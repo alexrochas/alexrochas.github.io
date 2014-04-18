@@ -1,4 +1,4 @@
 alexrochas.github.io
 ====================
 
-About.me
+Temporary redirect to About.me page.
