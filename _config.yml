@@ -7,18 +7,18 @@ highlighter: pygments
 markdown: kramdown
 disqus: alexrochas
 google_analytics: alex
-title: about_code
+title: "[about_code]"
 
 defaults:
   -
     scope:
       path: "" # empty string for all files
     values:
-      title: about_code
+      title: "[about_code]"
 
 description:
 author:
-  name: alex
+  name: "[about_code] by alex"
   email: alex.rochas@yahoo.com.br
   github: alexrochas
   twitter: alexsuzume
