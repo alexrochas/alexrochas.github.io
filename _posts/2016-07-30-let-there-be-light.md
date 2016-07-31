@@ -4,7 +4,7 @@ title: Let there be light!
 categories: [general]
 tags: [general]
 fullview: true
-comments: true
+comments: false 
 ---
 
 **aboutcode** is a blog about code, ideas and new ways of doing old things.
