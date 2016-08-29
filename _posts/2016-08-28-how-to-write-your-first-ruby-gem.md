@@ -38,13 +38,13 @@ Pipeme, is a simple gem that when added to your projects lets you concatenate pr
 First of all, we need to be certified that we have **bundler** installed.
 
 ```shell
-gem install bundler
+$ gem install bundler
 ```
 
 Once installed, we can create the boilerplate to **pipeme** gem.
 
 ```shell
-bundler gem pipeme
+$ bundler gem pipeme
 ```
 
 This creates the minimum needed to publish a new gem.
@@ -103,7 +103,7 @@ module Pipeme
 end
 {% endhighlight %}
 
-An extra point to be careful is to use semantic versioning (good read http://semver.org/) that in
+An extra point to be careful is to use semantic versioning (good read [http://semver.org/](http://semver.org/)) that in
 essence is.
 
 ```
@@ -243,7 +243,7 @@ Done. With passing tests we have a gem ready to be delivered.
 ### Shipping your gem ###
 
 Rubygems is essentially a repository for gems, like maven or npm. You should
-have a account in rubygem before been able to push your gem https://rubygems.org/sign_in.
+have a account in rubygem before been able to push your gem [https://rubygems.org/sign_in](https://rubygems.org/sign_in).
 
 Now, having a account, is time to export our gem for the world.
 
@@ -251,26 +251,26 @@ Now, having a account, is time to export our gem for the world.
 $ bundle exec rake release
 ```
 
-This way, **pipeme** gem is available to be downloaded in any ruby ecosystem that use rubygems, from https://rubygems.org/gems/pipeme
+This way, **pipeme** gem is available to be downloaded in any ruby ecosystem that use rubygems, from [https://rubygems.org/gems/pipeme](https://rubygems.org/gems/pipeme)
 or declaring it in your Gemfile.
 
 ### Where to go from here? ###
 
 Much more can be learned about gems. A good start may be read about other package managers as pypi, maven or npm.
 
-Once you understand a little about the process, give it a try in how to add executable scripts
+Once you understand a little more about the process, give it a try in how to add executable scripts
 to your gem and create rich terminal applications.
 
 [http://guides.rubygems.org/specification-reference/#executables](http://guides.rubygems.org/specification-reference/#executables)
 
-Study about continuous integration and how your gem cam play with that.
+Study about continuous integration and how your gem can play with that.
 
 [https://docs.travis-ci.com/user/languages/ruby](https://docs.travis-ci.com/user/languages/ruby)
 
-Maybe your gem requires a server to run, read about how heroku can help you that task.
+Sometimes your gem require a server to run, read about how heroku can help you that task.
 
 [https://devcenter.heroku.com/articles/getting-started-with-ruby#introduction](https://devcenter.heroku.com/articles/getting-started-with-ruby#introduction)
 
 Thanks for reading!
 
-Done a gem? Published on github? Tell me more on comments.
+Did a gem? Published on github? Tell me more in comments.
