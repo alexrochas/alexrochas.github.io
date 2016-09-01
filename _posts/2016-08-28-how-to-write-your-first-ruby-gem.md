@@ -68,7 +68,7 @@ From file to file, we first have pipeme.gemspec that is where are the metadata o
 name, version, license and dependencies with other gems. This file also specify where the
 source files are and the executables that will be added to our **path/bin**.
 
-{% highlight ruby linenos %}
+{% highlight ruby %}
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
