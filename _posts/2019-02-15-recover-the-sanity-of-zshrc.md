@@ -238,7 +238,8 @@ I know, there is a lot of creative ways to do that, but I really liked this one 
 
 [Powerline](https://github.com/powerline/powerline) is a theme for ZSH that does exactly what I need. Again, I liked so much that I even installed on my *.vimr*c.
 
-![“powerline example” by [powerline9k](https://github.com/bhilburn/powerlevel9k)](https://cdn-images-1.medium.com/max/2000/1*foOnmV5GeF61YDq5SZxvZw.png)*“powerline example” by [powerline9k](https://github.com/bhilburn/powerlevel9k)*
+![“powerline example” by [powerline9k](https://github.com/bhilburn/powerlevel9k)](https://cdn-images-1.medium.com/max/2000/1*foOnmV5GeF61YDq5SZxvZw.png){: .center }
+*“powerline example” by [powerline9k](https://github.com/bhilburn/powerlevel9k)*{: .quote }
 
 ### Z
 
