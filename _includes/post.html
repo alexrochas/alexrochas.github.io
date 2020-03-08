@@ -3,8 +3,8 @@
 </div>
 	
 <article>
-
-	<div class="col-sm-10">
+	{% include language.html %}
+	<div style="float: none" class="col-sm-10">
 	 <span class="post-date">
 	   {% assign d = page.date | date: "%d" | plus:'0' %}
 	   {{ page.date | date: "%B" }} 

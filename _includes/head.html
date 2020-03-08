@@ -1,0 +1,13 @@
+{% if page.layout != 'index' %}
+    {% assign posts = ''|split:''%}
+    {% for post in site.posts %}
+        {% if post.lang-ref and post.lang-ref == page.lang-ref %}
+            {% assign posts = posts|push:post%}
+        {% endif %}
+    {% endfor %}
+    {% if posts.size > 1 %}
+        {% for post in posts %}
+            <link rel="alternate" hreflang="{{post.lang}}" href="{{ site.base-url }}{{ post.url }}" />
+        {% endfor %}
+    {% endif %}
+{% endif %}

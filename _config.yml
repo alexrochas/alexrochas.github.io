@@ -7,24 +7,25 @@ highlighter: pygments
 markdown: kramdown
 disqus: alexrochas
 google_analytics: UA-83264734-1
-title: "[about_code]"
+title: "[alex_rocha]"
 
 defaults:
   -
     scope:
       path: "" # empty string for all files
     values:
-      title: "[about_code]"
+      title: "[alex_rocha]"
 
 description:
 author:
-  name: "[about_code] by alex"
-  email: alex.rochas@yahoo.com.br
+  name: "[alex_rocha] by alex"
+  email: alexsuzume@gmail.com
   github: alexrochas
   twitter: alexsuzume
   pinterest: alexrochas
   linkedin: alexrochas
-  bio: blog about good code and not so bad ideas
+  medium: alexrocha_15255
+  bio: 🇧🇷Senior Software Developer
   email_md5: e6f244d374347e94e7f33897d8f3e417
 
 rss_path: feed.xml

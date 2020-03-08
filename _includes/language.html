@@ -1,0 +1,24 @@
+{% if page.layout != 'index' %}
+    {% assign posts = ''|split:''%}
+    {% for post in site.posts %}
+        {% if post.lang-ref and post.lang-ref == page.lang-ref %}
+            {% assign posts = posts|push:post%}
+        {% endif %}
+    {% endfor %}
+    {% if posts.size > 1 %}
+        <header class="lang-options">
+            <em>Read this page in a different language:</em>
+            <ul class="lang-list">
+                {% for post in posts %}
+                    {% if post.lang != nil and post.lang-ref == page.lang-ref %}
+                        <li>
+                            <a href="{{ site.base-url }}{{ post.url }}" class="{{ post.lang }}" title="View in {{post.lang}}">
+                                {{ site.data.languages[post.lang].icon }}
+                            </a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </header>
+    {% endif %}
+{% endif %}
