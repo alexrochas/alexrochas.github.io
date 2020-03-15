@@ -37,5 +37,9 @@ tags_path: tags.html
 
 BASE_PATH:
 
+svg:
+  optimize: true
+
 gems:
   - jekyll-paginate
+  - jekyll-inline-svg
