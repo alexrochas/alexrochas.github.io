@@ -1,3 +1,6 @@
+---
+---
+
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:500&subset=latin,latin-ext);
 
 body{
@@ -39,6 +42,46 @@ body{
 	background-color: #2c3e50;
 	color: #fff;
 }
+
+/* about me start */
+.about-me-fs {
+	transition: 1s all;
+	width: 100%;
+	z-index: 100;
+	overflow: scroll;
+	height: 100%;
+	min-height: 0 !important;
+}
+
+#about-me {
+	padding: 50px 20%;
+	text-align: justify;
+    font-size: 18px;
+	line-height: 1.58;
+	text-indent: 50px;
+}
+
+#wordcloud {
+	display: block;
+	margin: auto;
+	font-family: 'Passion One', cursive;
+}
+
+.sidebar-hover:hover {
+	background-color: #465a6c;
+    cursor: pointer;
+}
+
+.contact-list-fs {
+	display: flex;
+	justify-content: center;
+}
+
+.zalando-icon {
+    margin-bottom: 1px;
+	height: 20px;
+}
+/* about me end */
 
 .sidebar-header {
 	text-align: center;

@@ -1,0 +1,185 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <style type="text/css">@import url(https://fonts.googleapis.com/css?family=Passion%20One:400);</style>
+ </defs>
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="602" width="802" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g id="svg_1">
+   <g id="svg_2" transform="rotate(-90 409.33593750000006,294.375) ">
+    <text id="svg_3" text-anchor="start" y="264.70588" x="250.130066" font-weight="normal" font-style="normal" font-size="74.1728px" font-family="Passion One" fill="#638db2">Spring Boot</text>
+   </g>
+   <g id="svg_4" transform="rotate(-90 353.33593750000006,296.375) ">
+    <text id="svg_5" text-anchor="start" y="266.70588" x="272.045639" font-weight="normal" font-style="normal" font-size="74.1728px" font-family="Passion One" fill="#d5a753">Kotlin</text>
+   </g>
+   <g id="svg_6">
+    <text id="svg_7" text-anchor="start" y="266.70588" x="383.497124" font-weight="normal" font-style="normal" font-size="74.1728px" font-family="Passion One" fill="#b95c28">Cloud</text>
+   </g>
+   <g id="svg_8">
+    <text id="svg_9" text-anchor="start" y="214.70588" x="385.727409" font-weight="normal" font-style="normal" font-size="74.1728px" font-family="Passion One" fill="#d5a753">Scala</text>
+   </g>
+   <g id="svg_10">
+    <text id="svg_11" text-anchor="start" y="318.70588" x="393.96286" font-weight="normal" font-style="normal" font-size="74.1728px" font-family="Passion One" fill="#638db2">Java</text>
+   </g>
+   <g id="svg_12">
+    <text id="svg_13" text-anchor="start" y="162.70588" x="381.777435" font-weight="normal" font-style="normal" font-size="74.1728px" font-family="Passion One" fill="#dbcc58">AWS</text>
+   </g>
+   <g id="svg_14">
+    <text id="svg_15" text-anchor="start" y="362.639704" x="383.565048" font-weight="normal" font-style="normal" font-size="59.3382px" font-family="Passion One" fill="#638db2">Agile Methods</text>
+   </g>
+   <g id="svg_16" transform="rotate(-90 291.33593750000006,296.375) ">
+    <text id="svg_17" text-anchor="start" y="272.639704" x="184.067329" font-weight="normal" font-style="normal" font-size="59.3382px" font-family="Passion One" fill="#f0f0f0">Javascript</text>
+   </g>
+   <g id="svg_18">
+    <text id="svg_19" text-anchor="start" y="110.639704" x="239.247261" font-weight="normal" font-style="normal" font-size="59.3382px" font-family="Passion One" fill="#b95c28">Kubernetes</text>
+   </g>
+   <g id="svg_20">
+    <text id="svg_21" text-anchor="start" y="410.639704" x="391.55722" font-weight="normal" font-style="normal" font-size="59.3382px" font-family="Passion One" fill="#d5a753">Zalando</text>
+   </g>
+   <g id="svg_22" transform="rotate(-90 247.33593750000003,298.375) ">
+    <text id="svg_23" text-anchor="start" y="274.639704" x="174.122726" font-weight="normal" font-style="normal" font-size="59.3382px" font-family="Passion One" fill="#dbcc58">Github</text>
+   </g>
+   <g id="svg_24">
+    <text id="svg_25" text-anchor="start" y="258.639704" x="535.198341" font-weight="normal" font-style="normal" font-size="59.3382px" font-family="Passion One" fill="#1b3c69">Groovy</text>
+   </g>
+   <g id="svg_26" transform="rotate(-90 351.33593750000006,454.375) ">
+    <text id="svg_27" text-anchor="start" y="430.639704" x="273.672981" font-weight="normal" font-style="normal" font-size="59.3382px" font-family="Passion One" fill="#b95c28">Python</text>
+   </g>
+   <g id="svg_28">
+    <text id="svg_29" text-anchor="start" y="310.639704" x="512.450935" font-weight="normal" font-style="normal" font-size="59.3382px" font-family="Passion One" fill="#d5a753">CI/CD</text>
+   </g>
+   <g id="svg_30">
+    <text id="svg_31" text-anchor="start" y="186.639704" x="204.352379" font-weight="normal" font-style="normal" font-size="59.3382px" font-family="Passion One" fill="#d5a753">Scrum</text>
+   </g>
+   <g id="svg_32">
+    <text id="svg_33" text-anchor="start" y="454.639704" x="391.803062" font-weight="normal" font-style="normal" font-size="59.3382px" font-family="Passion One" fill="#1b3c69">Ruby</text>
+   </g>
+   <g id="svg_34" transform="rotate(-90 409.33593750000006,484.375) ">
+    <text id="svg_35" text-anchor="start" y="460.639704" x="377.653725" font-weight="normal" font-style="normal" font-size="59.3382px" font-family="Passion One" fill="#638db2">Git</text>
+   </g>
+   <g id="svg_36" transform="rotate(-90 205.33593750000009,296.37500000000006) ">
+    <text id="svg_37" text-anchor="start" y="272.639704" x="161.965714" font-weight="normal" font-style="normal" font-size="59.3382px" font-family="Passion One" fill="#1b3c69">TDD</text>
+   </g>
+   <g id="svg_38" transform="rotate(-90 157.33593750000003,394.375) ">
+    <text id="svg_39" text-anchor="start" y="376.573528" x="12.043488" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#638db2">Jupyter Notebook</text>
+   </g>
+   <g id="svg_40" transform="rotate(-90 241.33593750000003,470.375) ">
+    <text id="svg_41" text-anchor="start" y="452.573528" x="144.41497" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#b95c28">Automation</text>
+   </g>
+   <g id="svg_42">
+    <text id="svg_43" text-anchor="start" y="66.573528" x="257.000969" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#638db2">Micronauts</text>
+   </g>
+   <g id="svg_44" transform="rotate(-90 301.33593750000006,478.375) ">
+    <text id="svg_45" text-anchor="start" y="460.573528" x="228.689713" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#dbcc58">Coaching</text>
+   </g>
+   <g id="svg_46">
+    <text id="svg_47" text-anchor="start" y="214.573528" x="527.85421" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#d5a753">Scalatra</text>
+   </g>
+   <g id="svg_48" transform="rotate(-90 435.33593750000017,514.3750000000001) ">
+    <text id="svg_49" text-anchor="start" y="496.573528" x="378.776459" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#d5a753">AssertJ</text>
+   </g>
+   <g id="svg_50">
+    <text id="svg_51" text-anchor="start" y="174.573528" x="504.338707" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#dbcc58">GraphQL</text>
+   </g>
+   <g id="svg_52" transform="rotate(-90 467.33593750000017,518.3750000000001) ">
+    <text id="svg_53" text-anchor="start" y="500.573528" x="407.705963" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#b95c28">Jenkins</text>
+   </g>
+   <g id="svg_54">
+    <text id="svg_55" text-anchor="start" y="142.573528" x="204.032211" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#b95c28">Mockito</text>
+   </g>
+   <g id="svg_56" transform="rotate(-90 199.33593750000003,396.375) ">
+    <text id="svg_57" text-anchor="start" y="378.573528" x="140.862961" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#f0f0f0">Sinatra</text>
+   </g>
+   <g id="svg_58">
+    <text id="svg_59" text-anchor="start" y="442.573528" x="508.430214" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#dbcc58">Medium</text>
+   </g>
+   <g id="svg_60">
+    <text id="svg_61" text-anchor="start" y="490.573528" x="452.99646" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#dbcc58">Pandas</text>
+   </g>
+   <g id="svg_62" transform="rotate(-90 199.33593750000003,210.375) ">
+    <text id="svg_63" text-anchor="start" y="192.573528" x="158.440453" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#dbcc58">Flask</text>
+   </g>
+   <g id="svg_64">
+    <text id="svg_65" text-anchor="start" y="314.573528" x="628.240204" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#b95c28">JUnit</text>
+   </g>
+   <g id="svg_66">
+    <text id="svg_67" text-anchor="start" y="394.573528" x="568.687706" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#638db2">Rails</text>
+   </g>
+   <g id="svg_68">
+    <text id="svg_69" text-anchor="start" y="522.573528" x="452.07946" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#d5a753">React</text>
+   </g>
+   <g id="svg_70" transform="rotate(-90 123.33593750000007,324.37500000000006) ">
+    <text id="svg_71" text-anchor="start" y="306.573528" x="71.871712" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#1b3c69">Redux</text>
+   </g>
+   <g id="svg_72" transform="rotate(-90 219.33593750000003,128.375) ">
+    <text id="svg_73" text-anchor="start" y="110.573528" x="180.620949" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#d5a753">Bash</text>
+   </g>
+   <g id="svg_74" transform="rotate(-90 91.33593750000007,356.37500000000006) ">
+    <text id="svg_75" text-anchor="start" y="338.573528" x="53.355202" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#1b3c69">Lean</text>
+   </g>
+   <g id="svg_76">
+    <text id="svg_77" text-anchor="start" y="562.573528" x="300.660454" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#f0f0f0">Node</text>
+   </g>
+   <g id="svg_78" transform="rotate(-90 751.3359375,336.37499999999994) ">
+    <text id="svg_79" text-anchor="start" y="318.573528" x="716.225449" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#f0f0f0">Play</text>
+   </g>
+   <g id="svg_80">
+    <text id="svg_81" text-anchor="start" y="554.573528" x="452.732201" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#d5a753">REST</text>
+   </g>
+   <g id="svg_82">
+    <text id="svg_83" text-anchor="start" y="474.573528" x="572.225441" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#f0f0f0">DDD</text>
+   </g>
+   <g id="svg_84" transform="rotate(-90 691.3359375,398.37499999999994) ">
+    <text id="svg_85" text-anchor="start" y="380.573528" x="659.229202" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#638db2">Vim</text>
+   </g>
+   <g id="svg_86" transform="rotate(-90 259.33593750000006,472.375) ">
+    <text id="svg_87" text-anchor="start" y="460.507352" x="190.747238" font-weight="normal" font-style="normal" font-size="29.6691px" font-family="Passion One" fill="#dbcc58">Data Science</text>
+   </g>
+   <g id="svg_88">
+    <text id="svg_89" text-anchor="start" y="578.507352" x="453.626297" font-weight="normal" font-style="normal" font-size="29.6691px" font-family="Passion One" fill="#1b3c69">Tensor Flow</text>
+   </g>
+   <g id="svg_90" transform="rotate(-90 707.3359375,412.37499999999994) ">
+    <text id="svg_91" text-anchor="start" y="400.507352" x="662.890457" font-weight="normal" font-style="normal" font-size="29.6691px" font-family="Passion One" fill="#638db2">Fintechs</text>
+   </g>
+   <g id="svg_92" transform="rotate(-90 203.33593750000003,506.375) ">
+    <text id="svg_93" text-anchor="start" y="494.507352" x="155.642685" font-weight="normal" font-style="normal" font-size="29.6691px" font-family="Passion One" fill="#638db2">Planning</text>
+   </g>
+   <g id="svg_94" transform="rotate(-90 119.33593750000001,424.375) ">
+    <text id="svg_95" text-anchor="start" y="412.507352" x="74.979431" font-weight="normal" font-style="normal" font-size="29.6691px" font-family="Passion One" fill="#d5a753">Agibank</text>
+   </g>
+   <g id="svg_96" transform="rotate(-90 599.3359375000001,516.375) ">
+    <text id="svg_97" text-anchor="start" y="504.507352" x="561.208038" font-weight="normal" font-style="normal" font-size="29.6691px" font-family="Passion One" fill="#638db2">Clojure</text>
+   </g>
+   <g id="svg_98">
+    <text id="svg_99" text-anchor="start" y="498.507352" x="591.000412" font-weight="normal" font-style="normal" font-size="29.6691px" font-family="Passion One" fill="#1b3c69">Django</text>
+   </g>
+   <g id="svg_100">
+    <text id="svg_101" text-anchor="start" y="210.507352" x="273.421806" font-weight="normal" font-style="normal" font-size="29.6691px" font-family="Passion One" fill="#f0f0f0">Ilegra</text>
+   </g>
+   <g id="svg_102" transform="rotate(-90 767.3359375,358.37499999999994) ">
+    <text id="svg_103" text-anchor="start" y="346.507352" x="736.445076" font-weight="normal" font-style="normal" font-size="29.6691px" font-family="Passion One" fill="#b95c28">Jekyll</text>
+   </g>
+   <g id="svg_104" transform="rotate(-90 179.33593750000003,500.375) ">
+    <text id="svg_105" text-anchor="start" y="488.507352" x="138.449661" font-weight="normal" font-style="normal" font-size="29.6691px" font-family="Passion One" fill="#d5a753">Kanban</text>
+   </g>
+   <g id="svg_106">
+    <text id="svg_107" text-anchor="start" y="142.507352" x="569.409027" font-weight="normal" font-style="normal" font-size="29.6691px" font-family="Passion One" fill="#638db2">Keras</text>
+   </g>
+   <g id="svg_108">
+    <text id="svg_109" text-anchor="start" y="38.507352" x="321.320038" font-weight="normal" font-style="normal" font-size="29.6691px" font-family="Passion One" fill="#dbcc58">Retro</text>
+   </g>
+   <g id="svg_110">
+    <text id="svg_111" text-anchor="start" y="574.507352" x="237.082756" font-weight="normal" font-style="normal" font-size="29.6691px" font-family="Passion One" fill="#f0f0f0">Mobx</text>
+   </g>
+   <g id="svg_112">
+    <text id="svg_113" text-anchor="start" y="222.507352" x="186.247688" font-weight="normal" font-style="normal" font-size="29.6691px" font-family="Passion One" fill="#d5a753">ZSH</text>
+   </g>
+   <g id="svg_114">
+    <text id="svg_115" text-anchor="start" y="278.441176" x="415.430016" font-weight="normal" font-style="normal" font-size="14.8346px" font-family="Passion One" fill="#dbcc58">Datacom</text>
+   </g>
+  </g>
+ </g>
+</svg>
