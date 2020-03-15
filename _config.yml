@@ -42,4 +42,3 @@ svg:
 
 gems:
   - jekyll-paginate
-  - jekyll-inline-svg
