@@ -1,185 +1,180 @@
-<svg id='wordcloud' viewBox='0 0 800 600' xmlns="http://www.w3.org/2000/svg">
- <defs>
-  <style type="text/css">@import url(https://fonts.googleapis.com/css?family=Passion%20One:400);</style>
- </defs>
- <g>
-  <title>background</title>
-  <rect fill="none" id="canvas_background" height="602" width="802" y="-1" x="-1"/>
- </g>
- <g>
-  <title>Layer 1</title>
-  <g id="svg_1">
-   <g id="svg_2" transform="rotate(-90 409.33593750000006,294.375) ">
-    <text id="svg_3" text-anchor="start" y="264.70588" x="250.130066" font-weight="normal" font-style="normal" font-size="74.1728px" font-family="Passion One" fill="#638db2">Spring Boot</text>
-   </g>
-   <g id="svg_4" transform="rotate(-90 353.33593750000006,296.375) ">
-    <text id="svg_5" text-anchor="start" y="266.70588" x="272.045639" font-weight="normal" font-style="normal" font-size="74.1728px" font-family="Passion One" fill="#d5a753">Kotlin</text>
-   </g>
-   <g id="svg_6">
-    <text id="svg_7" text-anchor="start" y="266.70588" x="383.497124" font-weight="normal" font-style="normal" font-size="74.1728px" font-family="Passion One" fill="#b95c28">Cloud</text>
-   </g>
-   <g id="svg_8">
-    <text id="svg_9" text-anchor="start" y="214.70588" x="385.727409" font-weight="normal" font-style="normal" font-size="74.1728px" font-family="Passion One" fill="#d5a753">Scala</text>
-   </g>
-   <g id="svg_10">
-    <text id="svg_11" text-anchor="start" y="318.70588" x="393.96286" font-weight="normal" font-style="normal" font-size="74.1728px" font-family="Passion One" fill="#638db2">Java</text>
-   </g>
-   <g id="svg_12">
-    <text id="svg_13" text-anchor="start" y="162.70588" x="381.777435" font-weight="normal" font-style="normal" font-size="74.1728px" font-family="Passion One" fill="#dbcc58">AWS</text>
-   </g>
-   <g id="svg_14">
-    <text id="svg_15" text-anchor="start" y="362.639704" x="383.565048" font-weight="normal" font-style="normal" font-size="59.3382px" font-family="Passion One" fill="#638db2">Agile Methods</text>
-   </g>
-   <g id="svg_16" transform="rotate(-90 291.33593750000006,296.375) ">
-    <text id="svg_17" text-anchor="start" y="272.639704" x="184.067329" font-weight="normal" font-style="normal" font-size="59.3382px" font-family="Passion One" fill="#f0f0f0">Javascript</text>
-   </g>
-   <g id="svg_18">
-    <text id="svg_19" text-anchor="start" y="110.639704" x="239.247261" font-weight="normal" font-style="normal" font-size="59.3382px" font-family="Passion One" fill="#b95c28">Kubernetes</text>
-   </g>
-   <g id="svg_20">
-    <text id="svg_21" text-anchor="start" y="410.639704" x="391.55722" font-weight="normal" font-style="normal" font-size="59.3382px" font-family="Passion One" fill="#d5a753">Zalando</text>
-   </g>
-   <g id="svg_22" transform="rotate(-90 247.33593750000003,298.375) ">
-    <text id="svg_23" text-anchor="start" y="274.639704" x="174.122726" font-weight="normal" font-style="normal" font-size="59.3382px" font-family="Passion One" fill="#dbcc58">Github</text>
-   </g>
-   <g id="svg_24">
-    <text id="svg_25" text-anchor="start" y="258.639704" x="535.198341" font-weight="normal" font-style="normal" font-size="59.3382px" font-family="Passion One" fill="#1b3c69">Groovy</text>
-   </g>
-   <g id="svg_26" transform="rotate(-90 351.33593750000006,454.375) ">
-    <text id="svg_27" text-anchor="start" y="430.639704" x="273.672981" font-weight="normal" font-style="normal" font-size="59.3382px" font-family="Passion One" fill="#b95c28">Python</text>
-   </g>
-   <g id="svg_28">
-    <text id="svg_29" text-anchor="start" y="310.639704" x="512.450935" font-weight="normal" font-style="normal" font-size="59.3382px" font-family="Passion One" fill="#d5a753">CI/CD</text>
-   </g>
-   <g id="svg_30">
-    <text id="svg_31" text-anchor="start" y="186.639704" x="204.352379" font-weight="normal" font-style="normal" font-size="59.3382px" font-family="Passion One" fill="#d5a753">Scrum</text>
-   </g>
-   <g id="svg_32">
-    <text id="svg_33" text-anchor="start" y="454.639704" x="391.803062" font-weight="normal" font-style="normal" font-size="59.3382px" font-family="Passion One" fill="#1b3c69">Ruby</text>
-   </g>
-   <g id="svg_34" transform="rotate(-90 409.33593750000006,484.375) ">
-    <text id="svg_35" text-anchor="start" y="460.639704" x="377.653725" font-weight="normal" font-style="normal" font-size="59.3382px" font-family="Passion One" fill="#638db2">Git</text>
-   </g>
-   <g id="svg_36" transform="rotate(-90 205.33593750000009,296.37500000000006) ">
-    <text id="svg_37" text-anchor="start" y="272.639704" x="161.965714" font-weight="normal" font-style="normal" font-size="59.3382px" font-family="Passion One" fill="#1b3c69">TDD</text>
-   </g>
-   <g id="svg_38" transform="rotate(-90 157.33593750000003,394.375) ">
-    <text id="svg_39" text-anchor="start" y="376.573528" x="12.043488" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#638db2">Jupyter Notebook</text>
-   </g>
-   <g id="svg_40" transform="rotate(-90 241.33593750000003,470.375) ">
-    <text id="svg_41" text-anchor="start" y="452.573528" x="144.41497" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#b95c28">Automation</text>
-   </g>
-   <g id="svg_42">
-    <text id="svg_43" text-anchor="start" y="66.573528" x="257.000969" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#638db2">Micronauts</text>
-   </g>
-   <g id="svg_44" transform="rotate(-90 301.33593750000006,478.375) ">
-    <text id="svg_45" text-anchor="start" y="460.573528" x="228.689713" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#dbcc58">Coaching</text>
-   </g>
-   <g id="svg_46">
-    <text id="svg_47" text-anchor="start" y="214.573528" x="527.85421" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#d5a753">Scalatra</text>
-   </g>
-   <g id="svg_48" transform="rotate(-90 435.33593750000017,514.3750000000001) ">
-    <text id="svg_49" text-anchor="start" y="496.573528" x="378.776459" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#d5a753">AssertJ</text>
-   </g>
-   <g id="svg_50">
-    <text id="svg_51" text-anchor="start" y="174.573528" x="504.338707" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#dbcc58">GraphQL</text>
-   </g>
-   <g id="svg_52" transform="rotate(-90 467.33593750000017,518.3750000000001) ">
-    <text id="svg_53" text-anchor="start" y="500.573528" x="407.705963" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#b95c28">Jenkins</text>
-   </g>
-   <g id="svg_54">
-    <text id="svg_55" text-anchor="start" y="142.573528" x="204.032211" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#b95c28">Mockito</text>
-   </g>
-   <g id="svg_56" transform="rotate(-90 199.33593750000003,396.375) ">
-    <text id="svg_57" text-anchor="start" y="378.573528" x="140.862961" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#f0f0f0">Sinatra</text>
-   </g>
-   <g id="svg_58">
-    <text id="svg_59" text-anchor="start" y="442.573528" x="508.430214" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#dbcc58">Medium</text>
-   </g>
-   <g id="svg_60">
-    <text id="svg_61" text-anchor="start" y="490.573528" x="452.99646" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#dbcc58">Pandas</text>
-   </g>
-   <g id="svg_62" transform="rotate(-90 199.33593750000003,210.375) ">
-    <text id="svg_63" text-anchor="start" y="192.573528" x="158.440453" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#dbcc58">Flask</text>
-   </g>
-   <g id="svg_64">
-    <text id="svg_65" text-anchor="start" y="314.573528" x="628.240204" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#b95c28">JUnit</text>
-   </g>
-   <g id="svg_66">
-    <text id="svg_67" text-anchor="start" y="394.573528" x="568.687706" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#638db2">Rails</text>
-   </g>
-   <g id="svg_68">
-    <text id="svg_69" text-anchor="start" y="522.573528" x="452.07946" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#d5a753">React</text>
-   </g>
-   <g id="svg_70" transform="rotate(-90 123.33593750000007,324.37500000000006) ">
-    <text id="svg_71" text-anchor="start" y="306.573528" x="71.871712" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#1b3c69">Redux</text>
-   </g>
-   <g id="svg_72" transform="rotate(-90 219.33593750000003,128.375) ">
-    <text id="svg_73" text-anchor="start" y="110.573528" x="180.620949" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#d5a753">Bash</text>
-   </g>
-   <g id="svg_74" transform="rotate(-90 91.33593750000007,356.37500000000006) ">
-    <text id="svg_75" text-anchor="start" y="338.573528" x="53.355202" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#1b3c69">Lean</text>
-   </g>
-   <g id="svg_76">
-    <text id="svg_77" text-anchor="start" y="562.573528" x="300.660454" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#f0f0f0">Node</text>
-   </g>
-   <g id="svg_78" transform="rotate(-90 751.3359375,336.37499999999994) ">
-    <text id="svg_79" text-anchor="start" y="318.573528" x="716.225449" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#f0f0f0">Play</text>
-   </g>
-   <g id="svg_80">
-    <text id="svg_81" text-anchor="start" y="554.573528" x="452.732201" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#d5a753">REST</text>
-   </g>
-   <g id="svg_82">
-    <text id="svg_83" text-anchor="start" y="474.573528" x="572.225441" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#f0f0f0">DDD</text>
-   </g>
-   <g id="svg_84" transform="rotate(-90 691.3359375,398.37499999999994) ">
-    <text id="svg_85" text-anchor="start" y="380.573528" x="659.229202" font-weight="normal" font-style="normal" font-size="44.5037px" font-family="Passion One" fill="#638db2">Vim</text>
-   </g>
-   <g id="svg_86" transform="rotate(-90 259.33593750000006,472.375) ">
-    <text id="svg_87" text-anchor="start" y="460.507352" x="190.747238" font-weight="normal" font-style="normal" font-size="29.6691px" font-family="Passion One" fill="#dbcc58">Data Science</text>
-   </g>
-   <g id="svg_88">
-    <text id="svg_89" text-anchor="start" y="578.507352" x="453.626297" font-weight="normal" font-style="normal" font-size="29.6691px" font-family="Passion One" fill="#1b3c69">Tensor Flow</text>
-   </g>
-   <g id="svg_90" transform="rotate(-90 707.3359375,412.37499999999994) ">
-    <text id="svg_91" text-anchor="start" y="400.507352" x="662.890457" font-weight="normal" font-style="normal" font-size="29.6691px" font-family="Passion One" fill="#638db2">Fintechs</text>
-   </g>
-   <g id="svg_92" transform="rotate(-90 203.33593750000003,506.375) ">
-    <text id="svg_93" text-anchor="start" y="494.507352" x="155.642685" font-weight="normal" font-style="normal" font-size="29.6691px" font-family="Passion One" fill="#638db2">Planning</text>
-   </g>
-   <g id="svg_94" transform="rotate(-90 119.33593750000001,424.375) ">
-    <text id="svg_95" text-anchor="start" y="412.507352" x="74.979431" font-weight="normal" font-style="normal" font-size="29.6691px" font-family="Passion One" fill="#d5a753">Agibank</text>
-   </g>
-   <g id="svg_96" transform="rotate(-90 599.3359375000001,516.375) ">
-    <text id="svg_97" text-anchor="start" y="504.507352" x="561.208038" font-weight="normal" font-style="normal" font-size="29.6691px" font-family="Passion One" fill="#638db2">Clojure</text>
-   </g>
-   <g id="svg_98">
-    <text id="svg_99" text-anchor="start" y="498.507352" x="591.000412" font-weight="normal" font-style="normal" font-size="29.6691px" font-family="Passion One" fill="#1b3c69">Django</text>
-   </g>
-   <g id="svg_100">
-    <text id="svg_101" text-anchor="start" y="210.507352" x="273.421806" font-weight="normal" font-style="normal" font-size="29.6691px" font-family="Passion One" fill="#f0f0f0">Ilegra</text>
-   </g>
-   <g id="svg_102" transform="rotate(-90 767.3359375,358.37499999999994) ">
-    <text id="svg_103" text-anchor="start" y="346.507352" x="736.445076" font-weight="normal" font-style="normal" font-size="29.6691px" font-family="Passion One" fill="#b95c28">Jekyll</text>
-   </g>
-   <g id="svg_104" transform="rotate(-90 179.33593750000003,500.375) ">
-    <text id="svg_105" text-anchor="start" y="488.507352" x="138.449661" font-weight="normal" font-style="normal" font-size="29.6691px" font-family="Passion One" fill="#d5a753">Kanban</text>
-   </g>
-   <g id="svg_106">
-    <text id="svg_107" text-anchor="start" y="142.507352" x="569.409027" font-weight="normal" font-style="normal" font-size="29.6691px" font-family="Passion One" fill="#638db2">Keras</text>
-   </g>
-   <g id="svg_108">
-    <text id="svg_109" text-anchor="start" y="38.507352" x="321.320038" font-weight="normal" font-style="normal" font-size="29.6691px" font-family="Passion One" fill="#dbcc58">Retro</text>
-   </g>
-   <g id="svg_110">
-    <text id="svg_111" text-anchor="start" y="574.507352" x="237.082756" font-weight="normal" font-style="normal" font-size="29.6691px" font-family="Passion One" fill="#f0f0f0">Mobx</text>
-   </g>
-   <g id="svg_112">
-    <text id="svg_113" text-anchor="start" y="222.507352" x="186.247688" font-weight="normal" font-style="normal" font-size="29.6691px" font-family="Passion One" fill="#d5a753">ZSH</text>
-   </g>
-   <g id="svg_114">
-    <text id="svg_115" text-anchor="start" y="278.441176" x="415.430016" font-weight="normal" font-style="normal" font-size="14.8346px" font-family="Passion One" fill="#dbcc58">Datacom</text>
-   </g>
-  </g>
- </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id='wordcloud' viewBox='0 0 800 600' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<defs>
+<style type="text/css"> @import url(https://fonts.googleapis.com/css?family=Passion%20One:400); </style>
+</defs>
+<g>
+<g transform="translate(398,300) rotate(-90,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="55.6493px" font-style="normal" font-weight="normal" x="-119.43122100830078" y="-22.259710200000004" text-anchor="start" dominant-baseline="alphabetic">Spring Boot</text>
+</g>
+<g transform="translate(354,298) rotate(-90,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="55.6493px" font-style="normal" font-weight="normal" x="-60.981422424316406" y="-22.259710200000004" text-anchor="start" dominant-baseline="alphabetic">Kotlin</text>
+</g>
+<g transform="translate(438,300) rotate(0,0,0)">
+<text fill="#66d9ef" stroke="none" font-family="Passion One" font-size="55.6493px" font-style="normal" font-weight="normal" x="-56.891876220703125" y="-22.259710200000004" text-anchor="start" dominant-baseline="alphabetic">Cloud</text>
+</g>
+<g transform="translate(432,260) rotate(0,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="55.6493px" font-style="normal" font-weight="normal" x="-52.218116760253906" y="-22.259710200000004" text-anchor="start" dominant-baseline="alphabetic">Scala</text>
+</g>
+<g transform="translate(430,340) rotate(0,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="55.6493px" font-style="normal" font-weight="normal" x="-44.53980255126953" y="-22.259710200000004" text-anchor="start" dominant-baseline="alphabetic">Java</text>
+</g>
+<g transform="translate(394,200) rotate(0,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="55.6493px" font-style="normal" font-weight="normal" x="-44.67890930175781" y="-22.259710200000004" text-anchor="start" dominant-baseline="alphabetic">AWS</text>
+</g>
+<g transform="translate(498,368) rotate(0,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-116.8609619140625" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Agile Methods</text>
+</g>
+<g transform="translate(306,298) rotate(-90,0,0)">
+<text fill="#fd9720" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-80.47405242919922" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Javascript</text>
+</g>
+<g transform="translate(398,468) rotate(0,0,0)">
+<text fill="#66d9ef" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-93.09263610839844" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Kubernetes</text>
+</g>
+<g transform="translate(452,404) rotate(0,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-65.85252380371094" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Zalando</text>
+</g>
+<g transform="translate(272,300) rotate(-90,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-54.925315856933594" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Github</text>
+</g>
+<g transform="translate(556,300) rotate(0,0,0)">
+<text fill="#a581ff" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-58.619651794433594" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Groovy</text>
+</g>
+<g transform="translate(356,176) rotate(-90,0,0)">
+<text fill="#66d9ef" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-58.263572692871094" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Python</text>
+</g>
+<g transform="translate(522,332) rotate(0,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-44.17616271972656" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">CI/CD</text>
+</g>
+<g transform="translate(436,436) rotate(0,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-50.25177764892578" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Scrum</text>
+</g>
+<g transform="translate(388,148) rotate(0,0,0)">
+<text fill="#a581ff" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-41.661346435546875" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Ruby</text>
+</g>
+<g transform="translate(356,386) rotate(-90,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-23.768325805664062" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Git</text>
+</g>
+<g transform="translate(240,302) rotate(-90,0,0)">
+<text fill="#a581ff" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-32.53679656982422" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">TDD</text>
+</g>
+<g transform="translate(202,372) rotate(-90,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-108.98565673828125" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Jupyter Notebook</text>
+</g>
+<g transform="translate(270,428) rotate(-90,0,0)">
+<text fill="#66d9ef" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-72.70161437988281" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Automation</text>
+</g>
+<g transform="translate(398,488) rotate(0,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-67.76138305664062" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Micronauts</text>
+</g>
+<g transform="translate(318,160) rotate(-90,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-54.492835998535156" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Coaching</text>
+</g>
+<g transform="translate(484,212) rotate(0,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-49.11865234375" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Scalatra</text>
+</g>
+<g transform="translate(314,424) rotate(-90,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-42.42595672607422" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">AssertJ</text>
+</g>
+<g transform="translate(550,264) rotate(0,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-51.75567626953125" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">GraphQL</text>
+</g>
+<g transform="translate(270,196) rotate(-90,0,0)">
+<text fill="#66d9ef" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-44.72917938232422" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Jenkins</text>
+</g>
+<g transform="translate(532,240) rotate(0,0,0)">
+<text fill="#66d9ef" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-48.985137939453125" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Mockito</text>
+</g>
+<g transform="translate(234,222) rotate(-90,0,0)">
+<text fill="#fd9720" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-43.861305236816406" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Sinatra</text>
+</g>
+<g transform="translate(396,512) rotate(0,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-50.18681335449219" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Medium</text>
+</g>
+<g transform="translate(566,388) rotate(0,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-43.76116943359375" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Pandas</text>
+</g>
+<g transform="translate(234,366) rotate(-90,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-30.67620086669922" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Flask</text>
+</g>
+<g transform="translate(598,332) rotate(0,0,0)">
+<text fill="#66d9ef" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-30.826416015625" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">JUnit</text>
+</g>
+<g transform="translate(516,424) rotate(0,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-28.990516662597656" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Rails</text>
+</g>
+<g transform="translate(528,448) rotate(0,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-33.94744873046875" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">React</text>
+</g>
+<g transform="translate(174,320) rotate(-90,0,0)">
+<text fill="#a581ff" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-38.60395812988281" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Redux</text>
+</g>
+<g transform="translate(338,492) rotate(-90,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-29.04058837890625" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Bash</text>
+</g>
+<g transform="translate(246,426) rotate(-90,0,0)">
+<text fill="#a581ff" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-28.489822387695312" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Lean</text>
+</g>
+<g transform="translate(502,488) rotate(0,0,0)">
+<text fill="#fd9720" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-32.01141357421875" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Node</text>
+</g>
+<g transform="translate(306,492) rotate(-90,0,0)">
+<text fill="#fd9720" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-26.336807250976562" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Play</text>
+</g>
+<g transform="translate(564,216) rotate(0,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-28.957138061523438" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">REST</text>
+</g>
+<g transform="translate(576,412) rotate(0,0,0)">
+<text fill="#fd9720" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-26.336814880371094" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">DDD</text>
+</g>
+<g transform="translate(296,426) rotate(-90,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-24.083656311035156" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Vim</text>
+</g>
+<g transform="translate(288,162) rotate(-90,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-51.45306396484375" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Data Science</text>
+</g>
+<g transform="translate(396,526) rotate(0,0,0)">
+<text fill="#a581ff" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-47.79296112060547" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Tensor Flow</text>
+</g>
+<g transform="translate(654,340) rotate(-90,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-33.341590881347656" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Fintechs</text>
+</g>
+<g transform="translate(148,356) rotate(-90,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-35.777976989746094" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Planning</text>
+</g>
+<g transform="translate(586,436) rotate(-90,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-33.27484893798828" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Agibank</text>
+</g>
+<g transform="translate(634,380) rotate(-90,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-28.60235595703125" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Clojure</text>
+</g>
+<g transform="translate(476,502) rotate(0,0,0)">
+<text fill="#a581ff" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-28.758102416992188" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Django</text>
+</g>
+<g transform="translate(408,206) rotate(0,0,0)">
+<text fill="#fd9720" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-23.94097900390625" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Ilegra</text>
+</g>
+<g transform="translate(170,386) rotate(-90,0,0)">
+<text fill="#66d9ef" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-23.173355102539062" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Jekyll</text>
+</g>
+<g transform="translate(674,350) rotate(-90,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-30.671607971191406" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Kanban</text>
+</g>
+<g transform="translate(354,106) rotate(0,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-22.450233459472656" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Keras</text>
+</g>
+<g transform="translate(466,526) rotate(0,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-22.51697540283203" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Retro</text>
+</g>
+<g transform="translate(530,502) rotate(0,0,0)">
+<text fill="#fd9720" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-22.694992065429688" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Mobx</text>
+</g>
+<g transform="translate(456,182) rotate(0,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-15.819740295410156" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">ZSH</text>
+</g>
+<g transform="translate(526,182) rotate(0,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="11.1299px" font-style="normal" font-weight="normal" x="-17.9254150390625" y="-4.451942040000001" text-anchor="start" dominant-baseline="alphabetic">Datacom</text>
+</g>
+</g>
 </svg>

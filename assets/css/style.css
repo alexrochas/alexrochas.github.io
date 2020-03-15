@@ -60,7 +60,7 @@ body{
 
 #wordcloud {
 	display: block;
-	margin: auto;
+	margin: -5%;
 	font-family: 'Passion One', cursive;
 }
 
