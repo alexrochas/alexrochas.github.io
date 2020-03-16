@@ -58,6 +58,10 @@ body{
 	text-indent: 50px;
 }
 
+.about-me-link:hover {
+	cursor: pointer;
+}
+
 #wordcloud {
 	display: block;
 	margin: -5%;
