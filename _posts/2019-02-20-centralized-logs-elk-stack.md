@@ -180,7 +180,6 @@ Spring boot is configured with logback to generate logs in JSON format with fiel
     <root level="INFO">
         <appender-ref ref="jsonConsoleAppender"/>
     </root>
-
 </configuration>
 ```
 

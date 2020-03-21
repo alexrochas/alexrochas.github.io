@@ -84,6 +84,38 @@ body{
 }
 /* about me end */
 
+.highlighter-rouge {
+	border-radius: 4px;
+}
+
+.highlight {
+	border-radius: 4px;
+}
+
+code table {
+	display: block;
+}
+
+code tbody {
+	display: block;
+	width: 100%;
+}
+
+code tbody tr {
+	width: 100%;
+	display: flex;
+}
+
+.rouge-code {
+	flex: 1 0 0px;
+	max-width: calc(100% - 4em);
+}
+
+code pre {
+	white-space: pre;
+    overflow: auto;
+}
+
 .sidebar-header {
 	text-align: center;
 	margin-bottom: 10px;
