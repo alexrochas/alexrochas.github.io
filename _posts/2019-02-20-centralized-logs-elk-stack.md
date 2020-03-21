@@ -170,6 +170,8 @@ But which value Kafka can add to our stack?
 
 Spring boot is configured with logback to generate logs in JSON format with field *log* and *log_topic*:
 
+><i class="far fa-file-code"></i> logback.xml
+{:.filename}
 ```xml
 <configuration>
     <appender name="jsonConsoleAppender" class="ch.qos.logback.core.ConsoleAppender">
@@ -185,6 +187,8 @@ Spring boot is configured with logback to generate logs in JSON format with fiel
 
 This enables filebeat to extract the specific field JSON and send it to Kafka in a topic defined by the field *log_topic*:
 
+><i class="far fa-file-code"></i> filebeat.yml
+{:.filename}
 ```yaml
 filebeat.prospectors:
 - type: log
@@ -231,6 +235,8 @@ logging.to_syslog: false
 
 With the events now in Kafka, logstash is able to consume by topic and send to Elasticsearch:
 
+><i class="far fa-file-code"></i> logstash.conf
+{:.filename}
 ```
 input {
     kafka {
