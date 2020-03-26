@@ -9,6 +9,8 @@ excerpt:
     “The greatest enemy of knowledge is not ignorance, it is the illusion of knowledge.” 
     ~ Daniel J. Boorstin
 comments: true
+feature_img: /assets/media/cover_banner.png
+image: /assets/media/cover_banner.png
 ---
 
 ![cover]({{ site.url }}/assets/media/cover_banner.png)

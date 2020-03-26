@@ -26,6 +26,8 @@ tagline:
   <div>
     {% if post.fullview %}
     {{ post.content }}
+    {% elsif post.feature_img %}
+    <img class="feature-img" src="{{ post.feature_img }}" />
     {% else %}
     {% if post.shortinfo %}
     {{ post.shortinfo }}

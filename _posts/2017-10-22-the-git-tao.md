@@ -8,9 +8,11 @@ excerpt_separator: <!--more-->
 excerpt:
     Here are my top 6 behaviors a good developer must have when using Git.
 comments: true
+image: https://cdn-images-1.medium.com/max/2000/1*scAYNyWlof1odFBfsdlHIA.jpeg
+feature_img: https://cdn-images-1.medium.com/max/2000/1*scAYNyWlof1odFBfsdlHIA.jpeg
 ---
 
-![](https://cdn-images-1.medium.com/max/2000/1*scAYNyWlof1odFBfsdlHIA.jpeg){: .center }
+![cover](https://cdn-images-1.medium.com/max/2000/1*scAYNyWlof1odFBfsdlHIA.jpeg){: .center }
 
 I worked with versioning tools since 2006. Already worked with CVS, Subversion and from 2011 until now with Git.
 

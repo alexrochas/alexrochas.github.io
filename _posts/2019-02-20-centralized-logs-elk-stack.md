@@ -8,6 +8,7 @@ excerpt_separator: <!--more-->
 excerpt:
     Improve our current ELK stack using Kafka
 comments: true
+image: https://cdn-images-1.medium.com/max/2458/1*a67reU9VyN1HeS_Rszx8VA.jpeg
 ---
 
 ![ELK stack](https://cdn-images-1.medium.com/max/2000/1*pqzrs9L8wdnbWfFjIq5X7A.png){: .center }

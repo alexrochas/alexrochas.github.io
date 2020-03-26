@@ -8,6 +8,7 @@ excerpt_separator: <!--more-->
 excerpt:
     "The highs and lows of an event sourcing architecture"
 comments: true
+image: https://cdn-images-1.medium.com/max/2000/0*WdYZ4xKi-0jFdqj4.jpg
 ---
 
 ![“Evolutionary perspective” by [Allan Bao](https://me.me/i/www-alanbao-tumblr-comm-17300790)](https://cdn-images-1.medium.com/max/2000/0*WdYZ4xKi-0jFdqj4.jpg){: .center }

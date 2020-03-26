@@ -8,6 +8,8 @@ excerpt_separator: <!--more-->
 excerpt:
     “Unpack the mystery behind what’s in a RubyGem.” ~ Rubygems
 comments: true
+feature_img: /assets/media/ruby-banner.png
+image: /assets/media/ruby-banner.png
 ---
 
 ![cover]({{ site.url }}/assets/media/ruby-banner.png)

@@ -73,6 +73,11 @@ body{
     cursor: pointer;
 }
 
+.feature-img {
+	text-align: center;
+	max-height: 220px;
+}
+
 .contact-list-fs {
 	display: flex;
 	justify-content: center;
