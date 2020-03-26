@@ -48,5 +48,9 @@ BASE_PATH:
 svg:
   optimize: true
 
+twitter:
+  username: alexsuzume
+
 gems:
   - jekyll-paginate
+  - jekyll-seo-tag
