@@ -53,4 +53,4 @@ twitter:
 
 gems:
   - jekyll-paginate
-  - jekyll-seo-tag
+  - jekyll-seo-tag # https://maxchadwick.xyz/blog/twitter-cards-for-jekyll-with-jekyll-seo-tag
