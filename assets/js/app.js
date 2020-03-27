@@ -46,7 +46,9 @@
 function showAboutMe() {
     let sidebar = $(document.getElementsByClassName('sidebar')[0]);
     sidebar.addClass('about-me-fs');
-    sidebar.removeClass('sidebar-hover');
+
+    let sidebarFixed = $(document.getElementsByClassName('sidebar-fixed')[0]);
+    sidebarFixed.removeClass('sidebar-hover');
 
     $(document.getElementById('contact-list')).addClass('contact-list-fs');
 
