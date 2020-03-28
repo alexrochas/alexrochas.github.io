@@ -51,6 +51,9 @@ svg:
 twitter:
   username: alexsuzume
 
+url: "http://alexrocha.de"
+
 gems:
   - jekyll-paginate
+  - jekyll-sitemap
   - jekyll-seo-tag # https://maxchadwick.xyz/blog/twitter-cards-for-jekyll-with-jekyll-seo-tag
