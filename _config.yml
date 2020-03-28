@@ -53,6 +53,9 @@ twitter:
 
 url: "http://alexrocha.de"
 
+webmaster_verifications:
+  google: OzMjWKKnJc_zMK4N0NCn7tAa9ZIuiEzXdgAPZdaqIEI
+
 gems:
   - jekyll-paginate
   - jekyll-sitemap
