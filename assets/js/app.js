@@ -38,7 +38,7 @@
     $(document).ready(init);
 
     $('.about-me-link').click(function() {
-        $(document.getElementsByClassName('sidebar')[0]).click();
+        $(document.getElementsByClassName('sidebar-fixed')[0]).click();
     })
 
 })(jQuery);
