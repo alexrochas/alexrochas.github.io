@@ -56,7 +56,7 @@ url: "http://alexrocha.de"
 webmaster_verifications:
   google: OzMjWKKnJc_zMK4N0NCn7tAa9ZIuiEzXdgAPZdaqIEI
 
-gems:
+plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-seo-tag # https://maxchadwick.xyz/blog/twitter-cards-for-jekyll-with-jekyll-seo-tag
