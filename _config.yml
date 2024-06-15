@@ -1,13 +1,16 @@
 # visit https://github.com/mojombo/jekyll/wiki/Configuration for more settings
 
-paginate: 10 # pagination based on number of posts
-paginate_path: "page:num"
+## paginate: 10 # pagination based on number of posts
+## paginate_path: "page:num"
 exclude: ["README.md"] # files to exclude
 highlighter: rouge
 markdown: kramdown
 disqus: alexrochas
 google_analytics: UA-83264734-1
 title: "[alex_rocha]"
+
+include:
+  - _pages
 
 kramdown:
   syntax_highlighter_opts:
@@ -57,6 +60,21 @@ webmaster_verifications:
   google: OzMjWKKnJc_zMK4N0NCn7tAa9ZIuiEzXdgAPZdaqIEI
 
 plugins:
-  - jekyll-paginate
+  - jekyll-paginate-v2
   - jekyll-sitemap
   - jekyll-seo-tag # https://maxchadwick.xyz/blog/twitter-cards-for-jekyll-with-jekyll-seo-tag
+
+plugins:
+
+pagination:
+  enabled: true
+  per_page: 10
+  permalink: '/:num/'
+  title_suffix: ' - page :num'
+  trail:
+    before: 2
+    after: 2
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+  collection: 'posts'

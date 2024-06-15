@@ -1,12 +1,13 @@
 ---
 layout: page
-tagline:
+title: Today I Learned
+permalink: /til/
 pagination:
   enabled: true
 ---
 
 {% for post in paginator.posts %}
-  {% unless post.tags contains 'til' %}
+  {% if post.tags contains 'til' %}
     <article class="home">
 
       <span class="post-date">
@@ -42,7 +43,7 @@ pagination:
       </div>
 
     </article>
-  {% endunless %}
+  {% endif %}
 {% endfor %}
 <hr/>
 
