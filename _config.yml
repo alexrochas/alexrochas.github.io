@@ -12,6 +12,14 @@ title: "[alex_rocha]"
 include:
   - _pages
 
+exclude:
+  - vendor/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - README.md
+  - LICENSE
+
 kramdown:
   syntax_highlighter_opts:
     block:
