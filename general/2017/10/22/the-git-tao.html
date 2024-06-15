@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>The Git TAO</title>
+	
+	<meta name="author" content="[alex_rocha] by alex">
+
+	<!-- Enable responsive viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Le styles -->
+	<link href="/assets/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/assets/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="/assets/resources/syntax/syntax.css" rel="stylesheet">
+	<link href="/assets/css/style.css" rel="stylesheet">
+	<link href="/assets/css/code.css" rel="stylesheet">
+
+	<!-- Le fav and touch icons -->
+	<link rel="shortcut icon" href="/assets/media/alexrocha_small.png">
+	<!-- Update these with your own images
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+	-->
+
+	<link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+
+	
+    
+    
+    
+
+</head>
+
+<body>
+	<nav class="navbar navbar-default visible-xs" role="navigation">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/">
+				<img src="http://www.gravatar.com/avatar/e6f244d374347e94e7f33897d8f3e417?s=35" class="img-circle" />
+				[alex_rocha]
+			</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="/">Home</a></li>
+				<li><a href="/categories.html">Categories</a></li>
+				<li><a href="/tags.html">Tags</a></li>
+                <li class="divider-xs"></li>
+                <li class="social-xs">
+					
+					<a type="button" class="navbar-toggle nav-link" href="http://github.com/alexrochas">
+						<i class="fab fa-github"></i>
+					</a>
+					
+					
+					<a type="button" class="navbar-toggle nav-link" href="http://twitter.com/alexsuzume">
+						<i class="fab fa-twitter"></i>
+					</a>
+					
+					
+					<a type="button" class="navbar-toggle nav-link" href="mailto:alexsuzume@gmail.com">
+						<i class="fa fa-envelope"></i>
+					</a>
+					
+					
+					<a type="button" class="navbar-toggle nav-link" href="https://medium.com/@alexrocha_15255">
+						<i class="fab fa-medium"></i>
+					</a>
+					
+					
+					<a type="button" class="navbar-toggle nav-link" href="https://linkedin.com/in/alexrochas">
+						<i class="fab fa-linkedin"></i>
+					</a>
+					
+					<a type="button" class="navbar-toggle nav-link" href="/feed.xml">
+						<i class="fa fa-rss"></i>
+					</a>
+				</li>
+			</ul>
+		</div><!-- /.navbar-collapse -->
+	</nav>
+
+	<!-- nav-menu-dropdown -->
+	<div class="btn-group hidden-xs" id="nav-menu">
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			<i class="fa fa-bars"></i>
+		</button>
+		<ul class="dropdown-menu" role="menu">
+			<li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+			<li><a href="/til/"><i class="fa fa-graduation-cap"></i>Today I Learned</a></li>
+			<li><a href="/categories.html"><i class="fa fa-folder"></i>Categories</a></li>
+			<li><a href="/tags.html"><i class="fa fa-tags"></i>Tags</a></li>
+			<li><a class='about-me-link'><i class="fa fa-user"></i>About me</a></li>
+			<li class="divider"></li>
+			<li><a href="#"><i class="fa fa-arrow-up"></i>Top of Page</a></li>
+		</ul>
+	</div>
+
+	<div class="col-sm-3 sidebar hidden-xs" style="">
+		<div class="sidebar-fixed sidebar-hover" onclick="showAboutMe()"></div>
+		<!-- sidebar.html -->
+<header class="sidebar-header" role="banner">
+	<a href="/">
+		<img src="http://www.gravatar.com/avatar/e6f244d374347e94e7f33897d8f3e417?s=150" class="img-circle" />
+	</a>
+	<h3 class="title">
+        <a href="/">[alex_rocha]</a>
+    </h3>
+</header>
+
+
+<div id="bio" class="text-center">
+	🇧🇷Senior Software Developer
+</div>
+
+
+<div id="about-me" class="text-center" hidden>
+	<p>
+    I'm Alex, Karate black-belt and Software Developer from Porto Alegre 🇧🇷,
+    now living in Berlin 🇩🇪. Working with development since 2006, I already used a huge amount of different technologies.
+    Technologies from JVM languages like Java, Kotlin, Scala, and Groovy to more script languages as Ruby and Python.
+    Learned and taught TDD, Lean, Agile principles and many others through the years.
+</p>
+
+<!-- Wordcloud create using https://www.wordclouds.com/ -->
+<p>
+    <?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id='wordcloud' viewBox='0 0 800 600' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<defs>
+<style type="text/css"> @import url(https://fonts.googleapis.com/css?family=Passion%20One:400); </style>
+</defs>
+<g>
+<g transform="translate(398,300) rotate(-90,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="55.6493px" font-style="normal" font-weight="normal" x="-119.43122100830078" y="-22.259710200000004" text-anchor="start" dominant-baseline="alphabetic">Spring Boot</text>
+</g>
+<g transform="translate(354,298) rotate(-90,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="55.6493px" font-style="normal" font-weight="normal" x="-60.981422424316406" y="-22.259710200000004" text-anchor="start" dominant-baseline="alphabetic">Kotlin</text>
+</g>
+<g transform="translate(438,300) rotate(0,0,0)">
+<text fill="#66d9ef" stroke="none" font-family="Passion One" font-size="55.6493px" font-style="normal" font-weight="normal" x="-56.891876220703125" y="-22.259710200000004" text-anchor="start" dominant-baseline="alphabetic">Cloud</text>
+</g>
+<g transform="translate(432,260) rotate(0,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="55.6493px" font-style="normal" font-weight="normal" x="-52.218116760253906" y="-22.259710200000004" text-anchor="start" dominant-baseline="alphabetic">Scala</text>
+</g>
+<g transform="translate(430,340) rotate(0,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="55.6493px" font-style="normal" font-weight="normal" x="-44.53980255126953" y="-22.259710200000004" text-anchor="start" dominant-baseline="alphabetic">Java</text>
+</g>
+<g transform="translate(394,200) rotate(0,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="55.6493px" font-style="normal" font-weight="normal" x="-44.67890930175781" y="-22.259710200000004" text-anchor="start" dominant-baseline="alphabetic">AWS</text>
+</g>
+<g transform="translate(498,368) rotate(0,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-116.8609619140625" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Agile Methods</text>
+</g>
+<g transform="translate(306,298) rotate(-90,0,0)">
+<text fill="#fd9720" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-80.47405242919922" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Javascript</text>
+</g>
+<g transform="translate(398,468) rotate(0,0,0)">
+<text fill="#66d9ef" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-93.09263610839844" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Kubernetes</text>
+</g>
+<g transform="translate(452,404) rotate(0,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-65.85252380371094" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Zalando</text>
+</g>
+<g transform="translate(272,300) rotate(-90,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-54.925315856933594" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Github</text>
+</g>
+<g transform="translate(556,300) rotate(0,0,0)">
+<text fill="#a581ff" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-58.619651794433594" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Groovy</text>
+</g>
+<g transform="translate(356,176) rotate(-90,0,0)">
+<text fill="#66d9ef" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-58.263572692871094" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Python</text>
+</g>
+<g transform="translate(522,332) rotate(0,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-44.17616271972656" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">CI/CD</text>
+</g>
+<g transform="translate(436,436) rotate(0,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-50.25177764892578" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Scrum</text>
+</g>
+<g transform="translate(388,148) rotate(0,0,0)">
+<text fill="#a581ff" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-41.661346435546875" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Ruby</text>
+</g>
+<g transform="translate(356,386) rotate(-90,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-23.768325805664062" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Git</text>
+</g>
+<g transform="translate(240,302) rotate(-90,0,0)">
+<text fill="#a581ff" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-32.53679656982422" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">TDD</text>
+</g>
+<g transform="translate(202,372) rotate(-90,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-108.98565673828125" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Jupyter Notebook</text>
+</g>
+<g transform="translate(270,428) rotate(-90,0,0)">
+<text fill="#66d9ef" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-72.70161437988281" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Automation</text>
+</g>
+<g transform="translate(398,488) rotate(0,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-67.76138305664062" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Micronauts</text>
+</g>
+<g transform="translate(318,160) rotate(-90,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-54.492835998535156" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Coaching</text>
+</g>
+<g transform="translate(484,212) rotate(0,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-49.11865234375" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Scalatra</text>
+</g>
+<g transform="translate(314,424) rotate(-90,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-42.42595672607422" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">AssertJ</text>
+</g>
+<g transform="translate(550,264) rotate(0,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-51.75567626953125" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">GraphQL</text>
+</g>
+<g transform="translate(270,196) rotate(-90,0,0)">
+<text fill="#66d9ef" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-44.72917938232422" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Jenkins</text>
+</g>
+<g transform="translate(532,240) rotate(0,0,0)">
+<text fill="#66d9ef" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-48.985137939453125" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Mockito</text>
+</g>
+<g transform="translate(234,222) rotate(-90,0,0)">
+<text fill="#fd9720" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-43.861305236816406" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Sinatra</text>
+</g>
+<g transform="translate(396,512) rotate(0,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-50.18681335449219" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Medium</text>
+</g>
+<g transform="translate(566,388) rotate(0,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-43.76116943359375" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Pandas</text>
+</g>
+<g transform="translate(234,366) rotate(-90,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-30.67620086669922" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Flask</text>
+</g>
+<g transform="translate(598,332) rotate(0,0,0)">
+<text fill="#66d9ef" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-30.826416015625" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">JUnit</text>
+</g>
+<g transform="translate(516,424) rotate(0,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-28.990516662597656" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Rails</text>
+</g>
+<g transform="translate(528,448) rotate(0,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-33.94744873046875" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">React</text>
+</g>
+<g transform="translate(174,320) rotate(-90,0,0)">
+<text fill="#a581ff" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-38.60395812988281" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Redux</text>
+</g>
+<g transform="translate(338,492) rotate(-90,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-29.04058837890625" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Bash</text>
+</g>
+<g transform="translate(246,426) rotate(-90,0,0)">
+<text fill="#a581ff" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-28.489822387695312" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Lean</text>
+</g>
+<g transform="translate(502,488) rotate(0,0,0)">
+<text fill="#fd9720" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-32.01141357421875" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Node</text>
+</g>
+<g transform="translate(306,492) rotate(-90,0,0)">
+<text fill="#fd9720" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-26.336807250976562" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Play</text>
+</g>
+<g transform="translate(564,216) rotate(0,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-28.957138061523438" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">REST</text>
+</g>
+<g transform="translate(576,412) rotate(0,0,0)">
+<text fill="#fd9720" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-26.336814880371094" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">DDD</text>
+</g>
+<g transform="translate(296,426) rotate(-90,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-24.083656311035156" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Vim</text>
+</g>
+<g transform="translate(288,162) rotate(-90,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-51.45306396484375" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Data Science</text>
+</g>
+<g transform="translate(396,526) rotate(0,0,0)">
+<text fill="#a581ff" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-47.79296112060547" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Tensor Flow</text>
+</g>
+<g transform="translate(654,340) rotate(-90,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-33.341590881347656" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Fintechs</text>
+</g>
+<g transform="translate(148,356) rotate(-90,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-35.777976989746094" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Planning</text>
+</g>
+<g transform="translate(586,436) rotate(-90,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-33.27484893798828" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Agibank</text>
+</g>
+<g transform="translate(634,380) rotate(-90,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-28.60235595703125" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Clojure</text>
+</g>
+<g transform="translate(476,502) rotate(0,0,0)">
+<text fill="#a581ff" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-28.758102416992188" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Django</text>
+</g>
+<g transform="translate(408,206) rotate(0,0,0)">
+<text fill="#fd9720" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-23.94097900390625" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Ilegra</text>
+</g>
+<g transform="translate(170,386) rotate(-90,0,0)">
+<text fill="#66d9ef" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-23.173355102539062" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Jekyll</text>
+</g>
+<g transform="translate(674,350) rotate(-90,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-30.671607971191406" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Kanban</text>
+</g>
+<g transform="translate(354,106) rotate(0,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-22.450233459472656" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Keras</text>
+</g>
+<g transform="translate(466,526) rotate(0,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-22.51697540283203" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Retro</text>
+</g>
+<g transform="translate(530,502) rotate(0,0,0)">
+<text fill="#fd9720" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-22.694992065429688" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Mobx</text>
+</g>
+<g transform="translate(456,182) rotate(0,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-15.819740295410156" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">ZSH</text>
+</g>
+<g transform="translate(526,182) rotate(0,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="11.1299px" font-style="normal" font-weight="normal" x="-17.9254150390625" y="-4.451942040000001" text-anchor="start" dominant-baseline="alphabetic">Datacom</text>
+</g>
+</g>
+</svg>
+</p>
+
+<p>
+    Today I work as a Software Engineer for Zalando
+    <img class="zalando-icon" src='/assets/media/zalando-logo.png'/> where I can use all my knowledge about
+    resilience and scalable Cloud-Native Applications using on a daily basis Python, Java, Scala and Kotlin
+    with Kubernetes on the AWS stack.
+</p>
+
+
+
+</div>
+
+<div id="contact-list" class="text-center">
+	<ul class="list-unstyled list-inline">
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://github.com/alexrochas">
+				<i class="fab fa-github-alt fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://twitter.com/alexsuzume">
+				<i class="fab fa-twitter fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://medium.com/@alexrocha_15255">
+				<i class="fab fa-medium fa-lg"></i>
+			</a>
+		</li>
+		
+	</ul>
+	<ul class="list-unstyled list-inline">
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="mailto:alexsuzume@gmail.com">
+				<i class="fa fa-envelope fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://linkedin.com/in/alexrochas">
+				<i class="fab fa-linkedin fa-lg"></i>
+			</a>
+		</li>
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="/feed.xml">
+				<i class="fa fa-rss fa-lg"></i>
+			</a>
+		</li>
+	</ul>
+</div>
+<!-- sidebar.html end -->
+
+	</div>
+
+	<div class="col-sm-9 col-sm-offset-3">
+		<div class="page-header">
+  <h1>The Git TAO </h1>
+</div>
+	
+<article>
+	
+    
+    
+    
+
+	<div style="float: none" class="col-sm-10">
+	 <span class="post-date">
+	   
+	   October 
+	   22nd,
+	     
+	   2017
+	 </span>
+	  <div class="article_body">
+	  <p><img src="https://cdn-images-1.medium.com/max/2000/1*scAYNyWlof1odFBfsdlHIA.jpeg" alt="cover" class="center" /></p>
+
+<p>I worked with versioning tools since 2006. Already worked with CVS, Subversion and from 2011 until now with Git.</p>
+
+<p>Thing is, with my experience, I managed to identify some common behaviors in developers when using Git or migrating the first time to Git. Here are my top 6 behaviors a good developer must have when using Git.</p>
+
+<ol>
+  <li>
+    <p>Be semantic</p>
+  </li>
+  <li>
+    <p>Be consistent</p>
+  </li>
+  <li>
+    <p>Be predictable</p>
+  </li>
+  <li>
+    <p>Don’t use force-push</p>
+  </li>
+  <li>
+    <p>Re-base it, don’t merge it</p>
+  </li>
+  <li>
+    <p>Be lazy</p>
+  </li>
+</ol>
+
+<h3 id="1--be-semantic">1 — Be semantic</h3>
+
+<p>Who never saw a list of commits with descriptions like:</p>
+
+<ul>
+  <li>
+    <p>“Tests”</p>
+  </li>
+  <li>
+    <p>“More tests”</p>
+  </li>
+  <li>
+    <p>“Working”</p>
+  </li>
+  <li>
+    <p>“Deploy”</p>
+  </li>
+</ul>
+
+<p>Come’on, those descriptions doesn’t say anything, for me and in approximately 20 min even you will don’t remember about which tests that commit is talking about. Semantic is the key for a good communication, not just between the team but for history purposes. You will be interested on semantic when you need to find your work on the git log.</p>
+
+<p>Looking further for that you can use a lot, believe-me “a lot”, of plugins that help your laziness. Like this one <a href="https://github.com/alexrochas/zsh-git-semantic-commits">https://github.com/alexrochas/zsh-git-semantic-commits</a> forked from another similar project in order to create a ZSH plugin.</p>
+
+<h3 id="2--be-consistent">2 — Be consistent</h3>
+
+<p>Once your team decide a convention, stick to that! Doesn’t matter if the flow is Git flow, Github flow, trunk based or wherever, stick to what your team decide it.</p>
+
+<p>I kinda of tired to work in projects with Github flow (for example) where feature/branch are the rules until we are in deployment and something goes wrong.</p>
+
+<p><img src="https://cdn-images-1.medium.com/max/2000/0*pr_gbAwD3NBL7-Xa.png" alt="I love this dog." class="center" />
+<em class="quote">I love this dog.</em></p>
+
+<p>Let’s do a quickly review. If your team decide to use Github flow, probably they have some deploy pipeline right? What is on master is the same that is on production maybe and send something directly to master means take a shortcut between some automated tests. Looks fine from here right?</p>
+
+<h3 id="3--be-predictable">3 — Be predictable</h3>
+
+<p>Whenever someone calls me to help with git, I suppose you didn’t kick the source tree with both legs. Git does’t loose anything, and by experience I say again, “Git does’t loose anything”. You’re responsible for always loose.</p>
+
+<p>There you are, in some really big problem with git, something that started with some re-base conflicts or maybe your local source tree is wrong, or all you wanted to do was a re-base but you forgot the flag. In your life, you don’t cut a leg every time you take a wrong step, you always take a step back before go again. Same with git.</p>
+
+<p>Git merge, git re-base and other commands have the flag abort. Before deleting everything, put all the changes in something mystical like “stash”, cloning the project again or reboot your PC. Try just to undo what you just did.</p>
+
+<p>And if nothing works I always will be able to look the mess you did with “git reflog”.</p>
+
+<h3 id="4--dont-use-force-push">4 — Don’t use force-push.</h3>
+
+<p><img src="https://cdn-images-1.medium.com/max/2000/0*MkgWsktliD18GYml.jpg" alt="Yeah, maybe on Star Wars, but please, not in git." class="center" />
+<em class="quote">Yeah, maybe on Star Wars, but please, not in git.</em></p>
+
+<p>You just finished your job, worked a stressful week on that and are pretty confident about your code and that this will probably make the world a better place. But wait, you have some errors when trying to push your code. Something about difference with the HEAD? Ok, you don’t right understand the conflicts and a post on SlackOverflow just said that to resolve this you should use “the force”.</p>
+
+<p>Think git like a tree. Every commit is stacked above the last one. Now you use the force.</p>
+
+<p><img src="https://cdn-images-1.medium.com/max/2000/0*XKBZ4TN96QDFTVAd.jpg" alt="" class="center" /></p>
+
+<p>Update your code with the remote branch before push. Also, independent of the method your team decide to use. You really should maintain your code constantly updated with the remote branches.</p>
+
+<h3 id="5-re-base-it-dont-merge-it">5— Re-base it, don’t merge it</h3>
+
+<p>Now you don’t try to force anything that is not Star Wars related. But when you do pulls, you always take some pretty effort to merge those twenty and something files and always mess up with the tree creating a lot of unnecessary merge commits and omitting the merged branch commits.</p>
+
+<p>Re-base to the rescue, the main feature of re-base is, re-base will look for the first commit in common. From that it will apply the remote commits and after that you local commits, one-by-one. You still will have conflicts, probably, but you will have to deal with them one-by-one.</p>
+
+<p><img src="https://cdn-images-1.medium.com/max/2000/0*13W25Gjh1ojzPL_T.png" alt="" class="center" /></p>
+
+<p>Also, it keeps your history coherent.</p>
+
+<h3 id="6--be-lazy">6 — Be lazy</h3>
+
+<p>I worked with Linux almost double the time I know Git and something I learned with that is, a good programmer is a lazy programmer.</p>
+<blockquote>
+  <p>“a good programmer is a lazy programmer”</p>
+</blockquote>
+
+<p>Working with Linux, made me do, until today, almost 30 or 40 tools between Git tools, terminal tools, alias and other stuff. I can say that if you do something more often, this probably can be automatized.</p>
+
+<h3 id="where-to-go-from-here">Where to go from here?</h3>
+
+<p>I really like this kind of session and here my tips.</p>
+
+<ul>
+  <li>
+    <p>my Github <a href="https://github.com/alexrochas">https://github.com/alexrochas</a>, maybe you find something useful (yeah, self promoting)</p>
+  </li>
+  <li>
+    <p>this <a href="http://ndpsoftware.com/git-cheatsheet.html">http://ndpsoftware.com/git-cheatsheet.html</a> that was what I most used long ago to understand the flow and how to undo the daily mess.</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/alexrochas/git-logger">https://github.com/alexrochas/git-logger</a>, a project to collect the use of git and with that be able to create more “how-to” posts or tools to do the world a better place.</p>
+  </li>
+</ul>
+
+<p>Finally, git is amazing and immense. Study it a little and I’m sure that you and your team mattes will not regret.</p>
+
+	  </div>
+
+		
+		<ul class="tag_box list-unstyled list-inline">
+		  <li><i class="fa fa-folder-open"></i></li>
+		  
+		  
+			 
+				<li><a href="/categories.html#general-ref">
+					general <span>(9)</span>
+					
+				</a></li>
+			
+		  
+		</ul>
+		  
+
+		
+		<ul class="list-inline">
+		  <li><i class="fa fa-tags"></i></li>
+		  
+		  
+			 
+				<li>
+					<a href="/tags.html#git-ref">
+					git <span>(1)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#best practices-ref">
+					best practices <span>(2)</span>
+					
+					</a>
+				</li>
+			
+		  
+		  
+		</ul>
+		  
+
+		<hr>
+
+		<div>
+      <section class="share col-sm-6">
+        <h4 class="section-title">Share Post</h4>
+        <a class="btn btn-default btn-sm twitter" href="http://twitter.com/share?text=The Git TAO&via=alexsuzume"
+           onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+          <i class="fab fa-twitter fa-lg"></i>
+          Twitter
+        </a>
+        <a class="btn btn-default btn-sm facebook" href="https://www.facebook.com/sharer/sharer.php"
+           onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+          <i class="fab fa-facebook fa-lg"></i>
+          Facebook
+        </a>
+        <a class="btn btn-default btn-sm gplus"
+           onclick="window.open('https://plus.google.com/share?url='+window.location.href, 'google-plus-share', 'width=490,height=530');return false;">
+          <i class="fab fa-google-plus fa-lg"></i>
+          Google+
+        </a>
+      </section>
+
+      <section class="col-sm-6 author">
+        <img src="http://www.gravatar.com/avatar/e6f244d374347e94e7f33897d8f3e417" class="img-rounded author-image" />
+        <h4 class="section-title author-name">[alex_rocha] by alex</h4>
+        <p class="author-bio">🇧🇷Senior Software Developer</p>
+      </section>
+    </div>
+
+    <div class="clearfix"></div>
+
+		<ul class="pager">
+		  
+		  <li class="previous"><a href="/development/2016/08/28/how-to-write-your-first-ruby-gem.html" title="How-to write your first ruby gem">&larr; Previous</a></li>
+		  
+		  
+		  <li class="next"><a href="/general/2017/10/27/about-purpose.html" title="About purpose">Next &rarr;</a></li>
+		  
+		</ul>
+
+		<hr>
+	</div>
+	
+	<div class="col-sm-2 sidebar-2">
+	
+	</div>
+</article>
+<div class="clearfix"></div>
+
+
+
+    
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'alexrochas';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+		<footer>
+			<hr/>
+			<p>
+				&copy; 2024 [alex_rocha] by alex with <a href="http://jekyllrb.com/">Jekyll</a>. Theme: <a href="https://github.com/dbtek/dbyll">dbyll</a> by dbtek.
+			</p>
+		</footer>
+	</div>
+
+	<script type="text/javascript" src="/assets/resources/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/assets/resources/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/assets/js/app.js"></script>
+</body>
+</html>
+
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl =
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-83264734-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+

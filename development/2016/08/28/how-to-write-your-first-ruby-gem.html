@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>How-to write your first ruby gem</title>
+	
+	<meta name="author" content="[alex_rocha] by alex">
+
+	<!-- Enable responsive viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Le styles -->
+	<link href="/assets/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/assets/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="/assets/resources/syntax/syntax.css" rel="stylesheet">
+	<link href="/assets/css/style.css" rel="stylesheet">
+	<link href="/assets/css/code.css" rel="stylesheet">
+
+	<!-- Le fav and touch icons -->
+	<link rel="shortcut icon" href="/assets/media/alexrocha_small.png">
+	<!-- Update these with your own images
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+	-->
+
+	<link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+
+	
+    
+    
+    
+
+</head>
+
+<body>
+	<nav class="navbar navbar-default visible-xs" role="navigation">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/">
+				<img src="http://www.gravatar.com/avatar/e6f244d374347e94e7f33897d8f3e417?s=35" class="img-circle" />
+				[alex_rocha]
+			</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="/">Home</a></li>
+				<li><a href="/categories.html">Categories</a></li>
+				<li><a href="/tags.html">Tags</a></li>
+                <li class="divider-xs"></li>
+                <li class="social-xs">
+					
+					<a type="button" class="navbar-toggle nav-link" href="http://github.com/alexrochas">
+						<i class="fab fa-github"></i>
+					</a>
+					
+					
+					<a type="button" class="navbar-toggle nav-link" href="http://twitter.com/alexsuzume">
+						<i class="fab fa-twitter"></i>
+					</a>
+					
+					
+					<a type="button" class="navbar-toggle nav-link" href="mailto:alexsuzume@gmail.com">
+						<i class="fa fa-envelope"></i>
+					</a>
+					
+					
+					<a type="button" class="navbar-toggle nav-link" href="https://medium.com/@alexrocha_15255">
+						<i class="fab fa-medium"></i>
+					</a>
+					
+					
+					<a type="button" class="navbar-toggle nav-link" href="https://linkedin.com/in/alexrochas">
+						<i class="fab fa-linkedin"></i>
+					</a>
+					
+					<a type="button" class="navbar-toggle nav-link" href="/feed.xml">
+						<i class="fa fa-rss"></i>
+					</a>
+				</li>
+			</ul>
+		</div><!-- /.navbar-collapse -->
+	</nav>
+
+	<!-- nav-menu-dropdown -->
+	<div class="btn-group hidden-xs" id="nav-menu">
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			<i class="fa fa-bars"></i>
+		</button>
+		<ul class="dropdown-menu" role="menu">
+			<li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+			<li><a href="/til/"><i class="fa fa-graduation-cap"></i>Today I Learned</a></li>
+			<li><a href="/categories.html"><i class="fa fa-folder"></i>Categories</a></li>
+			<li><a href="/tags.html"><i class="fa fa-tags"></i>Tags</a></li>
+			<li><a class='about-me-link'><i class="fa fa-user"></i>About me</a></li>
+			<li class="divider"></li>
+			<li><a href="#"><i class="fa fa-arrow-up"></i>Top of Page</a></li>
+		</ul>
+	</div>
+
+	<div class="col-sm-3 sidebar hidden-xs" style="">
+		<div class="sidebar-fixed sidebar-hover" onclick="showAboutMe()"></div>
+		<!-- sidebar.html -->
+<header class="sidebar-header" role="banner">
+	<a href="/">
+		<img src="http://www.gravatar.com/avatar/e6f244d374347e94e7f33897d8f3e417?s=150" class="img-circle" />
+	</a>
+	<h3 class="title">
+        <a href="/">[alex_rocha]</a>
+    </h3>
+</header>
+
+
+<div id="bio" class="text-center">
+	🇧🇷Senior Software Developer
+</div>
+
+
+<div id="about-me" class="text-center" hidden>
+	<p>
+    I'm Alex, Karate black-belt and Software Developer from Porto Alegre 🇧🇷,
+    now living in Berlin 🇩🇪. Working with development since 2006, I already used a huge amount of different technologies.
+    Technologies from JVM languages like Java, Kotlin, Scala, and Groovy to more script languages as Ruby and Python.
+    Learned and taught TDD, Lean, Agile principles and many others through the years.
+</p>
+
+<!-- Wordcloud create using https://www.wordclouds.com/ -->
+<p>
+    <?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id='wordcloud' viewBox='0 0 800 600' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<defs>
+<style type="text/css"> @import url(https://fonts.googleapis.com/css?family=Passion%20One:400); </style>
+</defs>
+<g>
+<g transform="translate(398,300) rotate(-90,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="55.6493px" font-style="normal" font-weight="normal" x="-119.43122100830078" y="-22.259710200000004" text-anchor="start" dominant-baseline="alphabetic">Spring Boot</text>
+</g>
+<g transform="translate(354,298) rotate(-90,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="55.6493px" font-style="normal" font-weight="normal" x="-60.981422424316406" y="-22.259710200000004" text-anchor="start" dominant-baseline="alphabetic">Kotlin</text>
+</g>
+<g transform="translate(438,300) rotate(0,0,0)">
+<text fill="#66d9ef" stroke="none" font-family="Passion One" font-size="55.6493px" font-style="normal" font-weight="normal" x="-56.891876220703125" y="-22.259710200000004" text-anchor="start" dominant-baseline="alphabetic">Cloud</text>
+</g>
+<g transform="translate(432,260) rotate(0,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="55.6493px" font-style="normal" font-weight="normal" x="-52.218116760253906" y="-22.259710200000004" text-anchor="start" dominant-baseline="alphabetic">Scala</text>
+</g>
+<g transform="translate(430,340) rotate(0,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="55.6493px" font-style="normal" font-weight="normal" x="-44.53980255126953" y="-22.259710200000004" text-anchor="start" dominant-baseline="alphabetic">Java</text>
+</g>
+<g transform="translate(394,200) rotate(0,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="55.6493px" font-style="normal" font-weight="normal" x="-44.67890930175781" y="-22.259710200000004" text-anchor="start" dominant-baseline="alphabetic">AWS</text>
+</g>
+<g transform="translate(498,368) rotate(0,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-116.8609619140625" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Agile Methods</text>
+</g>
+<g transform="translate(306,298) rotate(-90,0,0)">
+<text fill="#fd9720" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-80.47405242919922" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Javascript</text>
+</g>
+<g transform="translate(398,468) rotate(0,0,0)">
+<text fill="#66d9ef" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-93.09263610839844" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Kubernetes</text>
+</g>
+<g transform="translate(452,404) rotate(0,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-65.85252380371094" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Zalando</text>
+</g>
+<g transform="translate(272,300) rotate(-90,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-54.925315856933594" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Github</text>
+</g>
+<g transform="translate(556,300) rotate(0,0,0)">
+<text fill="#a581ff" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-58.619651794433594" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Groovy</text>
+</g>
+<g transform="translate(356,176) rotate(-90,0,0)">
+<text fill="#66d9ef" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-58.263572692871094" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Python</text>
+</g>
+<g transform="translate(522,332) rotate(0,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-44.17616271972656" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">CI/CD</text>
+</g>
+<g transform="translate(436,436) rotate(0,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-50.25177764892578" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Scrum</text>
+</g>
+<g transform="translate(388,148) rotate(0,0,0)">
+<text fill="#a581ff" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-41.661346435546875" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Ruby</text>
+</g>
+<g transform="translate(356,386) rotate(-90,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-23.768325805664062" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Git</text>
+</g>
+<g transform="translate(240,302) rotate(-90,0,0)">
+<text fill="#a581ff" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-32.53679656982422" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">TDD</text>
+</g>
+<g transform="translate(202,372) rotate(-90,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-108.98565673828125" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Jupyter Notebook</text>
+</g>
+<g transform="translate(270,428) rotate(-90,0,0)">
+<text fill="#66d9ef" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-72.70161437988281" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Automation</text>
+</g>
+<g transform="translate(398,488) rotate(0,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-67.76138305664062" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Micronauts</text>
+</g>
+<g transform="translate(318,160) rotate(-90,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-54.492835998535156" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Coaching</text>
+</g>
+<g transform="translate(484,212) rotate(0,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-49.11865234375" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Scalatra</text>
+</g>
+<g transform="translate(314,424) rotate(-90,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-42.42595672607422" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">AssertJ</text>
+</g>
+<g transform="translate(550,264) rotate(0,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-51.75567626953125" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">GraphQL</text>
+</g>
+<g transform="translate(270,196) rotate(-90,0,0)">
+<text fill="#66d9ef" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-44.72917938232422" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Jenkins</text>
+</g>
+<g transform="translate(532,240) rotate(0,0,0)">
+<text fill="#66d9ef" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-48.985137939453125" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Mockito</text>
+</g>
+<g transform="translate(234,222) rotate(-90,0,0)">
+<text fill="#fd9720" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-43.861305236816406" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Sinatra</text>
+</g>
+<g transform="translate(396,512) rotate(0,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-50.18681335449219" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Medium</text>
+</g>
+<g transform="translate(566,388) rotate(0,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-43.76116943359375" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Pandas</text>
+</g>
+<g transform="translate(234,366) rotate(-90,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-30.67620086669922" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Flask</text>
+</g>
+<g transform="translate(598,332) rotate(0,0,0)">
+<text fill="#66d9ef" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-30.826416015625" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">JUnit</text>
+</g>
+<g transform="translate(516,424) rotate(0,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-28.990516662597656" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Rails</text>
+</g>
+<g transform="translate(528,448) rotate(0,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-33.94744873046875" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">React</text>
+</g>
+<g transform="translate(174,320) rotate(-90,0,0)">
+<text fill="#a581ff" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-38.60395812988281" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Redux</text>
+</g>
+<g transform="translate(338,492) rotate(-90,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-29.04058837890625" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Bash</text>
+</g>
+<g transform="translate(246,426) rotate(-90,0,0)">
+<text fill="#a581ff" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-28.489822387695312" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Lean</text>
+</g>
+<g transform="translate(502,488) rotate(0,0,0)">
+<text fill="#fd9720" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-32.01141357421875" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Node</text>
+</g>
+<g transform="translate(306,492) rotate(-90,0,0)">
+<text fill="#fd9720" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-26.336807250976562" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Play</text>
+</g>
+<g transform="translate(564,216) rotate(0,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-28.957138061523438" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">REST</text>
+</g>
+<g transform="translate(576,412) rotate(0,0,0)">
+<text fill="#fd9720" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-26.336814880371094" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">DDD</text>
+</g>
+<g transform="translate(296,426) rotate(-90,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-24.083656311035156" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Vim</text>
+</g>
+<g transform="translate(288,162) rotate(-90,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-51.45306396484375" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Data Science</text>
+</g>
+<g transform="translate(396,526) rotate(0,0,0)">
+<text fill="#a581ff" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-47.79296112060547" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Tensor Flow</text>
+</g>
+<g transform="translate(654,340) rotate(-90,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-33.341590881347656" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Fintechs</text>
+</g>
+<g transform="translate(148,356) rotate(-90,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-35.777976989746094" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Planning</text>
+</g>
+<g transform="translate(586,436) rotate(-90,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-33.27484893798828" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Agibank</text>
+</g>
+<g transform="translate(634,380) rotate(-90,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-28.60235595703125" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Clojure</text>
+</g>
+<g transform="translate(476,502) rotate(0,0,0)">
+<text fill="#a581ff" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-28.758102416992188" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Django</text>
+</g>
+<g transform="translate(408,206) rotate(0,0,0)">
+<text fill="#fd9720" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-23.94097900390625" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Ilegra</text>
+</g>
+<g transform="translate(170,386) rotate(-90,0,0)">
+<text fill="#66d9ef" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-23.173355102539062" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Jekyll</text>
+</g>
+<g transform="translate(674,350) rotate(-90,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-30.671607971191406" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Kanban</text>
+</g>
+<g transform="translate(354,106) rotate(0,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-22.450233459472656" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Keras</text>
+</g>
+<g transform="translate(466,526) rotate(0,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-22.51697540283203" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Retro</text>
+</g>
+<g transform="translate(530,502) rotate(0,0,0)">
+<text fill="#fd9720" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-22.694992065429688" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Mobx</text>
+</g>
+<g transform="translate(456,182) rotate(0,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-15.819740295410156" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">ZSH</text>
+</g>
+<g transform="translate(526,182) rotate(0,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="11.1299px" font-style="normal" font-weight="normal" x="-17.9254150390625" y="-4.451942040000001" text-anchor="start" dominant-baseline="alphabetic">Datacom</text>
+</g>
+</g>
+</svg>
+</p>
+
+<p>
+    Today I work as a Software Engineer for Zalando
+    <img class="zalando-icon" src='/assets/media/zalando-logo.png'/> where I can use all my knowledge about
+    resilience and scalable Cloud-Native Applications using on a daily basis Python, Java, Scala and Kotlin
+    with Kubernetes on the AWS stack.
+</p>
+
+
+
+</div>
+
+<div id="contact-list" class="text-center">
+	<ul class="list-unstyled list-inline">
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://github.com/alexrochas">
+				<i class="fab fa-github-alt fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://twitter.com/alexsuzume">
+				<i class="fab fa-twitter fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://medium.com/@alexrocha_15255">
+				<i class="fab fa-medium fa-lg"></i>
+			</a>
+		</li>
+		
+	</ul>
+	<ul class="list-unstyled list-inline">
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="mailto:alexsuzume@gmail.com">
+				<i class="fa fa-envelope fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://linkedin.com/in/alexrochas">
+				<i class="fab fa-linkedin fa-lg"></i>
+			</a>
+		</li>
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="/feed.xml">
+				<i class="fa fa-rss fa-lg"></i>
+			</a>
+		</li>
+	</ul>
+</div>
+<!-- sidebar.html end -->
+
+	</div>
+
+	<div class="col-sm-9 col-sm-offset-3">
+		<div class="page-header">
+  <h1>How-to write your first ruby gem </h1>
+</div>
+	
+<article>
+	
+    
+    
+    
+
+	<div style="float: none" class="col-sm-10">
+	 <span class="post-date">
+	   
+	   August 
+	   28th,
+	   
+	   2016
+	 </span>
+	  <div class="article_body">
+	  <p style="text-align: center"><img src="http://alexrocha.de/assets/media/ruby-banner.png" alt="cover" /></p>
+
+<h3 id="what-is-a-gem">What is a gem?</h3>
+
+<p>The main idea to understand the concept of gem is thinking in that as a Ruby plugin.
+Before gems, already existed the concept of plugin in ruby, however they should be
+fully included in code and also the work to maintain and update was completely manual.</p>
+
+<p>So, “gem” was created as a way to isolate, decouple and versioning code in a practical way as a dependency.
+Usually, gem is used with bundler (another gem that has the role of package manager)
+that with your Gemfile install all dependencies declared with the specified versions.</p>
+
+<h3 id="pipeme-gem">Pipeme gem</h3>
+
+<p>Generally, we say that if you see yourself repeating code in more than one place or even in more than one project,
+this is probably a pretty good candidate to become a gem. Even if we assume that
+the code will be reused is not always enough for creating a gem.</p>
+
+<p>I created <strong>pipeme</strong> thinking about it, already used the same solution at least in two or three
+other projects and decide that probably it should be a gem.
+Pipeme, is a simple gem that when added to your projects lets you concatenate procedures. Almost like shell do with <strong>pipes</strong>.</p>
+
+<h3 id="how-was-done">How was done?</h3>
+
+<p>First of all, we need to be certified that we have <strong>bundler</strong> installed.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>gem <span class="nb">install </span>bundler
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Once installed, we can create the boilerplate to <strong>pipeme</strong> gem.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>bundler gem pipeme
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>This creates the minimum needed to publish a new gem.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>tree pipeme
+pipeme
+├── .gitignore
+├── Gemfile
+├── LICENSE.txt
+├── README.md
+├── Rakefile
+├── pipeme.gemspec
+└── lib
+    ├── pipeme
+    │   └── version.rb
+    └── pipeme.rb
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>From file to file, we first have pipeme.gemspec that is where are the metadata of our gem like
+name, version, license and dependencies with other gems. This file also specify where the
+source files are and the executables that will be added to our <strong>path/bin</strong>.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># coding: utf-8</span>
+<span class="n">lib</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">expand_path</span><span class="p">(</span><span class="s1">'../lib'</span><span class="p">,</span> <span class="kp">__FILE__</span><span class="p">)</span>
+<span class="vg">$LOAD_PATH</span><span class="p">.</span><span class="nf">unshift</span><span class="p">(</span><span class="n">lib</span><span class="p">)</span> <span class="k">unless</span> <span class="vg">$LOAD_PATH</span><span class="p">.</span><span class="nf">include?</span><span class="p">(</span><span class="n">lib</span><span class="p">)</span>
+<span class="nb">require</span> <span class="s1">'pipeme/version'</span>
+
+<span class="no">Gem</span><span class="o">::</span><span class="no">Specification</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span> <span class="o">|</span><span class="n">spec</span><span class="o">|</span>
+  <span class="n">spec</span><span class="p">.</span><span class="nf">name</span>          <span class="o">=</span> <span class="s2">"pipeme"</span>
+  <span class="n">spec</span><span class="p">.</span><span class="nf">version</span>       <span class="o">=</span> <span class="no">Pipeme</span><span class="o">::</span><span class="no">VERSION</span>
+  <span class="n">spec</span><span class="p">.</span><span class="nf">authors</span>       <span class="o">=</span> <span class="p">[</span><span class="s2">"Alex Rocha"</span><span class="p">]</span>
+  <span class="n">spec</span><span class="p">.</span><span class="nf">email</span>         <span class="o">=</span> <span class="p">[</span><span class="s2">"alex.rochas@yahoo.com.br"</span><span class="p">]</span>
+
+  <span class="n">spec</span><span class="p">.</span><span class="nf">summary</span>       <span class="o">=</span> <span class="s2">"Add a more functional approach to your Ruby projects"</span>
+  <span class="n">spec</span><span class="p">.</span><span class="nf">description</span>   <span class="o">=</span> <span class="s2">"Add pipe functionality as '&gt;&gt;' to Object class"</span>
+  <span class="n">spec</span><span class="p">.</span><span class="nf">homepage</span>      <span class="o">=</span> <span class="s2">"https://github.com/alexrochas/pipeme"</span>
+  <span class="n">spec</span><span class="p">.</span><span class="nf">license</span>       <span class="o">=</span> <span class="s2">"MIT"</span>
+
+  <span class="n">spec</span><span class="p">.</span><span class="nf">files</span>         <span class="o">=</span> <span class="sb">`git ls-files -z`</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\x0</span><span class="s2">"</span><span class="p">).</span><span class="nf">reject</span> <span class="p">{</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span> <span class="n">f</span><span class="p">.</span><span class="nf">match</span><span class="p">(</span><span class="sr">%r{^(test|spec|features)/}</span><span class="p">)</span> <span class="p">}</span>
+  <span class="n">spec</span><span class="p">.</span><span class="nf">require_paths</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"lib"</span><span class="p">]</span>
+
+  <span class="n">spec</span><span class="p">.</span><span class="nf">add_development_dependency</span> <span class="s2">"bundler"</span><span class="p">,</span> <span class="s2">"~&gt; 1.12"</span>
+  <span class="n">spec</span><span class="p">.</span><span class="nf">add_development_dependency</span> <span class="s2">"rake"</span><span class="p">,</span> <span class="s2">"~&gt; 10.0"</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>Note that the line “spec.version” have Pipeme::VERSION. This happens because we
+are retrieving the version from the file <strong>version.rb</strong> that has the this information for our gem.
+This should be updated at every publish for our gem. So, <strong>lib/pipeme/version.rb</strong>.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">module</span> <span class="nn">Pipeme</span>
+  <span class="no">VERSION</span> <span class="o">=</span> <span class="s2">"0.1.0"</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>An extra point to be careful is to use semantic versioning (good read <a href="http://semver.org/">http://semver.org/</a>) that in
+essence is.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>1. MAJOR version when you make incompatible API changes,
+2. MINOR version when you add functionality in a backwards-compatible manner, and
+3. PATCH version when you make backwards-compatible bug fixes. Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Now <strong>pipeme.rb</strong> is the file where we will put the code for our gem. Lucky for us, someone put
+an space indicating where to put our code.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s2">"pipeme/version"</span>
+
+<span class="k">module</span> <span class="nn">Pipeme</span>
+  <span class="c1"># Your code goes here...</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>Probably your gems will be bigger than that and should result in more tha one file. The point here
+is that this file will be the first loaded when your installed gem be required.</p>
+
+<p>Like all good rubyist, we should write some tests to your gem. But at first I will
+need to declare that my project have a test library. If we see the Gemfile, it
+only have a call to gemspec.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>
+
+<span class="c1"># Specify your gem's dependencies in pipeme.gemspec</span>
+<span class="n">gemspec</span></code></pre></figure>
+
+<p>Declare your dependencies in gemspec and only make reference to them divide opinions but
+for this small project is more practical and easy way to do.</p>
+
+<p>In pipeme.gemspec, after choose my test library (RSpec) I should declare it there.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">spec</span><span class="p">.</span><span class="nf">add_development_dependency</span> <span class="s2">"rspec"</span><span class="p">,</span> <span class="s2">"~&gt; 3.0"</span></code></pre></figure>
+
+<p>The pipeme.gemspec file will be now like this.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># coding: utf-8</span>
+<span class="n">lib</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">expand_path</span><span class="p">(</span><span class="s1">'../lib'</span><span class="p">,</span> <span class="kp">__FILE__</span><span class="p">)</span>
+<span class="vg">$LOAD_PATH</span><span class="p">.</span><span class="nf">unshift</span><span class="p">(</span><span class="n">lib</span><span class="p">)</span> <span class="k">unless</span> <span class="vg">$LOAD_PATH</span><span class="p">.</span><span class="nf">include?</span><span class="p">(</span><span class="n">lib</span><span class="p">)</span>
+<span class="nb">require</span> <span class="s1">'pipeme/version'</span>
+
+<span class="no">Gem</span><span class="o">::</span><span class="no">Specification</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span> <span class="o">|</span><span class="n">spec</span><span class="o">|</span>
+  <span class="n">spec</span><span class="p">.</span><span class="nf">name</span>          <span class="o">=</span> <span class="s2">"pipeme"</span>
+  <span class="n">spec</span><span class="p">.</span><span class="nf">version</span>       <span class="o">=</span> <span class="no">Pipeme</span><span class="o">::</span><span class="no">VERSION</span>
+  <span class="n">spec</span><span class="p">.</span><span class="nf">authors</span>       <span class="o">=</span> <span class="p">[</span><span class="s2">"Alex Rocha"</span><span class="p">]</span>
+  <span class="n">spec</span><span class="p">.</span><span class="nf">email</span>         <span class="o">=</span> <span class="p">[</span><span class="s2">"alex.rochas@yahoo.com.br"</span><span class="p">]</span>
+
+  <span class="n">spec</span><span class="p">.</span><span class="nf">summary</span>       <span class="o">=</span> <span class="s2">"Add a more functional approach to your Ruby projects"</span>
+  <span class="n">spec</span><span class="p">.</span><span class="nf">description</span>   <span class="o">=</span> <span class="s2">"Add pipe functionality as '&gt;&gt;' to Object class"</span>
+  <span class="n">spec</span><span class="p">.</span><span class="nf">homepage</span>      <span class="o">=</span> <span class="s2">"https://github.com/alexrochas/pipeme"</span>
+  <span class="n">spec</span><span class="p">.</span><span class="nf">license</span>       <span class="o">=</span> <span class="s2">"MIT"</span>
+
+  <span class="n">spec</span><span class="p">.</span><span class="nf">files</span>         <span class="o">=</span> <span class="sb">`git ls-files -z`</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\x0</span><span class="s2">"</span><span class="p">).</span><span class="nf">reject</span> <span class="p">{</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span> <span class="n">f</span><span class="p">.</span><span class="nf">match</span><span class="p">(</span><span class="sr">%r{^(test|spec|features)/}</span><span class="p">)</span> <span class="p">}</span>
+  <span class="n">spec</span><span class="p">.</span><span class="nf">require_paths</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"lib"</span><span class="p">]</span>
+
+  <span class="n">spec</span><span class="p">.</span><span class="nf">add_development_dependency</span> <span class="s2">"bundler"</span><span class="p">,</span> <span class="s2">"~&gt; 1.12"</span>
+  <span class="n">spec</span><span class="p">.</span><span class="nf">add_development_dependency</span> <span class="s2">"rake"</span><span class="p">,</span> <span class="s2">"~&gt; 10.0"</span>
+  <span class="n">spec</span><span class="p">.</span><span class="nf">add_development_dependency</span> <span class="s2">"rspec"</span><span class="p">,</span> <span class="s2">"~&gt; 3.0"</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>Because we are working with RSpec, create the directory where our unit tests will be.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>spec
+├─ pipeme_spec.rb
+└─ spec_pipeme.rb
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>In spec_pipeme.rb we should load all source files from “/lib” and import pipeme.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="vg">$LOAD_PATH</span><span class="p">.</span><span class="nf">unshift</span> <span class="no">File</span><span class="p">.</span><span class="nf">expand_path</span><span class="p">(</span><span class="s1">'../../lib'</span><span class="p">,</span> <span class="kp">__FILE__</span><span class="p">)</span>
+<span class="nb">require</span> <span class="s1">'pipeme'</span></code></pre></figure>
+
+<p>Writing our tests, seeing that is a pretty simple gem, for now will test
+that the behavior we want is possible and if exists a file that contains
+our gem version.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s1">'spec_helper'</span>
+
+<span class="n">describe</span> <span class="no">Pipeme</span> <span class="k">do</span>
+  <span class="n">it</span> <span class="s1">'has a version number'</span> <span class="k">do</span>
+    <span class="n">expect</span><span class="p">(</span><span class="no">Pipeme</span><span class="o">::</span><span class="no">VERSION</span><span class="p">).</span><span class="nf">not_to</span> <span class="n">be</span> <span class="kp">nil</span>
+  <span class="k">end</span>
+
+  <span class="n">it</span> <span class="s1">'let me pipe procedures as expected'</span> <span class="k">do</span>
+    <span class="n">expect</span><span class="p">(</span><span class="s1">'Alex'</span> <span class="o">&gt;&gt;</span> <span class="p">(</span><span class="o">-&gt;</span> <span class="p">(</span><span class="nb">name</span><span class="p">)</span> <span class="p">{</span><span class="s2">"Hello </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">!"</span><span class="p">})).</span><span class="nf">equal?</span> <span class="s1">'Hello Alex!'</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>Having tests, we could go back to pipeme.rb.
+For <strong>pipeme.rb</strong> I delete the content and added the following behavior.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s2">"pipeme/version"</span>
+
+<span class="k">class</span> <span class="nc">Object</span>
+  <span class="k">def</span> <span class="nf">&gt;&gt;</span><span class="p">(</span><span class="nb">proc</span><span class="p">)</span>
+    <span class="nb">proc</span><span class="o">.</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>The source code for <strong>pipeme</strong> is simple and just one file should be enough.
+Also, is not the scope of this post explain what is happening on this code. Maybe in another post.
+Now from our root directory, we could run our tests with RSpec.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>rspec
+
+Pipeme
+  has a version number
+  <span class="nb">let </span>me pipe procedures as expected
+
+Finished <span class="k">in </span>0.00155 seconds <span class="o">(</span>files took 0.1186 seconds to load<span class="o">)</span>
+2 examples, 0 failures
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Done. With passing tests we have a gem ready to be delivered.</p>
+
+<p style="text-align: center"><img src="http://alexrocha.de/assets/media/rubygems-banner.jpg" alt="cover" /></p>
+
+<h3 id="shipping-your-gem">Shipping your gem</h3>
+
+<p>Rubygems is essentially a repository for gems, like maven or npm. You should
+have a account in rubygem before been able to push your gem <a href="https://rubygems.org/sign_in">https://rubygems.org/sign_in</a>.</p>
+
+<p>Now, having a account, is time to export our gem for the world.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>bundle <span class="nb">exec </span>rake release
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>This way, <strong>pipeme</strong> gem is available to be downloaded in any ruby ecosystem that use rubygems, from <a href="https://rubygems.org/gems/pipeme">https://rubygems.org/gems/pipeme</a>
+or declaring it in your Gemfile.</p>
+
+<h3 id="where-to-go-from-here">Where to go from here?</h3>
+
+<p>Much more can be learned about gems. A good start may be read about other package managers as pypi, maven or npm.</p>
+
+<p>Once you understand a little more about the process, give it a try in how to add executable scripts
+to your gem and create rich terminal applications.</p>
+
+<p><a href="http://guides.rubygems.org/specification-reference/#executables">http://guides.rubygems.org/specification-reference/#executables</a></p>
+
+<p>Study about continuous integration and how your gem can play with that.</p>
+
+<p><a href="https://docs.travis-ci.com/user/languages/ruby">https://docs.travis-ci.com/user/languages/ruby</a></p>
+
+<p>Sometimes your gem require a server to run, read about how heroku can help you that task.</p>
+
+<p><a href="https://devcenter.heroku.com/articles/getting-started-with-ruby#introduction">https://devcenter.heroku.com/articles/getting-started-with-ruby#introduction</a></p>
+
+<p>Thanks for reading!</p>
+
+<p>Did a gem? Published on github? Tell me more in comments.</p>
+
+	  </div>
+
+		
+		<ul class="tag_box list-unstyled list-inline">
+		  <li><i class="fa fa-folder-open"></i></li>
+		  
+		  
+			 
+				<li><a href="/categories.html#development-ref">
+					development <span>(1)</span>
+					
+				</a></li>
+			
+		  
+		</ul>
+		  
+
+		
+		<ul class="list-inline">
+		  <li><i class="fa fa-tags"></i></li>
+		  
+		  
+			 
+				<li>
+					<a href="/tags.html#ruby-ref">
+					ruby <span>(2)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#development-ref">
+					development <span>(1)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#rubygems-ref">
+					rubygems <span>(1)</span>
+					
+					</a>
+				</li>
+			
+		  
+		  
+		</ul>
+		  
+
+		<hr>
+
+		<div>
+      <section class="share col-sm-6">
+        <h4 class="section-title">Share Post</h4>
+        <a class="btn btn-default btn-sm twitter" href="http://twitter.com/share?text=How-to write your first ruby gem&via=alexsuzume"
+           onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+          <i class="fab fa-twitter fa-lg"></i>
+          Twitter
+        </a>
+        <a class="btn btn-default btn-sm facebook" href="https://www.facebook.com/sharer/sharer.php"
+           onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+          <i class="fab fa-facebook fa-lg"></i>
+          Facebook
+        </a>
+        <a class="btn btn-default btn-sm gplus"
+           onclick="window.open('https://plus.google.com/share?url='+window.location.href, 'google-plus-share', 'width=490,height=530');return false;">
+          <i class="fab fa-google-plus fa-lg"></i>
+          Google+
+        </a>
+      </section>
+
+      <section class="col-sm-6 author">
+        <img src="http://www.gravatar.com/avatar/e6f244d374347e94e7f33897d8f3e417" class="img-rounded author-image" />
+        <h4 class="section-title author-name">[alex_rocha] by alex</h4>
+        <p class="author-bio">🇧🇷Senior Software Developer</p>
+      </section>
+    </div>
+
+    <div class="clearfix"></div>
+
+		<ul class="pager">
+		  
+		  <li class="previous"><a href="/general/2016/08/11/about-teaching-and-learning.html" title="About teaching and learning">&larr; Previous</a></li>
+		  
+		  
+		  <li class="next"><a href="/general/2017/10/22/the-git-tao.html" title="The Git TAO">Next &rarr;</a></li>
+		  
+		</ul>
+
+		<hr>
+	</div>
+	
+	<div class="col-sm-2 sidebar-2">
+	
+	</div>
+</article>
+<div class="clearfix"></div>
+
+
+
+    
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'alexrochas';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+		<footer>
+			<hr/>
+			<p>
+				&copy; 2024 [alex_rocha] by alex with <a href="http://jekyllrb.com/">Jekyll</a>. Theme: <a href="https://github.com/dbtek/dbyll">dbyll</a> by dbtek.
+			</p>
+		</footer>
+	</div>
+
+	<script type="text/javascript" src="/assets/resources/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/assets/resources/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/assets/js/app.js"></script>
+</body>
+</html>
+
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl =
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-83264734-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+

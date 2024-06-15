@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Recover the sanity of your ZSH config</title>
+	
+	<meta name="author" content="[alex_rocha] by alex">
+
+	<!-- Enable responsive viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Le styles -->
+	<link href="/assets/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/assets/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="/assets/resources/syntax/syntax.css" rel="stylesheet">
+	<link href="/assets/css/style.css" rel="stylesheet">
+	<link href="/assets/css/code.css" rel="stylesheet">
+
+	<!-- Le fav and touch icons -->
+	<link rel="shortcut icon" href="/assets/media/alexrocha_small.png">
+	<!-- Update these with your own images
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+	-->
+
+	<link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+
+	
+    
+    
+    
+
+</head>
+
+<body>
+	<nav class="navbar navbar-default visible-xs" role="navigation">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/">
+				<img src="http://www.gravatar.com/avatar/e6f244d374347e94e7f33897d8f3e417?s=35" class="img-circle" />
+				[alex_rocha]
+			</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="/">Home</a></li>
+				<li><a href="/categories.html">Categories</a></li>
+				<li><a href="/tags.html">Tags</a></li>
+                <li class="divider-xs"></li>
+                <li class="social-xs">
+					
+					<a type="button" class="navbar-toggle nav-link" href="http://github.com/alexrochas">
+						<i class="fab fa-github"></i>
+					</a>
+					
+					
+					<a type="button" class="navbar-toggle nav-link" href="http://twitter.com/alexsuzume">
+						<i class="fab fa-twitter"></i>
+					</a>
+					
+					
+					<a type="button" class="navbar-toggle nav-link" href="mailto:alexsuzume@gmail.com">
+						<i class="fa fa-envelope"></i>
+					</a>
+					
+					
+					<a type="button" class="navbar-toggle nav-link" href="https://medium.com/@alexrocha_15255">
+						<i class="fab fa-medium"></i>
+					</a>
+					
+					
+					<a type="button" class="navbar-toggle nav-link" href="https://linkedin.com/in/alexrochas">
+						<i class="fab fa-linkedin"></i>
+					</a>
+					
+					<a type="button" class="navbar-toggle nav-link" href="/feed.xml">
+						<i class="fa fa-rss"></i>
+					</a>
+				</li>
+			</ul>
+		</div><!-- /.navbar-collapse -->
+	</nav>
+
+	<!-- nav-menu-dropdown -->
+	<div class="btn-group hidden-xs" id="nav-menu">
+		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			<i class="fa fa-bars"></i>
+		</button>
+		<ul class="dropdown-menu" role="menu">
+			<li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+			<li><a href="/til/"><i class="fa fa-graduation-cap"></i>Today I Learned</a></li>
+			<li><a href="/categories.html"><i class="fa fa-folder"></i>Categories</a></li>
+			<li><a href="/tags.html"><i class="fa fa-tags"></i>Tags</a></li>
+			<li><a class='about-me-link'><i class="fa fa-user"></i>About me</a></li>
+			<li class="divider"></li>
+			<li><a href="#"><i class="fa fa-arrow-up"></i>Top of Page</a></li>
+		</ul>
+	</div>
+
+	<div class="col-sm-3 sidebar hidden-xs" style="">
+		<div class="sidebar-fixed sidebar-hover" onclick="showAboutMe()"></div>
+		<!-- sidebar.html -->
+<header class="sidebar-header" role="banner">
+	<a href="/">
+		<img src="http://www.gravatar.com/avatar/e6f244d374347e94e7f33897d8f3e417?s=150" class="img-circle" />
+	</a>
+	<h3 class="title">
+        <a href="/">[alex_rocha]</a>
+    </h3>
+</header>
+
+
+<div id="bio" class="text-center">
+	🇧🇷Senior Software Developer
+</div>
+
+
+<div id="about-me" class="text-center" hidden>
+	<p>
+    I'm Alex, Karate black-belt and Software Developer from Porto Alegre 🇧🇷,
+    now living in Berlin 🇩🇪. Working with development since 2006, I already used a huge amount of different technologies.
+    Technologies from JVM languages like Java, Kotlin, Scala, and Groovy to more script languages as Ruby and Python.
+    Learned and taught TDD, Lean, Agile principles and many others through the years.
+</p>
+
+<!-- Wordcloud create using https://www.wordclouds.com/ -->
+<p>
+    <?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id='wordcloud' viewBox='0 0 800 600' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<defs>
+<style type="text/css"> @import url(https://fonts.googleapis.com/css?family=Passion%20One:400); </style>
+</defs>
+<g>
+<g transform="translate(398,300) rotate(-90,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="55.6493px" font-style="normal" font-weight="normal" x="-119.43122100830078" y="-22.259710200000004" text-anchor="start" dominant-baseline="alphabetic">Spring Boot</text>
+</g>
+<g transform="translate(354,298) rotate(-90,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="55.6493px" font-style="normal" font-weight="normal" x="-60.981422424316406" y="-22.259710200000004" text-anchor="start" dominant-baseline="alphabetic">Kotlin</text>
+</g>
+<g transform="translate(438,300) rotate(0,0,0)">
+<text fill="#66d9ef" stroke="none" font-family="Passion One" font-size="55.6493px" font-style="normal" font-weight="normal" x="-56.891876220703125" y="-22.259710200000004" text-anchor="start" dominant-baseline="alphabetic">Cloud</text>
+</g>
+<g transform="translate(432,260) rotate(0,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="55.6493px" font-style="normal" font-weight="normal" x="-52.218116760253906" y="-22.259710200000004" text-anchor="start" dominant-baseline="alphabetic">Scala</text>
+</g>
+<g transform="translate(430,340) rotate(0,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="55.6493px" font-style="normal" font-weight="normal" x="-44.53980255126953" y="-22.259710200000004" text-anchor="start" dominant-baseline="alphabetic">Java</text>
+</g>
+<g transform="translate(394,200) rotate(0,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="55.6493px" font-style="normal" font-weight="normal" x="-44.67890930175781" y="-22.259710200000004" text-anchor="start" dominant-baseline="alphabetic">AWS</text>
+</g>
+<g transform="translate(498,368) rotate(0,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-116.8609619140625" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Agile Methods</text>
+</g>
+<g transform="translate(306,298) rotate(-90,0,0)">
+<text fill="#fd9720" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-80.47405242919922" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Javascript</text>
+</g>
+<g transform="translate(398,468) rotate(0,0,0)">
+<text fill="#66d9ef" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-93.09263610839844" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Kubernetes</text>
+</g>
+<g transform="translate(452,404) rotate(0,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-65.85252380371094" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Zalando</text>
+</g>
+<g transform="translate(272,300) rotate(-90,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-54.925315856933594" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Github</text>
+</g>
+<g transform="translate(556,300) rotate(0,0,0)">
+<text fill="#a581ff" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-58.619651794433594" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Groovy</text>
+</g>
+<g transform="translate(356,176) rotate(-90,0,0)">
+<text fill="#66d9ef" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-58.263572692871094" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Python</text>
+</g>
+<g transform="translate(522,332) rotate(0,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-44.17616271972656" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">CI/CD</text>
+</g>
+<g transform="translate(436,436) rotate(0,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-50.25177764892578" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Scrum</text>
+</g>
+<g transform="translate(388,148) rotate(0,0,0)">
+<text fill="#a581ff" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-41.661346435546875" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Ruby</text>
+</g>
+<g transform="translate(356,386) rotate(-90,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-23.768325805664062" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">Git</text>
+</g>
+<g transform="translate(240,302) rotate(-90,0,0)">
+<text fill="#a581ff" stroke="none" font-family="Passion One" font-size="44.5194px" font-style="normal" font-weight="normal" x="-32.53679656982422" y="-17.807768160000006" text-anchor="start" dominant-baseline="alphabetic">TDD</text>
+</g>
+<g transform="translate(202,372) rotate(-90,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-108.98565673828125" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Jupyter Notebook</text>
+</g>
+<g transform="translate(270,428) rotate(-90,0,0)">
+<text fill="#66d9ef" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-72.70161437988281" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Automation</text>
+</g>
+<g transform="translate(398,488) rotate(0,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-67.76138305664062" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Micronauts</text>
+</g>
+<g transform="translate(318,160) rotate(-90,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-54.492835998535156" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Coaching</text>
+</g>
+<g transform="translate(484,212) rotate(0,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-49.11865234375" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Scalatra</text>
+</g>
+<g transform="translate(314,424) rotate(-90,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-42.42595672607422" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">AssertJ</text>
+</g>
+<g transform="translate(550,264) rotate(0,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-51.75567626953125" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">GraphQL</text>
+</g>
+<g transform="translate(270,196) rotate(-90,0,0)">
+<text fill="#66d9ef" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-44.72917938232422" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Jenkins</text>
+</g>
+<g transform="translate(532,240) rotate(0,0,0)">
+<text fill="#66d9ef" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-48.985137939453125" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Mockito</text>
+</g>
+<g transform="translate(234,222) rotate(-90,0,0)">
+<text fill="#fd9720" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-43.861305236816406" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Sinatra</text>
+</g>
+<g transform="translate(396,512) rotate(0,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-50.18681335449219" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Medium</text>
+</g>
+<g transform="translate(566,388) rotate(0,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-43.76116943359375" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Pandas</text>
+</g>
+<g transform="translate(234,366) rotate(-90,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-30.67620086669922" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Flask</text>
+</g>
+<g transform="translate(598,332) rotate(0,0,0)">
+<text fill="#66d9ef" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-30.826416015625" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">JUnit</text>
+</g>
+<g transform="translate(516,424) rotate(0,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-28.990516662597656" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Rails</text>
+</g>
+<g transform="translate(528,448) rotate(0,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-33.94744873046875" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">React</text>
+</g>
+<g transform="translate(174,320) rotate(-90,0,0)">
+<text fill="#a581ff" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-38.60395812988281" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Redux</text>
+</g>
+<g transform="translate(338,492) rotate(-90,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-29.04058837890625" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Bash</text>
+</g>
+<g transform="translate(246,426) rotate(-90,0,0)">
+<text fill="#a581ff" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-28.489822387695312" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Lean</text>
+</g>
+<g transform="translate(502,488) rotate(0,0,0)">
+<text fill="#fd9720" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-32.01141357421875" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Node</text>
+</g>
+<g transform="translate(306,492) rotate(-90,0,0)">
+<text fill="#fd9720" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-26.336807250976562" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Play</text>
+</g>
+<g transform="translate(564,216) rotate(0,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-28.957138061523438" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">REST</text>
+</g>
+<g transform="translate(576,412) rotate(0,0,0)">
+<text fill="#fd9720" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-26.336814880371094" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">DDD</text>
+</g>
+<g transform="translate(296,426) rotate(-90,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="33.3896px" font-style="normal" font-weight="normal" x="-24.083656311035156" y="-13.355826120000003" text-anchor="start" dominant-baseline="alphabetic">Vim</text>
+</g>
+<g transform="translate(288,162) rotate(-90,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-51.45306396484375" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Data Science</text>
+</g>
+<g transform="translate(396,526) rotate(0,0,0)">
+<text fill="#a581ff" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-47.79296112060547" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Tensor Flow</text>
+</g>
+<g transform="translate(654,340) rotate(-90,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-33.341590881347656" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Fintechs</text>
+</g>
+<g transform="translate(148,356) rotate(-90,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-35.777976989746094" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Planning</text>
+</g>
+<g transform="translate(586,436) rotate(-90,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-33.27484893798828" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Agibank</text>
+</g>
+<g transform="translate(634,380) rotate(-90,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-28.60235595703125" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Clojure</text>
+</g>
+<g transform="translate(476,502) rotate(0,0,0)">
+<text fill="#a581ff" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-28.758102416992188" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Django</text>
+</g>
+<g transform="translate(408,206) rotate(0,0,0)">
+<text fill="#fd9720" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-23.94097900390625" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Ilegra</text>
+</g>
+<g transform="translate(170,386) rotate(-90,0,0)">
+<text fill="#66d9ef" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-23.173355102539062" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Jekyll</text>
+</g>
+<g transform="translate(674,350) rotate(-90,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-30.671607971191406" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Kanban</text>
+</g>
+<g transform="translate(354,106) rotate(0,0,0)">
+<text fill="#a6e22d" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-22.450233459472656" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Keras</text>
+</g>
+<g transform="translate(466,526) rotate(0,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-22.51697540283203" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Retro</text>
+</g>
+<g transform="translate(530,502) rotate(0,0,0)">
+<text fill="#fd9720" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-22.694992065429688" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">Mobx</text>
+</g>
+<g transform="translate(456,182) rotate(0,0,0)">
+<text fill="#f92772" stroke="none" font-family="Passion One" font-size="22.2597px" font-style="normal" font-weight="normal" x="-15.819740295410156" y="-8.903884080000003" text-anchor="start" dominant-baseline="alphabetic">ZSH</text>
+</g>
+<g transform="translate(526,182) rotate(0,0,0)">
+<text fill="#a6e22a" stroke="none" font-family="Passion One" font-size="11.1299px" font-style="normal" font-weight="normal" x="-17.9254150390625" y="-4.451942040000001" text-anchor="start" dominant-baseline="alphabetic">Datacom</text>
+</g>
+</g>
+</svg>
+</p>
+
+<p>
+    Today I work as a Software Engineer for Zalando
+    <img class="zalando-icon" src='/assets/media/zalando-logo.png'/> where I can use all my knowledge about
+    resilience and scalable Cloud-Native Applications using on a daily basis Python, Java, Scala and Kotlin
+    with Kubernetes on the AWS stack.
+</p>
+
+
+
+</div>
+
+<div id="contact-list" class="text-center">
+	<ul class="list-unstyled list-inline">
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://github.com/alexrochas">
+				<i class="fab fa-github-alt fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://twitter.com/alexsuzume">
+				<i class="fab fa-twitter fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://medium.com/@alexrocha_15255">
+				<i class="fab fa-medium fa-lg"></i>
+			</a>
+		</li>
+		
+	</ul>
+	<ul class="list-unstyled list-inline">
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="mailto:alexsuzume@gmail.com">
+				<i class="fa fa-envelope fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://linkedin.com/in/alexrochas">
+				<i class="fab fa-linkedin fa-lg"></i>
+			</a>
+		</li>
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="/feed.xml">
+				<i class="fa fa-rss fa-lg"></i>
+			</a>
+		</li>
+	</ul>
+</div>
+<!-- sidebar.html end -->
+
+	</div>
+
+	<div class="col-sm-9 col-sm-offset-3">
+		<div class="page-header">
+  <h1>Recover the sanity of your ZSH config </h1>
+</div>
+	
+<article>
+	
+    
+    
+    
+
+	<div style="float: none" class="col-sm-10">
+	 <span class="post-date">
+	   
+	   February 
+	   15th,
+	   
+	   2019
+	 </span>
+	  <div class="article_body">
+	  <p>I started to work with Linux almost 10 years ago, and back there I discovered how my Ubuntu/Debian terminal could make a lot more for me if I start to personalize him. Started with little things, an alias, a shortcut or maybe an environment variable here or there.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+</pre></td><td class="rouge-code"><pre><span class="k">function </span>whichPort<span class="o">()</span> <span class="o">{</span> 
+    lsof <span class="nt">-i</span> tcp:<span class="nv">$1</span><span class="p">;</span> 
+<span class="o">}</span>
+
+<span class="nb">alias </span><span class="nv">zshconfig</span><span class="o">=</span><span class="s1">'vim ~/.zshrc'</span>
+<span class="nb">alias </span><span class="nv">vimrc</span><span class="o">=</span><span class="s1">'vim ~/.vimrc'</span>
+<span class="nb">alias </span><span class="nv">i3config</span><span class="o">=</span><span class="s1">'vim ~/.i3/config'</span>
+<span class="nb">alias </span><span class="nv">git</span><span class="o">=</span><span class="s1">'nocorrect git'</span>
+<span class="nb">alias </span><span class="nv">environment</span><span class="o">=</span><span class="s1">'sudo vim /etc/environment'</span>
+<span class="nb">alias </span><span class="nv">xsessionconf</span><span class="o">=</span><span class="s1">'vim ~/.xsession'</span>
+<span class="nb">alias </span><span class="nv">tasks</span><span class="o">=</span><span class="s1">'task list'</span>
+<span class="nb">alias sudo</span><span class="o">=</span><span class="s1">'sudo -E '</span>
+
+jp2a <span class="nt">--fill</span> <span class="nt">--background</span><span class="o">=</span>light <span class="nt">--fill</span> ~/Pictures/supermanLogo.jpeg
+
+task calendar
+
+fortune 30% debian-hints 30% brasil 40% riddles
+
+<span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"</span><span class="se">\"</span><span class="s2">You either die a hero or you live long enough to see yourself become the villain.</span><span class="se">\"\n\n</span><span class="s2">~ Harvey Dent</span><span class="se">\n</span><span class="s2">"</span>
+
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$PATH</span><span class="s2">:</span><span class="nv">$HOME</span><span class="s2">/.rvm/bin"</span> <span class="c"># Add RVM to PATH for scripting</span>
+<span class="nb">export </span><span class="nv">GOPATH</span><span class="o">=</span><span class="nv">$HOME</span>/go
+<span class="nb">export </span><span class="nv">GOBIN</span><span class="o">=</span><span class="nv">$HOME</span>/go/bin
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>But at some point, my <em>.zshrc</em> had 200 lines and my feeling was that I could not maintain it anymore.</p>
+
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*h5sBD-26TGNiQk65Az5Qeg.jpeg" alt="“First months vs first years” by [imgflip](https://imgflip.com/)" class="center" />
+<em class="quote">“First months vs first years” by <a href="https://imgflip.com/">imgflip</a></em></p>
+
+<h2 id="first-step--add-a-package-manager">First step — add a package manager</h2>
+
+<p>I heard once that:</p>
+<blockquote>
+  <p>“A good developer is a lazy developer.”</p>
+</blockquote>
+
+<p>And for me, this means automatize as much as possible in terms of my terminal. With years I started to have plugins for everything, from a beautiful PS1 line to a script to extract any compressed format.</p>
+
+<p>Stop to deal with that manually and use a package manager! In my case, I started to use antigen and now my plugins block looks like that:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+</pre></td><td class="rouge-code"><pre>
+<span class="nb">source</span> /home/alex/Development/antigen/antigen.zsh
+
+<span class="c"># Load the oh-my-zsh's library.</span>
+antigen use oh-my-zsh
+
+<span class="c"># Bundles from the default repo (robbyrussell's oh-my-zsh).</span>
+antigen bundle git
+antigen bundle zsh-users/zsh-completions
+antigen bundle heroku
+antigen bundle pip
+antigen bundle lein
+antigen bundle command-not-found
+antigen bundle gradle
+
+<span class="c"># Syntax highlighting bundle.</span>
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+<span class="c"># Load the theme.</span>
+<span class="c"># You probably will want to install powerline fonts https://github.com/powerline/fonts</span>
+antigen theme robbyrussell/oh-my-zsh themes/agnoster
+
+<span class="c"># Tell antigen that you're done.</span>
+antigen apply
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="second-step--componentize-your-zshrc">Second step — componentize your .zshrc</h2>
+
+<p>You can add practically anything to your <em>.zshrc</em> in order to automatize your tasks and for me, these means have a lot of things that don’t really fit with each other.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+</pre></td><td class="rouge-code"><pre><span class="nb">source</span> /home/alex/Development/antigen/antigen.zsh
+
+<span class="c"># Load the oh-my-zsh's library.</span>
+antigen use oh-my-zsh
+
+<span class="c"># Bundles from the default repo (robbyrussell's oh-my-zsh).</span>
+antigen bundle git
+antigen bundle heroku
+antigen bundle pip
+antigen bundle lein
+antigen bundle command-not-found
+
+<span class="c"># Syntax highlighting bundle.</span>
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+<span class="c"># Load the theme.</span>
+antigen theme robbyrussell/oh-my-zsh themes/apple
+
+<span class="c"># Tell antigen that you're done.</span>
+antigen apply
+
+<span class="c"># Functions</span>
+ex<span class="o">()</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">[[</span> <span class="nt">-f</span> <span class="nv">$1</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
+        case</span> <span class="nv">$1</span> <span class="k">in</span>
+            <span class="k">*</span>.tar.bz2<span class="p">)</span> <span class="nb">tar </span>xvjf <span class="nv">$1</span><span class="p">;;</span>
+            <span class="k">*</span>.tar.gz<span class="p">)</span> <span class="nb">tar </span>xvzf <span class="nv">$1</span><span class="p">;;</span>
+            <span class="k">*</span>.tar.xz<span class="p">)</span> <span class="nb">tar </span>xvJf <span class="nv">$1</span><span class="p">;;</span>
+            <span class="k">*</span>.tar.lzma<span class="p">)</span> <span class="nb">tar</span> <span class="nt">--lzma</span> xvf <span class="nv">$1</span><span class="p">;;</span>
+            <span class="k">*</span>.bz2<span class="p">)</span> bunzip <span class="nv">$1</span><span class="p">;;</span>
+            <span class="k">*</span>.rar<span class="p">)</span> unrar <span class="nv">$1</span><span class="p">;;</span>
+            <span class="k">*</span>.gz<span class="p">)</span> <span class="nb">gunzip</span> <span class="nv">$1</span><span class="p">;;</span>
+            <span class="k">*</span>.tar<span class="p">)</span> <span class="nb">tar </span>xvf <span class="nv">$1</span><span class="p">;;</span>
+            <span class="k">*</span>.tbz2<span class="p">)</span> <span class="nb">tar </span>xvjf <span class="nv">$1</span><span class="p">;;</span>
+            <span class="k">*</span>.tgz<span class="p">)</span> <span class="nb">tar </span>xvzf <span class="nv">$1</span><span class="p">;;</span>
+            <span class="k">*</span>.zip<span class="p">)</span> unzip <span class="nv">$1</span><span class="p">;;</span>
+            <span class="k">*</span>.Z<span class="p">)</span> uncompress <span class="nv">$1</span><span class="p">;;</span>
+            <span class="k">*</span>.7z<span class="p">)</span> 7z x <span class="nv">$1</span><span class="p">;;</span>
+            <span class="k">*</span>.dmg<span class="p">)</span> hdiutul mount <span class="nv">$1</span><span class="p">;;</span> <span class="c"># mount OS X disk images</span>
+            <span class="k">*</span><span class="p">)</span> <span class="nb">echo</span> <span class="s2">"'</span><span class="nv">$1</span><span class="s2">' cannot be extracted via &gt;ex&lt;"</span><span class="p">;;</span>
+  <span class="k">esac</span>
+    <span class="k">else
+        </span><span class="nb">echo</span> <span class="s2">"'</span><span class="nv">$1</span><span class="s2">' is not a valid file"</span>
+    <span class="k">fi</span>
+<span class="o">}</span>
+
+<span class="c"># Aliases</span>
+<span class="nb">alias </span><span class="nv">filemanager</span><span class="o">=</span><span class="s1">'pcmanfm'</span>
+<span class="nb">alias </span><span class="nv">zshmytheme</span><span class="o">=</span><span class="s1">'vim ~/.oh-my-zsh/themes/alex.zsh-theme'</span>
+<span class="nb">alias </span><span class="nv">zshconfig</span><span class="o">=</span><span class="s1">'vim ~/.zshrc'</span>
+<span class="nb">alias </span><span class="nv">vimrc</span><span class="o">=</span><span class="s1">'vim ~/.vimrc'</span>
+<span class="nb">alias </span><span class="nv">i3config</span><span class="o">=</span><span class="s1">'vim ~/.i3/config'</span>
+<span class="nb">alias </span><span class="nv">git</span><span class="o">=</span><span class="s1">'nocorrect git'</span>
+<span class="nb">alias </span><span class="nv">environment</span><span class="o">=</span><span class="s1">'sudo vim /etc/environment'</span>
+<span class="nb">alias </span><span class="nv">xsessionconf</span><span class="o">=</span><span class="s1">'vim ~/.xsession'</span>
+<span class="nb">alias sudo</span><span class="o">=</span><span class="s1">'sudo -E '</span>
+<span class="nb">alias </span><span class="nv">rundashboard</span><span class="o">=</span><span class="s1">'python ~/Development/jenkins_test/dashboard/run.py --config ~/Development/jenkins_test/dashboard/docs/config.json --debug'</span>
+<span class="nb">alias </span><span class="nv">workpy</span><span class="o">=</span><span class="s1">'workon dashboard'</span>
+<span class="nb">alias </span><span class="nv">notebook</span><span class="o">=</span><span class="s1">'jupyter notebook'</span>
+<span class="nb">alias </span><span class="nv">clipboard</span><span class="o">=</span><span class="s1">'xsel -b'</span>
+
+<span class="c"># Fortunes</span>
+<span class="c"># fortune 30% debian-hints 30% brasil 40% riddles</span>
+
+<span class="c"># Messages</span>
+<span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"</span><span class="se">\n\"</span><span class="s2">Agora é o lugar onde as perguntas descansam e as respostas crescem, nos seus próprios tempos…</span><span class="se">\"\n\n</span><span class="s2">~ Jeff Foster, </span><span class="se">\"</span><span class="s2">Slow Down, Friend</span><span class="se">\"\n</span><span class="s2">"</span>
+<span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"</span><span class="se">\"</span><span class="s2">You either die a hero or you live long enough to see yourself become the villain.</span><span class="se">\"\n\n</span><span class="s2">~ Harvey Dent</span><span class="se">\n</span><span class="s2">"</span>
+
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$PATH</span><span class="s2">:</span><span class="nv">$HOME</span><span class="s2">/.rvm/bin"</span> <span class="c"># Add RVM to PATH for scripting</span>
+<span class="nb">export </span><span class="nv">WORKON_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/.virtualenvs
+<span class="nb">export </span><span class="nv">PROJECT_HOME</span><span class="o">=</span><span class="nv">$HOME</span>/Develop
+<span class="nb">source</span> /usr/local/bin/virtualenvwrapper.sh
+<span class="nb">export  </span><span class="nv">PYTHONPATH</span><span class="o">=</span><span class="nv">$PYTHONPATH</span>:/apps/tools/scm_tools/scm_common/python/
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>And by extracting things to similar domains by simply checking if the script exists, I’m able to add and remove sensible code or proprietary configurations deleting an import. And that mess turns into this:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre></td><td class="rouge-code"><pre><span class="c"># Antigen</span>
+<span class="o">[[</span> <span class="nt">-f</span> ~/.zsh/antigen.zsh <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.zsh/antigen.zsh
+
+<span class="c"># Aliases</span>
+<span class="o">[[</span> <span class="nt">-f</span> ~/.zsh/aliases.zsh <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.zsh/aliases.zsh
+
+<span class="c"># Quotes</span>
+<span class="o">[[</span> <span class="nt">-f</span> ~/.zsh/quotes.zsh <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.zsh/quotes.zsh
+
+<span class="c"># RVM</span>
+<span class="o">[[</span> <span class="nt">-f</span> ~/.zsh/rvm.zsh <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.zsh/rvm.zsh
+
+<span class="c"># Functions</span>
+<span class="o">[[</span> <span class="nt">-f</span> ~/.zsh/functions.zsh <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.zsh/functions.zsh
+
+<span class="c"># Company stuff (generally AWS stuff that doesn't go to github)</span>
+<span class="o">[[</span> <span class="nt">-f</span> ~/.zsh/company.zsh <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.zsh/company.zsh
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="bonus-steps">Bonus steps</h2>
+
+<h3 id="create-your-own-plugins">Create your own plugins</h3>
+
+<p>Antigen has a nice approach to plugins, you can reference and import any GitHub repository that has <strong>.zsh</strong> extensions and load on your session.</p>
+
+<p>That old functions you lost in your *.zshrc *can become a GitHub repository and not only be shared but pretty well organized inside your system.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+</pre></td><td class="rouge-code"><pre><span class="c">#!/bin/zsh</span>
+
+<span class="k">function </span>extract <span class="o">{</span>
+    <span class="k">if</span> <span class="o">[[</span> <span class="nt">-f</span> <span class="nv">$1</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
+        case</span> <span class="nv">$1</span> <span class="k">in</span>
+            <span class="k">*</span>.tar.bz2<span class="p">)</span> <span class="nb">tar </span>xvjf <span class="nv">$1</span><span class="p">;;</span>
+            <span class="k">*</span>.tar.gz<span class="p">)</span> <span class="nb">tar </span>xvzf <span class="nv">$1</span><span class="p">;;</span>
+            <span class="k">*</span>.tar.xz<span class="p">)</span> <span class="nb">tar </span>xvJf <span class="nv">$1</span><span class="p">;;</span>
+            <span class="k">*</span>.tar.lzma<span class="p">)</span> <span class="nb">tar</span> <span class="nt">--lzma</span> xvf <span class="nv">$1</span><span class="p">;;</span>
+            <span class="k">*</span>.bz2<span class="p">)</span> bunzip <span class="nv">$1</span><span class="p">;;</span>
+            <span class="k">*</span>.rar<span class="p">)</span> unrar <span class="nv">$1</span><span class="p">;;</span>
+            <span class="k">*</span>.gz<span class="p">)</span> <span class="nb">gunzip</span> <span class="nv">$1</span><span class="p">;;</span>
+            <span class="k">*</span>.tar<span class="p">)</span> <span class="nb">tar </span>xvf <span class="nv">$1</span><span class="p">;;</span>
+            <span class="k">*</span>.tbz2<span class="p">)</span> <span class="nb">tar </span>xvjf <span class="nv">$1</span><span class="p">;;</span>
+            <span class="k">*</span>.tgz<span class="p">)</span> <span class="nb">tar </span>xvzf <span class="nv">$1</span><span class="p">;;</span>
+            <span class="k">*</span>.zip<span class="p">)</span> unzip <span class="nv">$1</span><span class="p">;;</span>
+            <span class="k">*</span>.Z<span class="p">)</span> uncompress <span class="nv">$1</span><span class="p">;;</span>
+            <span class="k">*</span>.7z<span class="p">)</span> 7z x <span class="nv">$1</span><span class="p">;;</span>
+            <span class="k">*</span>.dmg<span class="p">)</span> hdiutul mount <span class="nv">$1</span><span class="p">;;</span> <span class="c"># mount OS X disk images</span>
+            <span class="k">*</span><span class="p">)</span> <span class="nb">echo</span> <span class="s2">"'</span><span class="nv">$1</span><span class="s2">' cannot be extracted via &gt;ex&lt;"</span><span class="p">;;</span>
+  <span class="k">esac</span>
+    <span class="k">else
+        </span><span class="nb">echo</span> <span class="s2">"'</span><span class="nv">$1</span><span class="s2">' is not a valid file"</span>
+    <span class="k">fi</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="homesick">Homesick</h3>
+
+<p><a href="https://github.com/technicalpickles/homesick">Homesick</a> is the way I found to automatize the installation of my dotfiles whenever I had to in simple steps.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>~/$ homesick clone [alexrochas/dotfiles](https://github.com/alexrochas/dotfiles)
+
+~/$ homesick link dotfiles
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>I know, there is a lot of creative ways to do that, but I really liked this one and extend this for almost every dotfile I had.</p>
+
+<ul>
+  <li>
+    <p><a href="https://github.com/alexrochas/dotfiles">https://github.com/alexrochas/dotfiles</a></p>
+  </li>
+  <li>
+    <p><a href="https://github.com/alexrochas/X-dotfiles">https://github.com/alexrochas/X-dotfiles</a></p>
+  </li>
+  <li>
+    <p><a href="https://github.com/alexrochas/i3-dotfiles">https://github.com/alexrochas/i3-dotfiles</a></p>
+  </li>
+</ul>
+
+<p><strong>Powerline</strong></p>
+
+<p><a href="https://github.com/powerline/powerline">Powerline</a> is a theme for ZSH that does exactly what I need. Again, I liked so much that I even installed on my <em>.vimr</em>c.</p>
+
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*foOnmV5GeF61YDq5SZxvZw.png" alt="“powerline example” by [powerline9k](https://github.com/bhilburn/powerlevel9k)" class="center" />
+<em class="quote">“powerline example” by <a href="https://github.com/bhilburn/powerlevel9k">powerline9k</a></em></p>
+
+<h3 id="z">Z</h3>
+
+<p>You may already hear that “z is the new j”. Well, <a href="https://github.com/rupa/z">Z</a> is a tool to navigate between folder in a faster peace.</p>
+
+<p>Instead of:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>~/$ cd ./Development/ProjectX/some/folder/
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>You can just:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>~/$ z proj fol             #and let z resolves the pattern
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*UnRLMDLVJGtKhErxwDABbw.jpeg" alt="“mudra” by [vistataos](https://www.vistataos.com/4-types-of-holistic-therapies-to-enhance-your-recovery/)" class="center" />
+<em class="quote">“mudra” by <a href="https://www.vistataos.com/4-types-of-holistic-therapies-to-enhance-your-recovery/">vistataos</a></em></p>
+
+<p>The best approach at the end is the one that works for you. Doesn’t matter if it is bash, zsh, fish or whatever. The important thing is to try to work in smart ways.</p>
+
+<p>What do you think? I forgot something or you found a different way? Let me know in the comments and check my <a href="https://github.com/alexrochas/dotfiles">dotfiles</a> in GitHub.</p>
+
+	  </div>
+
+		
+		<ul class="tag_box list-unstyled list-inline">
+		  <li><i class="fa fa-folder-open"></i></li>
+		  
+		  
+			 
+				<li><a href="/categories.html#general-ref">
+					general <span>(9)</span>
+					
+				</a></li>
+			
+		  
+		</ul>
+		  
+
+		
+		<ul class="list-inline">
+		  <li><i class="fa fa-tags"></i></li>
+		  
+		  
+			 
+				<li>
+					<a href="/tags.html#best practices-ref">
+					best practices <span>(2)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#zsh-ref">
+					zsh <span>(1)</span>
+					,
+					</a>
+				</li>
+			 
+				<li>
+					<a href="/tags.html#terminal-ref">
+					terminal <span>(1)</span>
+					
+					</a>
+				</li>
+			
+		  
+		  
+		</ul>
+		  
+
+		<hr>
+
+		<div>
+      <section class="share col-sm-6">
+        <h4 class="section-title">Share Post</h4>
+        <a class="btn btn-default btn-sm twitter" href="http://twitter.com/share?text=Recover the sanity of your ZSH config&via=alexsuzume"
+           onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+          <i class="fab fa-twitter fa-lg"></i>
+          Twitter
+        </a>
+        <a class="btn btn-default btn-sm facebook" href="https://www.facebook.com/sharer/sharer.php"
+           onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+          <i class="fab fa-facebook fa-lg"></i>
+          Facebook
+        </a>
+        <a class="btn btn-default btn-sm gplus"
+           onclick="window.open('https://plus.google.com/share?url='+window.location.href, 'google-plus-share', 'width=490,height=530');return false;">
+          <i class="fab fa-google-plus fa-lg"></i>
+          Google+
+        </a>
+      </section>
+
+      <section class="col-sm-6 author">
+        <img src="http://www.gravatar.com/avatar/e6f244d374347e94e7f33897d8f3e417" class="img-rounded author-image" />
+        <h4 class="section-title author-name">[alex_rocha] by alex</h4>
+        <p class="author-bio">🇧🇷Senior Software Developer</p>
+      </section>
+    </div>
+
+    <div class="clearfix"></div>
+
+		<ul class="pager">
+		  
+		  <li class="previous"><a href="/general/2019/02/05/event-sourcing.html" title="Event Sourcing - an evolutionary perspective">&larr; Previous</a></li>
+		  
+		  
+		  <li class="next"><a href="/general/2019/02/20/centralized-logs-elk-stack.html" title="Centralized logs with Elastic stack and Apache Kafka">Next &rarr;</a></li>
+		  
+		</ul>
+
+		<hr>
+	</div>
+	
+	<div class="col-sm-2 sidebar-2">
+	
+	</div>
+</article>
+<div class="clearfix"></div>
+
+
+
+    
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'alexrochas';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+		<footer>
+			<hr/>
+			<p>
+				&copy; 2024 [alex_rocha] by alex with <a href="http://jekyllrb.com/">Jekyll</a>. Theme: <a href="https://github.com/dbtek/dbyll">dbyll</a> by dbtek.
+			</p>
+		</footer>
+	</div>
+
+	<script type="text/javascript" src="/assets/resources/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/assets/resources/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/assets/js/app.js"></script>
+</body>
+</html>
+
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl =
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-83264734-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+

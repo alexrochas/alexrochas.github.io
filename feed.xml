@@ -1,0 +1,2143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>[alex_rocha]</title>
+		<description></description>
+		<link>/</link>
+		<atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>Jekyll and social metatags</title>
+				<description>&lt;p&gt;Recently I decided to give a push in my social engagement and personal merketing by creating more visibility to my tech blog and other fresh started project. It was a surprise for me that this whole time I was sharing posts with this look:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/media/twitter-ugly-thumb.png&quot; alt=&quot;twitter-ugly-thumb&quot; class=&quot;center&quot; /&gt;
+&lt;em class=&quot;quote&quot;&gt;besides the politeness it’s not really attractive for a click&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I discovered then the my Jekyl static blog (yes, it’s important to point the whole scenario) was missing the metatags that most of social networks look for when creating a thumbnail.  Something like:&lt;/p&gt;
+
+&lt;blockquote class=&quot;filename&quot;&gt;
+  &lt;p&gt;&lt;i class=&quot;far fa-file-code&quot;&gt;&lt;/i&gt; index.html&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;og:type&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;article&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;og:url&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://conductofcode.io/post/social-meta-tags-with-jekyll/&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;og:title&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Social meta tags with Jekyll&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;og:description&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;This is how I added social meta tags to this Jekyll blog to optimize sharing on Facebook, Twitter and Google+.&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;og:image&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://conductofcode.io/post/social-meta-tags-with-jekyll/meta.png&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;og:image:width&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1200&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;og:image:height&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;630&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;og:site_name&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Conduct of Code&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;By seeing that the next clever step would be create a helper method on my Jekyll website and add to each one of my posts or even add to the header (some “clean code” here?). But before loose more time with that I found the right way to do it.&lt;/p&gt;
+
+&lt;p&gt;There is a Jekyll plugin, supported by github-pages, called &lt;a href=&quot;https://rubygems.org/gems/jekyll-seo-tag&quot;&gt;jekyll-seo-tags&lt;/a&gt;. (that is already bundled if you’re using &lt;a href=&quot;https://rubygems.org/gems/github-pages&quot;&gt;github-pages&lt;/a&gt; gem)&lt;/p&gt;
+
+&lt;blockquote class=&quot;filename&quot;&gt;
+  &lt;p&gt;&lt;i class=&quot;far fa-file-code&quot;&gt;&lt;/i&gt; Gemfile&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;# frozen_string_literal: true&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;https://rubygems.org&apos;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;github-pages&apos;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# jekyll-seo-tags is already bundled in this gem&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;jekyll&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&amp;gt;= 3.6.3&apos;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:jekyll_plugins&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;jekyll-paginate&apos;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;jekyll-admin&apos;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This plugin will add a new method that you should use in your default/template/index page, choose one that is used everywhere, to inside the head tag:&lt;/p&gt;
+
+&lt;blockquote class=&quot;filename&quot;&gt;
+  &lt;p&gt;&lt;i class=&quot;far fa-file-code&quot;&gt;&lt;/i&gt; default.html&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Jekyll and social metatags&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+	
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;author&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;[alex_rocha] by alex&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+		&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- stuff... --&amp;gt;&lt;/span&gt;
+
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;alternate&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;application/rss+xml&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/feed.xml&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+    
+        {% seo %} &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- here is the magic trick --&amp;gt;&lt;/span&gt;
+        {% include head.html %}
+    
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;After that, I tried to oncemore with twitter and now looks like something I may click:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/media/simple-thumb.png&quot; alt=&quot;simple-thumb&quot; class=&quot;center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And if you’re missing a beatiful image on the thumbnail just add to your post header the image key:&lt;/p&gt;
+
+&lt;blockquote class=&quot;filename&quot;&gt;
+  &lt;p&gt;&lt;i class=&quot;far fa-file-code&quot;&gt;&lt;/i&gt; a-post.md&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;---
+layout: post
+title: Event Sourcing - an evolutionary perspective
+categories: [general]
+tags: [event sourcing]
+fullview: false
+excerpt_separator: &amp;lt;!--more--&amp;gt;
+excerpt:
+    &quot;The highs and lows of an event sourcing architecture&quot;
+comments: true
+image: https://cdn-images-1.medium.com/max/2000/0*WdYZ4xKi-0jFdqj4.jpg
+---
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The result should look something like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/media/full-thumb.png&quot; alt=&quot;full-thumb&quot; class=&quot;center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now this is something I would click!&lt;/p&gt;
+
+&lt;p&gt;Resources:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cards-dev.twitter.com/validator&quot;&gt;card validator I used to preview my cards&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://pages.github.com/versions/&quot;&gt;github-pages supported plugins&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://conductofcode.io/post/social-meta-tags-with-jekyll/&quot;&gt;some insights about jekyll-seo-tag&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://maxchadwick.xyz/blog/twitter-cards-for-jekyll-with-jekyll-seo-tag&quot;&gt;what is twitter-cards?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+				<pubDate>Sat, 15 Jun 2024 00:00:00 +0000</pubDate>
+				<link>/posts/2024/06/15/git-commit-with-jira-branch.html</link>
+				<guid isPermaLink="true">/posts/2024/06/15/git-commit-with-jira-branch.html</guid>
+			</item>
+		
+			<item>
+				<title>Jekyll and social metatags</title>
+				<description>&lt;p&gt;Recently I decided to give a push in my social engagement and personal merketing by creating more visibility to my tech blog and other fresh started project. It was a surprise for me that this whole time I was sharing posts with this look:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/media/twitter-ugly-thumb.png&quot; alt=&quot;twitter-ugly-thumb&quot; class=&quot;center&quot; /&gt;
+&lt;em class=&quot;quote&quot;&gt;besides the politeness it’s not really attractive for a click&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I discovered then the my Jekyl static blog (yes, it’s important to point the whole scenario) was missing the metatags that most of social networks look for when creating a thumbnail.  Something like:&lt;/p&gt;
+
+&lt;blockquote class=&quot;filename&quot;&gt;
+  &lt;p&gt;&lt;i class=&quot;far fa-file-code&quot;&gt;&lt;/i&gt; index.html&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;og:type&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;article&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;og:url&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://conductofcode.io/post/social-meta-tags-with-jekyll/&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;og:title&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Social meta tags with Jekyll&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;og:description&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;This is how I added social meta tags to this Jekyll blog to optimize sharing on Facebook, Twitter and Google+.&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;og:image&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://conductofcode.io/post/social-meta-tags-with-jekyll/meta.png&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;og:image:width&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1200&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;og:image:height&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;630&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;property=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;og:site_name&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Conduct of Code&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;By seeing that the next clever step would be create a helper method on my Jekyll website and add to each one of my posts or even add to the header (some “clean code” here?). But before loose more time with that I found the right way to do it.&lt;/p&gt;
+
+&lt;p&gt;There is a Jekyll plugin, supported by github-pages, called &lt;a href=&quot;https://rubygems.org/gems/jekyll-seo-tag&quot;&gt;jekyll-seo-tags&lt;/a&gt;. (that is already bundled if you’re using &lt;a href=&quot;https://rubygems.org/gems/github-pages&quot;&gt;github-pages&lt;/a&gt; gem)&lt;/p&gt;
+
+&lt;blockquote class=&quot;filename&quot;&gt;
+  &lt;p&gt;&lt;i class=&quot;far fa-file-code&quot;&gt;&lt;/i&gt; Gemfile&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;# frozen_string_literal: true&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;https://rubygems.org&apos;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;github-pages&apos;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# jekyll-seo-tags is already bundled in this gem&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;jekyll&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&amp;gt;= 3.6.3&apos;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:jekyll_plugins&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;jekyll-paginate&apos;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;jekyll-admin&apos;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This plugin will add a new method that you should use in your default/template/index page, choose one that is used everywhere, to inside the head tag:&lt;/p&gt;
+
+&lt;blockquote class=&quot;filename&quot;&gt;
+  &lt;p&gt;&lt;i class=&quot;far fa-file-code&quot;&gt;&lt;/i&gt; default.html&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Jekyll and social metatags&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+	
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;author&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;[alex_rocha] by alex&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+		&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- stuff... --&amp;gt;&lt;/span&gt;
+
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;alternate&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;application/rss+xml&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/feed.xml&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+    
+        {% seo %} &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- here is the magic trick --&amp;gt;&lt;/span&gt;
+        {% include head.html %}
+    
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;After that, I tried to oncemore with twitter and now looks like something I may click:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/media/simple-thumb.png&quot; alt=&quot;simple-thumb&quot; class=&quot;center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And if you’re missing a beatiful image on the thumbnail just add to your post header the image key:&lt;/p&gt;
+
+&lt;blockquote class=&quot;filename&quot;&gt;
+  &lt;p&gt;&lt;i class=&quot;far fa-file-code&quot;&gt;&lt;/i&gt; a-post.md&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;---
+layout: post
+title: Event Sourcing - an evolutionary perspective
+categories: [general]
+tags: [event sourcing]
+fullview: false
+excerpt_separator: &amp;lt;!--more--&amp;gt;
+excerpt:
+    &quot;The highs and lows of an event sourcing architecture&quot;
+comments: true
+image: https://cdn-images-1.medium.com/max/2000/0*WdYZ4xKi-0jFdqj4.jpg
+---
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The result should look something like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/media/full-thumb.png&quot; alt=&quot;full-thumb&quot; class=&quot;center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now this is something I would click!&lt;/p&gt;
+
+&lt;p&gt;Resources:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cards-dev.twitter.com/validator&quot;&gt;card validator I used to preview my cards&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://pages.github.com/versions/&quot;&gt;github-pages supported plugins&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://conductofcode.io/post/social-meta-tags-with-jekyll/&quot;&gt;some insights about jekyll-seo-tag&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://maxchadwick.xyz/blog/twitter-cards-for-jekyll-with-jekyll-seo-tag&quot;&gt;what is twitter-cards?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+				<pubDate>Fri, 27 Mar 2020 00:00:00 +0000</pubDate>
+				<link>/general/2020/03/27/jekyll-and-social-metatags.html</link>
+				<guid isPermaLink="true">/general/2020/03/27/jekyll-and-social-metatags.html</guid>
+			</item>
+		
+			<item>
+				<title>Centralized logs with Elastic stack and Apache Kafka</title>
+				<description>&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*pqzrs9L8wdnbWfFjIq5X7A.png&quot; alt=&quot;ELK stack&quot; class=&quot;center&quot; /&gt;
+&lt;em class=&quot;quote&quot;&gt;ELK stack&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;ELK It’s the abbreviation of a technology stack used abroad for most medium/big size companies nowadays. ELK means:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Elasticsearch&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Logstash&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Kibana&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In case you already an expert in ELK, you can probably go to the end of this article where it has an example of usage with Kafka or enjoy the read.&lt;/p&gt;
+
+&lt;h2 id=&quot;elasticsearch&quot;&gt;Elasticsearch&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*1xGKezTzdjRVxMnmPkBSuQ.jpeg&quot; alt=&quot;Elasticsearch in ELK stack&quot; class=&quot;center&quot; /&gt;
+&lt;em class=&quot;quote&quot;&gt;Elasticsearch in ELK stack&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Elasticsearch is a highly scalable open-source full-text search and analytics engine. It allows you to store, search, and analyze big volumes of data quickly and in near real time. It is generally used as the underlying engine/technology that powers applications that have complex search features and requirements.&lt;/p&gt;
+
+&lt;p&gt;Elasticsearch has 6 basic concepts:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Near Real-time (NRT):&lt;/strong&gt; near real-time search platform means that exist a slight latency (normally one second) from the time you index a document until the time it becomes searchable.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;**Cluster: **is a collection of one or more nodes (servers) that together holds your entire data and provides federated indexing and search capabilities across all nodes.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Node:&lt;/strong&gt; is a single server that is part of your cluster, stores your data, and participates in the cluster’s indexing and search capabilities.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Index:&lt;/strong&gt; is a collection of documents that have somewhat similar characteristics.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Document:&lt;/strong&gt; is a basic unit of information that can be indexed. This document is expressed in &lt;a href=&quot;http://json.org/&quot;&gt;JSON&lt;/a&gt; (JavaScript Object Notation) which is a ubiquitous internet data interchange format.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Shards &amp;amp; Replicas:&lt;/strong&gt; each index can be split into multiple shards. An index can also be replicated zero (meaning no replicas) or more times. Once replicated, each index will have primary shards (the original shards that were replicated from) and replica shards (the copies of the primary shards).&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;logstash&quot;&gt;Logstash&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*wczWFrmY3F798d6LMzmBHw.png&quot; alt=&quot;Logstash in ELK stack&quot; class=&quot;center&quot; /&gt;
+&lt;em class=&quot;quote&quot;&gt;Logstash in ELK stack&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Logstash is a light-weight, open-source, server-side data processing pipeline that allows you to collect data from a variety of sources, transform it on the fly, and send it to your desired destination through an event processing pipeline.&lt;/p&gt;
+
+&lt;p&gt;The event processing pipeline has three stages:&lt;/p&gt;
+
+&lt;h3 id=&quot;inputs&quot;&gt;Inputs&lt;/h3&gt;
+
+&lt;p&gt;You use inputs to get data into Logstash. Some of the more commonly-used inputs are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;file: reads from a file on the filesystem, much like the UNIX command tail -0F&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;syslog: listens on the well-known port 514 for syslog messages and parses according to the RFC3164 format&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;redis: reads from a redis server, using both redis channels and redis lists. Redis is often used as a “broker” in a centralized Logstash installation, which queues Logstash events from remote Logstash “shippers”.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;beats: processes events sent by &lt;a href=&quot;https://www.elastic.co/downloads/beats&quot;&gt;Beats&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;filters&quot;&gt;Filters&lt;/h3&gt;
+
+&lt;p&gt;Filters are intermediary processing devices in the Logstash pipeline. You can combine filters with conditionals to perform an action on an event if it meets certain criteria. Some useful filters include:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;grok: parse and structure arbitrary text. Grok is currently the best way in Logstash to parse unstructured log data into something structured and queryable. With 120 patterns built-in to Logstash, it’s more than likely you’ll find one that meets your needs!&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;mutate: perform general transformations on event fields. You can rename, remove, replace, and modify fields in your events.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;drop: drop an event completely, for example, &lt;em&gt;debug&lt;/em&gt; events.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;clone: make a copy of an event, possibly adding or removing fields.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;geoip: add information about geographical location of IP addresses (also displays amazing charts in Kibana!)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;outputs&quot;&gt;Outputs&lt;/h3&gt;
+
+&lt;p&gt;Outputs are the final phase of the Logstash pipeline. An event can pass through multiple outputs, but once all output processing is complete, the event has finished its execution. Some commonly used outputs include:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;elasticsearch: send event data to Elasticsearch. If you’re planning to save your data in an efficient, convenient, and easily queryable format… Elasticsearch is the way to go. Period. Yes, we’re biased :)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;file: write event data to a file on disk.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;graphite: send event data to graphite, a popular open source tool for storing and graphing metrics. &lt;a href=&quot;http://graphite.readthedocs.io/en/latest/&quot;&gt;http://graphite.readthedocs.io/en/latest/&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;statsd: send event data to statsd, a service that “listens for statistics, like counters and timers, sent over UDP and sends aggregates to one or more pluggable backend services”. If you’re already using statsd, this could be useful for you!&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;codecs&quot;&gt;Codecs&lt;/h3&gt;
+
+&lt;p&gt;Inputs and outputs support codecs that enable you to encode or decode the data as it enters or exits the pipeline without having to use a separate filter. Codecs enable you to easily separate the transport of your messages from the serialization process. Popular codecs include json, msgpack, and plain (text).&lt;/p&gt;
+
+&lt;h2 id=&quot;beats&quot;&gt;Beats&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*HmwcqLrpa3MSSnMfPx8xZg.png&quot; alt=&quot;Beats in ELK stack&quot; class=&quot;center&quot; /&gt;
+&lt;em class=&quot;quote&quot;&gt;Beats in ELK stack&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Beats are great for gathering data. They sit on your servers, with your containers, or deploy as functions — and then centralize data in Elasticsearch. And if you want more processing muscle, Beats can also ship to Logstash for transformation and parsing.&lt;/p&gt;
+
+&lt;p&gt;There are 7 different beats:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.elastic.co/guide/en/beats/auditbeat/6.6/auditbeat-getting-started.html&quot;&gt;Auditbeat&lt;/a&gt;: collect your Linux audit framework data and monitor the integrity of your files.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.elastic.co/guide/en/beats/filebeat/6.6/filebeat-getting-started.html&quot;&gt;Filebeat&lt;/a&gt;: tails and ships log files.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.elastic.co/guide/en/beats/functionbeat/6.6/functionbeat-getting-started.html&quot;&gt;Functionbeat&lt;/a&gt;: read and ships events from serverless infrastructure.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.elastic.co/guide/en/beats/heartbeat/6.6/heartbeat-getting-started.html&quot;&gt;Heartbeat&lt;/a&gt;: ping remote services for availability.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.elastic.co/guide/en/beats/journalbeat/6.6/journalbeat-getting-started.html&quot;&gt;Journalbeat&lt;/a&gt;: read and ships event from Journald.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.elastic.co/guide/en/beats/metricbeat/6.6/metricbeat-getting-started.html&quot;&gt;Metricbeat&lt;/a&gt;: fetches sets of metrics from the operating system and services.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.elastic.co/guide/en/beats/packetbeat/6.6/packetbeat-getting-started.html&quot;&gt;Packetbeat&lt;/a&gt;: monitors the network and applications by sniffing packets.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.elastic.co/guide/en/beats/winlogbeat/6.6/winlogbeat-getting-started.html&quot;&gt;Winlogbeat&lt;/a&gt;: fetches and ships Windows Event logs.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;kibana&quot;&gt;Kibana&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*CJHcVrR05ws3MG4aRvojAg.png&quot; alt=&quot;Kibana in ELK stack&quot; class=&quot;center&quot; /&gt;
+&lt;em class=&quot;quote&quot;&gt;Kibana in ELK stack&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Kibana is an open source analytics and visualization platform designed to work with Elasticsearch. You use Kibana to search, view, and interact with data stored in Elasticsearch indices. You can easily perform advanced data analysis and visualize your data in a variety of charts, tables, and maps.&lt;/p&gt;
+
+&lt;p&gt;Kibana makes it easy to understand large volumes of data. Its simple, browser-based interface enables you to quickly create and share dynamic dashboards that display changes to Elasticsearch queries in real time.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*dEffeE7DZ86Vy1mYVmeRDg.jpeg&quot; alt=&quot;“What about Kafka?” by [imgflip](https://imgflip.com/)&quot; class=&quot;center&quot; /&gt;
+&lt;em class=&quot;quote&quot;&gt;“What about Kafka?” by &lt;a href=&quot;https://imgflip.com/&quot;&gt;imgflip&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;kafka&quot;&gt;Kafka&lt;/h2&gt;
+
+&lt;p&gt;Apache Kafka is a distributed streaming platform. What exactly does that mean? A streaming platform has three key capabilities:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Publish and subscribe to streams of records, similar to a message queue or enterprise messaging system.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Store streams of records in a fault-tolerant durable way.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Process streams of records as they occur.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Kafka is generally used for two broad classes of applications:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Building real-time streaming data pipelines that reliably get data between systems or applications&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Building real-time streaming applications that transform or react to the streams of data&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To understand how Kafka does these things, let’s dive in and explore Kafka’s capabilities from the bottom up.&lt;/p&gt;
+
+&lt;p&gt;First a few concepts:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Kafka run as a cluster on one or more servers that can span multiple datacenters.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The Kafka cluster stores streams of &lt;em&gt;records&lt;/em&gt; in categories called &lt;em&gt;topics&lt;/em&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Each record consists of a key, a value, and a timestamp.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;But which value Kafka can add to our stack?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*BD5p-hEKUJrnRoWdAZrNeA.png&quot; alt=&quot;ELK stack with Kafka&quot; class=&quot;center&quot; /&gt;
+&lt;em class=&quot;quote&quot;&gt;ELK stack with Kafka&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;example-of-usage-and-minor-configuration&quot;&gt;Example of usage and minor configuration&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*fu49GDn6zFP-5a9WP3jQwA.png&quot; alt=&quot;Full ecosystem example&quot; class=&quot;center&quot; /&gt;
+&lt;em class=&quot;quote&quot;&gt;Full ecosystem example&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Spring boot is configured with logback to generate logs in JSON format with field &lt;em&gt;log&lt;/em&gt; and &lt;em&gt;log_topic&lt;/em&gt;:&lt;/p&gt;
+
+&lt;blockquote class=&quot;filename&quot;&gt;
+  &lt;p&gt;&lt;i class=&quot;far fa-file-code&quot;&gt;&lt;/i&gt; logback.xml&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;configuration&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;appender&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;jsonConsoleAppender&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ch.qos.logback.core.ConsoleAppender&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;encoder&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;net.logstash.logback.encoder.LogstashEncoder&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;customFields&amp;gt;&lt;/span&gt;{&quot;log_topic&quot;:&quot;dummy-app&quot;}&lt;span class=&quot;nt&quot;&gt;&amp;lt;/customFields&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/encoder&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/appender&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;root&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;level=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;INFO&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;appender-ref&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;ref=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;jsonConsoleAppender&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/root&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/configuration&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This enables filebeat to extract the specific field JSON and send it to Kafka in a topic defined by the field &lt;em&gt;log_topic&lt;/em&gt;:&lt;/p&gt;
+
+&lt;blockquote class=&quot;filename&quot;&gt;
+  &lt;p&gt;&lt;i class=&quot;far fa-file-code&quot;&gt;&lt;/i&gt; filebeat.yml&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;na&quot;&gt;filebeat.prospectors&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;log&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;json.keys_under_root&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# Json key name, which value contains a sub JSON document produced by our application Console Appender&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;json.message_key&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;log&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;enabled&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;encoding&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;utf-8&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;document_type&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;docker&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;paths&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# Location of all our Docker log files (mapped volume in docker-compose.yml)&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;/usr/share/filebeat/dockerlogs/data/*/*.log&apos;&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;processors&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# decode the log field (sub JSON document) if JSONencoded, then maps it&apos;s fields to elasticsearch fields&lt;/span&gt;
+&lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;decode_json_fields&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;fields&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;log&quot;&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# overwrite existing target elasticsearch fields while decoding json fields&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;overwrite_keys&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+&lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;add_docker_metadata&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;~&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;filebeat.config.modules&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;${path.config}/modules.d/*.yml&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;reload.enabled&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;setup.template.settings&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;index.number_of_shards&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;output.kafka&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# initial brokers for reading cluster metadata&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;hosts&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;localhost:9092&quot;&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# message topic selection + partitioning&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;topic&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;%{[log_topic]:dummy}-log&apos;&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;partition.round_robin&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;reachable_only&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;required_acks&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;compression&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;gzip&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;max_message_bytes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1000000&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Write Filebeat own logs only to file to avoid catching them with itself in docker log files&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;logging.to_files&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;logging.to_syslog&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;With the events now in Kafka, logstash is able to consume by topic and send to Elasticsearch:&lt;/p&gt;
+
+&lt;blockquote class=&quot;filename&quot;&gt;
+  &lt;p&gt;&lt;i class=&quot;far fa-file-code&quot;&gt;&lt;/i&gt; logstash.conf&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;input {
+    kafka {
+            bootstrap_servers =&amp;gt; &quot;localhost:9092&quot;
+            topics_pattern =&amp;gt; [&quot;.*&quot;]
+    }
+}
+
+output {
+    elasticsearch {
+        hosts =&amp;gt; [&quot;localhost:9200&quot;]
+        index =&amp;gt; &quot;logstash&quot;
+        document_type =&amp;gt; &quot;logs&quot;
+    }
+    stdout { codec =&amp;gt; rubydebug }
+}
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Once in Elasticsearch we can normally make queries in Kibana.&lt;/p&gt;
+
+&lt;p&gt;This all can be started with docker-compose. Here you can check the full example:
+&lt;a href=&quot;https://github.com/alexrochas/kafka-centralized_logs&quot;&gt;&lt;strong&gt;alexrochas/kafka-centralized_logs&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2458/1*a67reU9VyN1HeS_Rszx8VA.jpeg&quot; alt=&quot;“Elks in the wild” by [outdoorcanada](https://www.outdoorcanada.ca/)&quot; class=&quot;center&quot; /&gt;
+&lt;em class=&quot;quote&quot;&gt;“Elks in the wild” by &lt;a href=&quot;https://www.outdoorcanada.ca/&quot;&gt;outdoorcanada&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;ELK stack is something common nowadays, but the constant need for a decoupled environment architecture in order to be reactive to problems and troubleshooting makes Kafka the best company to this stack.&lt;/p&gt;
+
+&lt;h3 id=&quot;pros&quot;&gt;Pros&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Decoupled architecture&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Any team can subscribe to Kafka in order to collect metrics or emit alarms&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Elasticsearch + Kibana is used only for consult purposes, not alerts or monitoring&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;cons&quot;&gt;Cons&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Crescent complexity&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;One more technology to maintain&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;speed-dating-questions&quot;&gt;Speed dating questions&lt;/h2&gt;
+
+&lt;h3 id=&quot;example-of-usage&quot;&gt;Example of usage?&lt;/h3&gt;
+
+&lt;p&gt;Emit events for monitoring and health check have a high cost and are not atomic since you have to do an action and emit the event. Going to an ELK stack with Kafka you don’t depend on your monitoring in emitted events.&lt;/p&gt;
+
+&lt;h3 id=&quot;which-is-the-difference-between-logstash-and-beats&quot;&gt;Which is the difference between logstash and beats?&lt;/h3&gt;
+
+&lt;p&gt;Beats are lightweight data shippers that you install as agents on your servers to send specific types of operational data to Elasticsearch. Beats have a small footprint and use fewer system resources than Logstash.&lt;/p&gt;
+
+&lt;p&gt;Logstash has a larger footprint but provides a broad array of input, filter, and output plugins for collecting, enriching, and transforming data from a variety of sources.&lt;/p&gt;
+
+&lt;h3 id=&quot;why-i-cannot-use-only-logstash-to-collect-input-and-send-to-output&quot;&gt;Why I cannot use only logstash to collect input and send to output?&lt;/h3&gt;
+
+&lt;p&gt;You can, but mostly because the best approach is ship filebeat with your container since logstash has a higher cost to your system.&lt;/p&gt;
+
+&lt;h3 id=&quot;why-you-should-ship-filebeat-with-your-service-container&quot;&gt;Why you should ship filebeat with your service container?&lt;/h3&gt;
+
+&lt;p&gt;Filebeat with Kafka has the benefit of create different topics per service. This way you can generate different topics per service, improving the reactive aspect of your systems.&lt;/p&gt;
+
+&lt;p&gt;Thank you for reading until the end. This post is strongly based on the official documentation of each product.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.elastic.co/&quot;&gt;https://www.elastic.co/&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://kafka.apache.org/&quot;&gt;https://kafka.apache.org/&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Which other use this approach could have and which drawbacks I did not list here?&lt;/p&gt;
+</description>
+				<pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
+				<link>/general/2019/02/20/centralized-logs-elk-stack.html</link>
+				<guid isPermaLink="true">/general/2019/02/20/centralized-logs-elk-stack.html</guid>
+			</item>
+		
+			<item>
+				<title>Recover the sanity of your ZSH config</title>
+				<description>&lt;p&gt;I started to work with Linux almost 10 years ago, and back there I discovered how my Ubuntu/Debian terminal could make a lot more for me if I start to personalize him. Started with little things, an alias, a shortcut or maybe an environment variable here or there.&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;function &lt;/span&gt;whichPort&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; 
+    lsof &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; tcp:&lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;zshconfig&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;vim ~/.zshrc&apos;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;vimrc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;vim ~/.vimrc&apos;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;i3config&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;vim ~/.i3/config&apos;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;git&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;nocorrect git&apos;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;environment&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;sudo vim /etc/environment&apos;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;xsessionconf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;vim ~/.xsession&apos;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;tasks&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;task list&apos;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias sudo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;sudo -E &apos;&lt;/span&gt;
+
+jp2a &lt;span class=&quot;nt&quot;&gt;--fill&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--background&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;light &lt;span class=&quot;nt&quot;&gt;--fill&lt;/span&gt; ~/Pictures/supermanLogo.jpeg
+
+task calendar
+
+fortune 30% debian-hints 30% brasil 40% riddles
+
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;You either die a hero or you live long enough to see yourself become the villain.&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;\n\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;~ Harvey Dent&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$HOME&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/.rvm/bin&quot;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# Add RVM to PATH for scripting&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;GOPATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$HOME&lt;/span&gt;/go
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;GOBIN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$HOME&lt;/span&gt;/go/bin
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;But at some point, my &lt;em&gt;.zshrc&lt;/em&gt; had 200 lines and my feeling was that I could not maintain it anymore.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*h5sBD-26TGNiQk65Az5Qeg.jpeg&quot; alt=&quot;“First months vs first years” by [imgflip](https://imgflip.com/)&quot; class=&quot;center&quot; /&gt;
+&lt;em class=&quot;quote&quot;&gt;“First months vs first years” by &lt;a href=&quot;https://imgflip.com/&quot;&gt;imgflip&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;first-step--add-a-package-manager&quot;&gt;First step — add a package manager&lt;/h2&gt;
+
+&lt;p&gt;I heard once that:&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;“A good developer is a lazy developer.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;And for me, this means automatize as much as possible in terms of my terminal. With years I started to have plugins for everything, from a beautiful PS1 line to a script to extract any compressed format.&lt;/p&gt;
+
+&lt;p&gt;Stop to deal with that manually and use a package manager! In my case, I started to use antigen and now my plugins block looks like that:&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;
+&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; /home/alex/Development/antigen/antigen.zsh
+
+&lt;span class=&quot;c&quot;&gt;# Load the oh-my-zsh&apos;s library.&lt;/span&gt;
+antigen use oh-my-zsh
+
+&lt;span class=&quot;c&quot;&gt;# Bundles from the default repo (robbyrussell&apos;s oh-my-zsh).&lt;/span&gt;
+antigen bundle git
+antigen bundle zsh-users/zsh-completions
+antigen bundle heroku
+antigen bundle pip
+antigen bundle lein
+antigen bundle command-not-found
+antigen bundle gradle
+
+&lt;span class=&quot;c&quot;&gt;# Syntax highlighting bundle.&lt;/span&gt;
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+&lt;span class=&quot;c&quot;&gt;# Load the theme.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# You probably will want to install powerline fonts https://github.com/powerline/fonts&lt;/span&gt;
+antigen theme robbyrussell/oh-my-zsh themes/agnoster
+
+&lt;span class=&quot;c&quot;&gt;# Tell antigen that you&apos;re done.&lt;/span&gt;
+antigen apply
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;second-step--componentize-your-zshrc&quot;&gt;Second step — componentize your .zshrc&lt;/h2&gt;
+
+&lt;p&gt;You can add practically anything to your &lt;em&gt;.zshrc&lt;/em&gt; in order to automatize your tasks and for me, these means have a lot of things that don’t really fit with each other.&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; /home/alex/Development/antigen/antigen.zsh
+
+&lt;span class=&quot;c&quot;&gt;# Load the oh-my-zsh&apos;s library.&lt;/span&gt;
+antigen use oh-my-zsh
+
+&lt;span class=&quot;c&quot;&gt;# Bundles from the default repo (robbyrussell&apos;s oh-my-zsh).&lt;/span&gt;
+antigen bundle git
+antigen bundle heroku
+antigen bundle pip
+antigen bundle lein
+antigen bundle command-not-found
+
+&lt;span class=&quot;c&quot;&gt;# Syntax highlighting bundle.&lt;/span&gt;
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+&lt;span class=&quot;c&quot;&gt;# Load the theme.&lt;/span&gt;
+antigen theme robbyrussell/oh-my-zsh themes/apple
+
+&lt;span class=&quot;c&quot;&gt;# Tell antigen that you&apos;re done.&lt;/span&gt;
+antigen apply
+
+&lt;span class=&quot;c&quot;&gt;# Functions&lt;/span&gt;
+ex&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[[&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then
+        case&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.tar.bz2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;tar &lt;/span&gt;xvjf &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.tar.gz&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;tar &lt;/span&gt;xvzf &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.tar.xz&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;tar &lt;/span&gt;xvJf &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.tar.lzma&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;tar&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--lzma&lt;/span&gt; xvf &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.bz2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; bunzip &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.rar&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; unrar &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.gz&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;gunzip&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.tar&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;tar &lt;/span&gt;xvf &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.tbz2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;tar &lt;/span&gt;xvjf &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.tgz&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;tar &lt;/span&gt;xvzf &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.zip&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; unzip &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.Z&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; uncompress &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.7z&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 7z x &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.dmg&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; hdiutul mount &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# mount OS X disk images&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&apos;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&apos; cannot be extracted via &amp;gt;ex&amp;lt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;esac&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else
+        &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&apos;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&apos; is not a valid file&quot;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Aliases&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;filemanager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;pcmanfm&apos;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;zshmytheme&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;vim ~/.oh-my-zsh/themes/alex.zsh-theme&apos;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;zshconfig&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;vim ~/.zshrc&apos;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;vimrc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;vim ~/.vimrc&apos;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;i3config&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;vim ~/.i3/config&apos;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;git&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;nocorrect git&apos;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;environment&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;sudo vim /etc/environment&apos;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;xsessionconf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;vim ~/.xsession&apos;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias sudo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;sudo -E &apos;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;rundashboard&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;python ~/Development/jenkins_test/dashboard/run.py --config ~/Development/jenkins_test/dashboard/docs/config.json --debug&apos;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;workpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;workon dashboard&apos;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;notebook&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;jupyter notebook&apos;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;clipboard&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;xsel -b&apos;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Fortunes&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# fortune 30% debian-hints 30% brasil 40% riddles&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Messages&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Agora é o lugar onde as perguntas descansam e as respostas crescem, nos seus próprios tempos…&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;\n\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;~ Jeff Foster, &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Slow Down, Friend&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;You either die a hero or you live long enough to see yourself become the villain.&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;\n\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;~ Harvey Dent&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$HOME&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/.rvm/bin&quot;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# Add RVM to PATH for scripting&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;WORKON_HOME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$HOME&lt;/span&gt;/.virtualenvs
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PROJECT_HOME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$HOME&lt;/span&gt;/Develop
+&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; /usr/local/bin/virtualenvwrapper.sh
+&lt;span class=&quot;nb&quot;&gt;export  &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PYTHONPATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PYTHONPATH&lt;/span&gt;:/apps/tools/scm_tools/scm_common/python/
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;And by extracting things to similar domains by simply checking if the script exists, I’m able to add and remove sensible code or proprietary configurations deleting an import. And that mess turns into this:&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# Antigen&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;[[&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; ~/.zsh/antigen.zsh &lt;span class=&quot;o&quot;&gt;]]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.zsh/antigen.zsh
+
+&lt;span class=&quot;c&quot;&gt;# Aliases&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;[[&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; ~/.zsh/aliases.zsh &lt;span class=&quot;o&quot;&gt;]]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.zsh/aliases.zsh
+
+&lt;span class=&quot;c&quot;&gt;# Quotes&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;[[&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; ~/.zsh/quotes.zsh &lt;span class=&quot;o&quot;&gt;]]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.zsh/quotes.zsh
+
+&lt;span class=&quot;c&quot;&gt;# RVM&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;[[&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; ~/.zsh/rvm.zsh &lt;span class=&quot;o&quot;&gt;]]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.zsh/rvm.zsh
+
+&lt;span class=&quot;c&quot;&gt;# Functions&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;[[&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; ~/.zsh/functions.zsh &lt;span class=&quot;o&quot;&gt;]]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.zsh/functions.zsh
+
+&lt;span class=&quot;c&quot;&gt;# Company stuff (generally AWS stuff that doesn&apos;t go to github)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;[[&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; ~/.zsh/company.zsh &lt;span class=&quot;o&quot;&gt;]]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.zsh/company.zsh
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;bonus-steps&quot;&gt;Bonus steps&lt;/h2&gt;
+
+&lt;h3 id=&quot;create-your-own-plugins&quot;&gt;Create your own plugins&lt;/h3&gt;
+
+&lt;p&gt;Antigen has a nice approach to plugins, you can reference and import any GitHub repository that has &lt;strong&gt;.zsh&lt;/strong&gt; extensions and load on your session.&lt;/p&gt;
+
+&lt;p&gt;That old functions you lost in your *.zshrc *can become a GitHub repository and not only be shared but pretty well organized inside your system.&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/zsh&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;function &lt;/span&gt;extract &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[[&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then
+        case&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.tar.bz2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;tar &lt;/span&gt;xvjf &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.tar.gz&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;tar &lt;/span&gt;xvzf &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.tar.xz&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;tar &lt;/span&gt;xvJf &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.tar.lzma&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;tar&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--lzma&lt;/span&gt; xvf &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.bz2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; bunzip &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.rar&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; unrar &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.gz&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;gunzip&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.tar&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;tar &lt;/span&gt;xvf &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.tbz2&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;tar &lt;/span&gt;xvjf &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.tgz&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;tar &lt;/span&gt;xvzf &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.zip&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; unzip &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.Z&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; uncompress &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.7z&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 7z x &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.dmg&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; hdiutul mount &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# mount OS X disk images&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&apos;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&apos; cannot be extracted via &amp;gt;ex&amp;lt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;esac&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else
+        &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&apos;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&apos; is not a valid file&quot;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;homesick&quot;&gt;Homesick&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/technicalpickles/homesick&quot;&gt;Homesick&lt;/a&gt; is the way I found to automatize the installation of my dotfiles whenever I had to in simple steps.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;~/$ homesick clone [alexrochas/dotfiles](https://github.com/alexrochas/dotfiles)
+
+~/$ homesick link dotfiles
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;I know, there is a lot of creative ways to do that, but I really liked this one and extend this for almost every dotfile I had.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://github.com/alexrochas/dotfiles&quot;&gt;https://github.com/alexrochas/dotfiles&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://github.com/alexrochas/X-dotfiles&quot;&gt;https://github.com/alexrochas/X-dotfiles&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://github.com/alexrochas/i3-dotfiles&quot;&gt;https://github.com/alexrochas/i3-dotfiles&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Powerline&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/powerline/powerline&quot;&gt;Powerline&lt;/a&gt; is a theme for ZSH that does exactly what I need. Again, I liked so much that I even installed on my &lt;em&gt;.vimr&lt;/em&gt;c.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*foOnmV5GeF61YDq5SZxvZw.png&quot; alt=&quot;“powerline example” by [powerline9k](https://github.com/bhilburn/powerlevel9k)&quot; class=&quot;center&quot; /&gt;
+&lt;em class=&quot;quote&quot;&gt;“powerline example” by &lt;a href=&quot;https://github.com/bhilburn/powerlevel9k&quot;&gt;powerline9k&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;z&quot;&gt;Z&lt;/h3&gt;
+
+&lt;p&gt;You may already hear that “z is the new j”. Well, &lt;a href=&quot;https://github.com/rupa/z&quot;&gt;Z&lt;/a&gt; is a tool to navigate between folder in a faster peace.&lt;/p&gt;
+
+&lt;p&gt;Instead of:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;~/$ cd ./Development/ProjectX/some/folder/
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You can just:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;~/$ z proj fol             #and let z resolves the pattern
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*UnRLMDLVJGtKhErxwDABbw.jpeg&quot; alt=&quot;“mudra” by [vistataos](https://www.vistataos.com/4-types-of-holistic-therapies-to-enhance-your-recovery/)&quot; class=&quot;center&quot; /&gt;
+&lt;em class=&quot;quote&quot;&gt;“mudra” by &lt;a href=&quot;https://www.vistataos.com/4-types-of-holistic-therapies-to-enhance-your-recovery/&quot;&gt;vistataos&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The best approach at the end is the one that works for you. Doesn’t matter if it is bash, zsh, fish or whatever. The important thing is to try to work in smart ways.&lt;/p&gt;
+
+&lt;p&gt;What do you think? I forgot something or you found a different way? Let me know in the comments and check my &lt;a href=&quot;https://github.com/alexrochas/dotfiles&quot;&gt;dotfiles&lt;/a&gt; in GitHub.&lt;/p&gt;
+</description>
+				<pubDate>Fri, 15 Feb 2019 00:00:00 +0000</pubDate>
+				<link>/general/2019/02/15/recover-the-sanity-of-zshrc.html</link>
+				<guid isPermaLink="true">/general/2019/02/15/recover-the-sanity-of-zshrc.html</guid>
+			</item>
+		
+			<item>
+				<title>Event Sourcing - an evolutionary perspective</title>
+				<description>&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/0*WdYZ4xKi-0jFdqj4.jpg&quot; alt=&quot;“Evolutionary perspective” by [Allan Bao](https://me.me/i/www-alanbao-tumblr-comm-17300790)&quot; class=&quot;center&quot; /&gt;
+&lt;em class=&quot;quote&quot;&gt;“Evolutionary perspective” by &lt;a href=&quot;https://me.me/i/www-alanbao-tumblr-comm-17300790&quot;&gt;Allan Bao&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Frequently in software development, we hear about some new trend, some new technology, a better way to use what we already have “working”. Event sourcing was one of those trends that as much I saw people studying for the last few years and talking about as a silver bullet, they find out that maybe was not so easy or even didn’t understand it at all. My purpose here is to explain Event Sourcing, without a pet framework, how it works and which decisions can drive you to go “full” event sourcing.&lt;/p&gt;
+
+&lt;p&gt;Here is our roadmap, those topics will be in order to create something that makes sense once you reach the end of this article.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/3208/1*waRlUXsLr4HcKnJ96rwQsQ.png&quot; alt=&quot;Roadmap&quot; class=&quot;center&quot; /&gt;
+&lt;em class=&quot;quote&quot;&gt;Roadmap&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Remembering that one is not necessarily better than the other, my point here is which decisions can you take to decide to use Event sourcing.&lt;/p&gt;
+
+&lt;h2 id=&quot;monolithic-architecture&quot;&gt;Monolithic Architecture&lt;/h2&gt;
+
+&lt;p&gt;Almost the first architecture every non-millennial worked. A monolith is a big block of code, normally with backend and frontend in the same code base and has the advantages of being fast to prototype and easy to deploy, but it has some famous drawbacks:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*fmDIsQhMp9HvJAngSJTWcw.jpeg&quot; alt=&quot;“why?” by [imgflip](https://imgflip.com/)&quot; class=&quot;center&quot; /&gt;
+&lt;em class=&quot;quote&quot;&gt;“why?” by &lt;a href=&quot;https://imgflip.com/&quot;&gt;imgflip&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;The large monolithic code base intimidates developers, especially ones who are new to the team&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Overloaded IDE&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Overloaded web container&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Continuous deployment is difficult&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Scaling the application can be difficult&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;An obstacle to scaling development&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Requires a long-term commitment to a technology stack&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Some examples of frameworks that have a monolithic architecture by nature are Rails, Django, Play Framework.&lt;/p&gt;
+
+&lt;h2 id=&quot;micro-services-architecture&quot;&gt;Micro-services architecture&lt;/h2&gt;
+
+&lt;p&gt;With a micro-service architecture, we could divide and decouple services by responsibility, this has a lot of advantages and today is the most common architecture. This trend is commonly associated with agile teams and projects where you can have teams working only in some “responsibilities” and making incrementing changes without impacting the whole project.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*Ejawmxn0rxsBHm2mfY7u0w.png&quot; alt=&quot;Micro-services example&quot; class=&quot;center&quot; /&gt;
+&lt;em class=&quot;quote&quot;&gt;Micro-services example&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;This approach resolves some problems of the monolithic architecture.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*pDMBXTvJVzG-4B4vtgow1g.png&quot; alt=&quot;Micro-services advantages&quot; class=&quot;center&quot; /&gt;
+&lt;em class=&quot;quote&quot;&gt;Micro-services advantages&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Testability, easy to test&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Deployability, easy to deploy&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Autonomy, decoupled from “most” of the system&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Fault isolation&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Today, a lot of frameworks can be used to create a micro-service. Some of them are Spring, Micronauts, Sinatra, Flask, Finatra and so on.&lt;/p&gt;
+
+&lt;h3 id=&quot;database-per-service&quot;&gt;Database per service&lt;/h3&gt;
+
+&lt;p&gt;Microservices can have different database necessities and business rules for changes. For that, we can have a single database for each microservice.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2868/1*OgCCs48cs_Ud7o5iiUjNAA.png&quot; alt=&quot;Database segregation&quot; class=&quot;center&quot; /&gt;
+&lt;em class=&quot;quote&quot;&gt;Database segregation&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/3052/1*IVBg6yjFvsTC5y14O_y9aA.png&quot; alt=&quot;“Independency” by [imgflip](https://imgflip.com/)&quot; class=&quot;center&quot; /&gt;
+&lt;em class=&quot;quote&quot;&gt;“Independency” by &lt;a href=&quot;https://imgflip.com/&quot;&gt;imgflip&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;This approach has some benefits:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Low coupling and high autonomy, since the database now is only accessible by API, it doesn’t matter to the other services how you store data. The microservice now can choose the best technology and model it’s own data to better solve the challenges.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And some drawbacks:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;High complexity, develop queries that spread across multiple databases is not straightforward.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Implement queries that join data, now in multiples databases, is challenging.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Maintain database consistency is tricky.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;sagas&quot;&gt;Sagas&lt;/h3&gt;
+
+&lt;p&gt;With a microservices architecture, comes the problem of “how to maintain consistency across services?”, for that purpose exists the concept of Saga. Saga is a sequence of transactions and each local transaction emits an event or a message that triggers the next process in a transaction.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;It enables an application to maintain data consistency across multiple services without using distributed transactions&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The programming model is more complex. For example, a developer must design compensating transactions that explicitly undo changes made earlier in a saga.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;In order to be reliable, a service must atomically update its database and publish an event.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;It’s also important to understand the difference between message and event:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;em&gt;Message&lt;/em&gt; is addressed to someone.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;em&gt;Event&lt;/em&gt; is something that happened and someone can react to that.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;sagas--choreography&quot;&gt;Sagas — Choreography&lt;/h3&gt;
+
+&lt;p&gt;An event triggers another step in the process.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*w_H5KEuj9KIGyEFS4nLVww.png&quot; alt=&quot;Choreography example&quot; class=&quot;center&quot; /&gt;
+&lt;em class=&quot;quote&quot;&gt;Choreography example&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Choreography is commonly known as “event-oriented” architecture.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;sagas--orchestration&quot;&gt;Sagas — Orchestration&lt;/h3&gt;
+
+&lt;p&gt;A process emits messages to another service.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*J0mOmy8xvUsQqJxyfB1qEg.png&quot; alt=&quot;&quot; class=&quot;center&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;event-sourcing&quot;&gt;Event Sourcing&lt;/h2&gt;
+
+&lt;p&gt;Event sourcing is an architecture pattern that focuses on maintaining the source of truth of your business as an immutable sequence of events. This sequence of events will be time-based and the current state of your business will be a reflection of the sequence of events, not of the last event.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*SdCD1vt3l7WnQVWas8_q9g.png&quot; alt=&quot;A sequence of events through time&quot; class=&quot;center&quot; /&gt;
+&lt;em class=&quot;quote&quot;&gt;A sequence of events through time&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;This sequence of events is persisted in an event store. An event store and it relation with the microservices have some peculiarities.&lt;/p&gt;
+
+&lt;h3 id=&quot;atomicity&quot;&gt;Atomicity&lt;/h3&gt;
+
+&lt;p&gt;When persisting an event to the event store, this should be atomic. By atomic it means:&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;An atomic operation, by definition, is an operation that occurs in only one step making impossible to have “half operation”.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;causal-consistency&quot;&gt;Causal consistency&lt;/h3&gt;
+
+&lt;p&gt;With the asynchronous nature of event sourcing:&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;The causal consistency means that all operations are related in some way. If event A means the trigger to event B, they are related and processed in order.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;With that in mind, the event store should persist the events in order and broadcast any new event.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*3ytNbNY3HGxX_FoiE6sfUw.png&quot; alt=&quot;Event Sourcing overview&quot; class=&quot;center&quot; /&gt;
+&lt;em class=&quot;quote&quot;&gt;Event Sourcing overview&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;cqrs&quot;&gt;CQRS&lt;/h3&gt;
+
+&lt;p&gt;With event sourcing, we can decouple which services do queries and which services generate commands.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;CQRS or Command Query Responsibility Segregation&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*41VBri_36RFAKKvbzE3wzw.png&quot; alt=&quot;CQRS example&quot; class=&quot;center&quot; /&gt;
+&lt;em class=&quot;quote&quot;&gt;CQRS example&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;event-store&quot;&gt;Event Store&lt;/h3&gt;
+
+&lt;p&gt;We could, in order to simplify what the event store does, implement an event store as below:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*E2IxCcTK9QGeJcXdGd6I6w.png&quot; alt=&quot;“Exploded” event store&quot; class=&quot;center&quot; /&gt;
+&lt;em class=&quot;quote&quot;&gt;“Exploded” event store&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Different from sagas, we should do it atomically. In the image above, we persist in the database and from a binlog generated by the database we produce events. These events are then consumed by other micro-services.&lt;/p&gt;
+
+&lt;h3 id=&quot;but-why&quot;&gt;But, why?&lt;/h3&gt;
+
+&lt;p&gt;Nubank (a fintech from Brazil) went to an Event Sourcing approach in order to gain scalability and resilience. They used Kafka as an event store.&lt;/p&gt;
+
+&lt;p&gt;Scalability. Using Kafka as an event store, they were able to at any time scale they services and replay the last events in order to be even with the event store and serve as a source of truth for the business.&lt;/p&gt;
+
+&lt;p&gt;Resilience. With event sourcing, they don’t lose events anymore. Once an event was accepted by the event store, it will be broadcast to any micro-service subscribed to that change.&lt;/p&gt;
+
+&lt;p&gt;Simplifying their solution:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*EHEkSJxiCiRbRPr3JqdK6g.png&quot; alt=&quot;Nubank simplified solution&quot; class=&quot;center&quot; /&gt;
+&lt;em class=&quot;quote&quot;&gt;Nubank simplified solution&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The idea is when the account has any kind of movement. The event store will generate events to all micro-services subscribed to that event. Those micro-services will receive this event and sensibilize the local database as bellow.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*45nn5sdMKMyTg2eTAMmSxQ.png&quot; alt=&quot;Nubank simplified flow&quot; class=&quot;center&quot; /&gt;
+&lt;em class=&quot;quote&quot;&gt;Nubank simplified flow&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;By receiving an event and storing its changes in a local denormalized database they get less latency for queries and be totally decoupled of other services.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*8OBRLbdGwj1RDRkUA14uKQ.jpeg&quot; alt=&quot;“Because Sponge Bob knows it” by [imgflip](https://imgflip.com/)&quot; class=&quot;center&quot; /&gt;
+&lt;em class=&quot;quote&quot;&gt;“Because Sponge Bob knows it” by &lt;a href=&quot;https://imgflip.com/&quot;&gt;imgflip&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;An event sourcing architecture has some drawbacks:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Duplicated data, because of the denormalized databases, it could have duplicated data.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;More cloud consuming, once every micro-service replica has its own database.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Complexity, because of the CQRS decoupling, it may spread micro-services that with time could become difficult to maintain.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Event sourcing doesn’t solve all your problems, and in any case is a silver bullet. Most of the times, it doesn’t go forward because of misunderstanding of the purposes and which problems it resolves. What are your thoughts about it? Which do you think will be the next trend? (besides serverless…)&lt;/p&gt;
+
+&lt;p&gt;Strongly based on:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://microservices.io/index.html&quot;&gt;https://microservices.io/index.html&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://github.com/alexrochas/whyeventsourcing&quot;&gt;https://github.com/alexrochas/whyeventsourcing&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://martinfowler.com/eaaDev/EventSourcing.html&quot;&gt;https://martinfowler.com/eaaDev/EventSourcing.html&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://eventuate.io&quot;&gt;http://eventuate.io&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+				<pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
+				<link>/general/2019/02/05/event-sourcing.html</link>
+				<guid isPermaLink="true">/general/2019/02/05/event-sourcing.html</guid>
+			</item>
+		
+			<item>
+				<title>Why Gatling?</title>
+				<description>&lt;h1 id=&quot;testing-the-limits-of-your-application-with-gatling&quot;&gt;Testing the limits of your application with Gatling&lt;/h1&gt;
+
+&lt;h2 id=&quot;why-gatling&quot;&gt;Why Gatling?&lt;/h2&gt;
+&lt;p&gt;Probably we could test almost the same things with JMeter or even writing a whole new application just to send N requests. So why Gatling?&lt;/p&gt;
+
+&lt;h2 id=&quot;its-all-about-dsl&quot;&gt;It’s all about DSL&lt;/h2&gt;
+&lt;p&gt;Apache Camel is widely used in Java and one of its principal changes was to stop using XML and start using the Camel DSL.&lt;/p&gt;
+
+&lt;p&gt;We came from here:&lt;/p&gt;
+
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;from&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;uri=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;direct:start&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;idempotentConsumer&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;messageIdRepositoryRef=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;repo&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;skipDuplicate=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;header&amp;gt;&lt;/span&gt;MessageId&lt;span class=&quot;nt&quot;&gt;&amp;lt;/header&amp;gt;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;lt;to&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;uri=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;log:org.apache.camel.spring.processor.idempotent?level=INFO&amp;amp;amp;showAll=true&amp;amp;amp;multiline=true&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;to&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;uri=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;mock:result&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;To here:&lt;/p&gt;
+
+&lt;div class=&quot;language-groovy highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;n&quot;&gt;from&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;direct:test&apos;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;transform&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;it&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;reverse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;someValue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setHeader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;myHeader&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;someValue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;reverse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;And that’s where gatling shines!&lt;/p&gt;
+
+&lt;h2 id=&quot;gatling-dsl&quot;&gt;Gatling DSL&lt;/h2&gt;
+&lt;p&gt;Ignoring some configurations, the result from a recorded test will look like:&lt;/p&gt;
+
+&lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;scn&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;scenario&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;RecordedSimulation&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;exec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;request_0&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;uri4&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;headers_0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;pause&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;exec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;request_1&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/noticias&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;headers_1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;pause&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;exec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;request_2&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;uri4&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;headers_0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;pause&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;exec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;request_3&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/noticias&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;headers_3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;formParam&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;q&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;alex&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;nf&quot;&gt;setUp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;scn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;inject&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;atOnceUsers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))).&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;protocols&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;httpProtocol&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;And this all was generated by Gatling recorder.
+For my need, I want to test what will happen in the above scenario, if 100 users access at the same time.&lt;/p&gt;
+
+&lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;numberOfUsers&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;scn&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;scenario&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;RecordedSimulation&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;exec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;request_0&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;uri4&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;headers_0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;pause&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;exec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;request_1&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/noticias&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;headers_1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;pause&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;exec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;request_2&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;uri4&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;headers_0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;pause&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;exec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;request_3&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/noticias&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;headers_3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;formParam&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;q&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;alex&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;nf&quot;&gt;setUp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;scn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;inject&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;atOnceUsers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numberOfUsers&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))).&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;protocols&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;httpProtocol&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Some resources to play in the wild https://gatling.io/docs/current/cheat-sheet/&lt;/p&gt;
+
+&lt;h2 id=&quot;ok-how-we-do&quot;&gt;Ok, how we do?&lt;/h2&gt;
+&lt;p&gt;First, Gatling is really well documented here https://gatling.io/docs/current/quickstart/ then, knowing this content, the steps are&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Recording your first test&lt;/li&gt;
+  &lt;li&gt;Running your first test&lt;/li&gt;
+  &lt;li&gt;Improving your first test&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To record, we will use Recorder located in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$GATLING_HOME/bin/recorder.sh&lt;/code&gt; that have a friendly UI to help. Again, Gatling is really well documented on how to record your tests.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;From Linux, because I’ve didn’t want to change any environment configuration to set a proxy, I’ve used a google-chrome plugin called &lt;a href=&quot;https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif/related&quot;&gt;SwitchyOmega&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Now, our record should be in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$GATLING_HOME/user-files/simulations/RecordedSimulation.scala&lt;/code&gt; with a content like our previously DSL.
+To run the recorded scenario, use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$GATLING_HOME/bin/gatling.sh&lt;/code&gt;, that one without UI.&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;Choose a simulation number:
+   &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;0] RecordedSimulation
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Type 0 (zero) and follow the instructions.
+Once you finish it. Time to see the reports in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$GATLING_HOME/results/0-1524494019638/index.html&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now how to improve our tests? Our tests are generated in plain Scala, add or remove methods in order to reflect the scenario you need, like, number of users, loops, conditions and other helpers that you can see in https://gatling.io/docs/current/cheat-sheet/.&lt;/p&gt;
+
+&lt;h1 id=&quot;conclusions&quot;&gt;Conclusions&lt;/h1&gt;
+&lt;p&gt;Besides this article still is a WIP. Gatling has a lot of cool features, and I question if we should ship some schedule tests to test our application resilience inside our pipeline.&lt;/p&gt;
+</description>
+				<pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
+				<link>/general/2018/04/23/why-gatling.html</link>
+				<guid isPermaLink="true">/general/2018/04/23/why-gatling.html</guid>
+			</item>
+		
+			<item>
+				<title>About purpose</title>
+				<description>&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*tDzDJ18hfMZxNiMSoOQbDA.png&quot; alt=&quot;Whenever I think about purpose, I think about a metaphorical road.&quot; class=&quot;center&quot; /&gt;
+&lt;em class=&quot;quote&quot;&gt;Whenever I think about purpose, I think about a metaphorical road.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Recently I had the pleasure of being invited to be the mentor of a group of trainees, who in the company we affectionately call Young Talents.&lt;/p&gt;
+
+&lt;p&gt;I had already written about learning and thought about purpose before. But our words take shape when we see people fervently eager for knowledge. Nothing more natural would cause me anxiety and a sense of “purpose.”&lt;/p&gt;
+
+&lt;p&gt;Purpose, it seems like something I’ve always sought, from simple things like reading self-help books, watching a handful of videos on the subject or even going on Zen Buddhist 7 days retreats. When I think about that subject, I always remember a sentence told in a TEDx where the author Andrew Solomon talks about identity. It follows the 15 min of TED proposing the idea that we are the result of our experiences (which in itself is not new), the plot twist is when it suggests that we are responsible for the meaning that our experiences have about who we are. That makes perfect sense to me.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/RiM5a-vaNkg&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot; class=&quot;center&quot;&gt;&lt;/iframe&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;“Forge meaning, build identity”&lt;br /&gt;
+~ Andrew Solomon&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;How to explain this in a clear way? In the last few weeks, I studied the concept of Learning 3.0, read the book and some articles. Personally, I do not believe I have found new things, but it was elucidating the way everything is placed. The feeling was that I had all the things I needed in a messy pile of clothes. The book folded and organized all the clothes by color in the closet.&lt;/p&gt;
+
+&lt;p&gt;A summary that not fully describe the book is the concept Learning 3.0 “The apprentice suggests the question and the answer”. This thought goes with what I’ve been thinking lately. But I still did not answer the question I was trying to solve, how to find purpose?&lt;/p&gt;
+
+&lt;p&gt;An article titled “A simple exercise for getting your priorities straight: Forget about work and relationship” had an answer. The exercise was simple, drawing four quadrants on a sheet of paper and writing on each of them what my priorities were.
+&lt;a href=&quot;https://qz.com/1091075/a-simple-exercise-for-getting-your-priorities-straight-forget-about-work-and-relationships/&quot;&gt;&lt;strong&gt;A simple exercise for getting your priorities straight: Forget about work and relationships&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Do it. Draw four quadrants on a sheet of paper and write one priority on each quadrant.&lt;/p&gt;
+
+&lt;p&gt;Now be honest and see if you wrote any synonyms of “work” or “family.” Yes? Do the exercise again but omit these synonyms.&lt;/p&gt;
+
+&lt;p&gt;The result is epiphanic. Thinking about work and family as something implicit is like taking a load off your back. First you may feel that you are not sure how many steps you are taking in the right direction and suddenly you can see where you want to go.&lt;/p&gt;
+
+&lt;p&gt;And that’s what I did, twice. But one piece of the puzzle was still missing. Instead of “priorities” I set myself on the mission of writing my four purposes. However, as I would visualize my progress?&lt;/p&gt;
+
+&lt;p&gt;Back to Learning 3.0. The coolest part of the book is to read the epic of a team leader trying to increase the number of sales, this and the examples of Learning 3.0 dynamics.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;“Viewing learning is more important than measuring it”&lt;br /&gt;
+~ Learning 3.0&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Learning Mosaic. Visualize learning is more important than measuring it. Each area of the learning mosaic would be aspects to improve but to make sense in my momentum they would need to represent a purpose. With the result of the previous dynamics, each step toward a purpose would become visible.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*MaI3cbu3WelK9JRGgUX3Pw.png&quot; alt=&quot;Now the walls here looks like that.&quot; class=&quot;center&quot; /&gt;
+&lt;em class=&quot;quote&quot;&gt;Now the walls here looks like that.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The result of these two dynamics was a group of Young Talents taking an apparently important step. Some did not even put values like “study” or the like. However, “purposes” such as happiness, health, well-being rained and this left me extremely optimistic.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;“On the inner level, perhaps nothing really attacks us except our own confusion,”&lt;br /&gt;
+~ Pema Chödron&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;At the end of the day, I believe that what you do that goes in order to your purposes are never wasted time and should be sought.&lt;/p&gt;
+</description>
+				<pubDate>Fri, 27 Oct 2017 00:00:00 +0000</pubDate>
+				<link>/general/2017/10/27/about-purpose.html</link>
+				<guid isPermaLink="true">/general/2017/10/27/about-purpose.html</guid>
+			</item>
+		
+			<item>
+				<title>The Git TAO</title>
+				<description>&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/1*scAYNyWlof1odFBfsdlHIA.jpeg&quot; alt=&quot;cover&quot; class=&quot;center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I worked with versioning tools since 2006. Already worked with CVS, Subversion and from 2011 until now with Git.&lt;/p&gt;
+
+&lt;p&gt;Thing is, with my experience, I managed to identify some common behaviors in developers when using Git or migrating the first time to Git. Here are my top 6 behaviors a good developer must have when using Git.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Be semantic&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Be consistent&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Be predictable&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Don’t use force-push&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Re-base it, don’t merge it&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Be lazy&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;1--be-semantic&quot;&gt;1 — Be semantic&lt;/h3&gt;
+
+&lt;p&gt;Who never saw a list of commits with descriptions like:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;“Tests”&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;“More tests”&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;“Working”&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;“Deploy”&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Come’on, those descriptions doesn’t say anything, for me and in approximately 20 min even you will don’t remember about which tests that commit is talking about. Semantic is the key for a good communication, not just between the team but for history purposes. You will be interested on semantic when you need to find your work on the git log.&lt;/p&gt;
+
+&lt;p&gt;Looking further for that you can use a lot, believe-me “a lot”, of plugins that help your laziness. Like this one &lt;a href=&quot;https://github.com/alexrochas/zsh-git-semantic-commits&quot;&gt;https://github.com/alexrochas/zsh-git-semantic-commits&lt;/a&gt; forked from another similar project in order to create a ZSH plugin.&lt;/p&gt;
+
+&lt;h3 id=&quot;2--be-consistent&quot;&gt;2 — Be consistent&lt;/h3&gt;
+
+&lt;p&gt;Once your team decide a convention, stick to that! Doesn’t matter if the flow is Git flow, Github flow, trunk based or wherever, stick to what your team decide it.&lt;/p&gt;
+
+&lt;p&gt;I kinda of tired to work in projects with Github flow (for example) where feature/branch are the rules until we are in deployment and something goes wrong.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/0*pr_gbAwD3NBL7-Xa.png&quot; alt=&quot;I love this dog.&quot; class=&quot;center&quot; /&gt;
+&lt;em class=&quot;quote&quot;&gt;I love this dog.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Let’s do a quickly review. If your team decide to use Github flow, probably they have some deploy pipeline right? What is on master is the same that is on production maybe and send something directly to master means take a shortcut between some automated tests. Looks fine from here right?&lt;/p&gt;
+
+&lt;h3 id=&quot;3--be-predictable&quot;&gt;3 — Be predictable&lt;/h3&gt;
+
+&lt;p&gt;Whenever someone calls me to help with git, I suppose you didn’t kick the source tree with both legs. Git does’t loose anything, and by experience I say again, “Git does’t loose anything”. You’re responsible for always loose.&lt;/p&gt;
+
+&lt;p&gt;There you are, in some really big problem with git, something that started with some re-base conflicts or maybe your local source tree is wrong, or all you wanted to do was a re-base but you forgot the flag. In your life, you don’t cut a leg every time you take a wrong step, you always take a step back before go again. Same with git.&lt;/p&gt;
+
+&lt;p&gt;Git merge, git re-base and other commands have the flag abort. Before deleting everything, put all the changes in something mystical like “stash”, cloning the project again or reboot your PC. Try just to undo what you just did.&lt;/p&gt;
+
+&lt;p&gt;And if nothing works I always will be able to look the mess you did with “git reflog”.&lt;/p&gt;
+
+&lt;h3 id=&quot;4--dont-use-force-push&quot;&gt;4 — Don’t use force-push.&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/0*MkgWsktliD18GYml.jpg&quot; alt=&quot;Yeah, maybe on Star Wars, but please, not in git.&quot; class=&quot;center&quot; /&gt;
+&lt;em class=&quot;quote&quot;&gt;Yeah, maybe on Star Wars, but please, not in git.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;You just finished your job, worked a stressful week on that and are pretty confident about your code and that this will probably make the world a better place. But wait, you have some errors when trying to push your code. Something about difference with the HEAD? Ok, you don’t right understand the conflicts and a post on SlackOverflow just said that to resolve this you should use “the force”.&lt;/p&gt;
+
+&lt;p&gt;Think git like a tree. Every commit is stacked above the last one. Now you use the force.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/0*XKBZ4TN96QDFTVAd.jpg&quot; alt=&quot;&quot; class=&quot;center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Update your code with the remote branch before push. Also, independent of the method your team decide to use. You really should maintain your code constantly updated with the remote branches.&lt;/p&gt;
+
+&lt;h3 id=&quot;5-re-base-it-dont-merge-it&quot;&gt;5— Re-base it, don’t merge it&lt;/h3&gt;
+
+&lt;p&gt;Now you don’t try to force anything that is not Star Wars related. But when you do pulls, you always take some pretty effort to merge those twenty and something files and always mess up with the tree creating a lot of unnecessary merge commits and omitting the merged branch commits.&lt;/p&gt;
+
+&lt;p&gt;Re-base to the rescue, the main feature of re-base is, re-base will look for the first commit in common. From that it will apply the remote commits and after that you local commits, one-by-one. You still will have conflicts, probably, but you will have to deal with them one-by-one.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/2000/0*13W25Gjh1ojzPL_T.png&quot; alt=&quot;&quot; class=&quot;center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Also, it keeps your history coherent.&lt;/p&gt;
+
+&lt;h3 id=&quot;6--be-lazy&quot;&gt;6 — Be lazy&lt;/h3&gt;
+
+&lt;p&gt;I worked with Linux almost double the time I know Git and something I learned with that is, a good programmer is a lazy programmer.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;“a good programmer is a lazy programmer”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Working with Linux, made me do, until today, almost 30 or 40 tools between Git tools, terminal tools, alias and other stuff. I can say that if you do something more often, this probably can be automatized.&lt;/p&gt;
+
+&lt;h3 id=&quot;where-to-go-from-here&quot;&gt;Where to go from here?&lt;/h3&gt;
+
+&lt;p&gt;I really like this kind of session and here my tips.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;my Github &lt;a href=&quot;https://github.com/alexrochas&quot;&gt;https://github.com/alexrochas&lt;/a&gt;, maybe you find something useful (yeah, self promoting)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;this &lt;a href=&quot;http://ndpsoftware.com/git-cheatsheet.html&quot;&gt;http://ndpsoftware.com/git-cheatsheet.html&lt;/a&gt; that was what I most used long ago to understand the flow and how to undo the daily mess.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://github.com/alexrochas/git-logger&quot;&gt;https://github.com/alexrochas/git-logger&lt;/a&gt;, a project to collect the use of git and with that be able to create more “how-to” posts or tools to do the world a better place.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Finally, git is amazing and immense. Study it a little and I’m sure that you and your team mattes will not regret.&lt;/p&gt;
+</description>
+				<pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
+				<link>/general/2017/10/22/the-git-tao.html</link>
+				<guid isPermaLink="true">/general/2017/10/22/the-git-tao.html</guid>
+			</item>
+		
+			<item>
+				<title>How-to write your first ruby gem</title>
+				<description>&lt;p style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;http://alexrocha.de/assets/media/ruby-banner.png&quot; alt=&quot;cover&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;what-is-a-gem&quot;&gt;What is a gem?&lt;/h3&gt;
+
+&lt;p&gt;The main idea to understand the concept of gem is thinking in that as a Ruby plugin.
+Before gems, already existed the concept of plugin in ruby, however they should be
+fully included in code and also the work to maintain and update was completely manual.&lt;/p&gt;
+
+&lt;p&gt;So, “gem” was created as a way to isolate, decouple and versioning code in a practical way as a dependency.
+Usually, gem is used with bundler (another gem that has the role of package manager)
+that with your Gemfile install all dependencies declared with the specified versions.&lt;/p&gt;
+
+&lt;h3 id=&quot;pipeme-gem&quot;&gt;Pipeme gem&lt;/h3&gt;
+
+&lt;p&gt;Generally, we say that if you see yourself repeating code in more than one place or even in more than one project,
+this is probably a pretty good candidate to become a gem. Even if we assume that
+the code will be reused is not always enough for creating a gem.&lt;/p&gt;
+
+&lt;p&gt;I created &lt;strong&gt;pipeme&lt;/strong&gt; thinking about it, already used the same solution at least in two or three
+other projects and decide that probably it should be a gem.
+Pipeme, is a simple gem that when added to your projects lets you concatenate procedures. Almost like shell do with &lt;strong&gt;pipes&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;how-was-done&quot;&gt;How was done?&lt;/h3&gt;
+
+&lt;p&gt;First of all, we need to be certified that we have &lt;strong&gt;bundler&lt;/strong&gt; installed.&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;gem &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;bundler
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Once installed, we can create the boilerplate to &lt;strong&gt;pipeme&lt;/strong&gt; gem.&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bundler gem pipeme
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This creates the minimum needed to publish a new gem.&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;tree pipeme
+pipeme
+├── .gitignore
+├── Gemfile
+├── LICENSE.txt
+├── README.md
+├── Rakefile
+├── pipeme.gemspec
+└── lib
+    ├── pipeme
+    │   └── version.rb
+    └── pipeme.rb
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;From file to file, we first have pipeme.gemspec that is where are the metadata of our gem like
+name, version, license and dependencies with other gems. This file also specify where the
+source files are and the executables that will be added to our &lt;strong&gt;path/bin&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# coding: utf-8&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;lib&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;expand_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;../lib&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;__FILE__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;vg&quot;&gt;$LOAD_PATH&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;unshift&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;unless&lt;/span&gt; &lt;span class=&quot;vg&quot;&gt;$LOAD_PATH&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;include?&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;pipeme/version&apos;&lt;/span&gt;
+
+&lt;span class=&quot;no&quot;&gt;Gem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Specification&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;spec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;spec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;name&lt;/span&gt;          &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;pipeme&quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;spec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;version&lt;/span&gt;       &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Pipeme&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;VERSION&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;spec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;authors&lt;/span&gt;       &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Alex Rocha&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;spec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;email&lt;/span&gt;         &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;alex.rochas@yahoo.com.br&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;spec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;summary&lt;/span&gt;       &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Add a more functional approach to your Ruby projects&quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;spec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;description&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Add pipe functionality as &apos;&amp;gt;&amp;gt;&apos; to Object class&quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;spec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;homepage&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;https://github.com/alexrochas/pipeme&quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;spec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;license&lt;/span&gt;       &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;MIT&quot;&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;spec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;files&lt;/span&gt;         &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`git ls-files -z`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x0&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;reject&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;%r{^(test|spec|features)/}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;spec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;require_paths&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;lib&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;spec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;add_development_dependency&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;bundler&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;~&amp;gt; 1.12&quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;spec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;add_development_dependency&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;rake&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;~&amp;gt; 10.0&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Note that the line “spec.version” have Pipeme::VERSION. This happens because we
+are retrieving the version from the file &lt;strong&gt;version.rb&lt;/strong&gt; that has the this information for our gem.
+This should be updated at every publish for our gem. So, &lt;strong&gt;lib/pipeme/version.rb&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Pipeme&lt;/span&gt;
+  &lt;span class=&quot;no&quot;&gt;VERSION&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;0.1.0&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;An extra point to be careful is to use semantic versioning (good read &lt;a href=&quot;http://semver.org/&quot;&gt;http://semver.org/&lt;/a&gt;) that in
+essence is.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;1. MAJOR version when you make incompatible API changes,
+2. MINOR version when you add functionality in a backwards-compatible manner, and
+3. PATCH version when you make backwards-compatible bug fixes. Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now &lt;strong&gt;pipeme.rb&lt;/strong&gt; is the file where we will put the code for our gem. Lucky for us, someone put
+an space indicating where to put our code.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;pipeme/version&quot;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Pipeme&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# Your code goes here...&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Probably your gems will be bigger than that and should result in more tha one file. The point here
+is that this file will be the first loaded when your installed gem be required.&lt;/p&gt;
+
+&lt;p&gt;Like all good rubyist, we should write some tests to your gem. But at first I will
+need to declare that my project have a test library. If we see the Gemfile, it
+only have a call to gemspec.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;https://rubygems.org&apos;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Specify your gem&apos;s dependencies in pipeme.gemspec&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;gemspec&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Declare your dependencies in gemspec and only make reference to them divide opinions but
+for this small project is more practical and easy way to do.&lt;/p&gt;
+
+&lt;p&gt;In pipeme.gemspec, after choose my test library (RSpec) I should declare it there.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;spec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;add_development_dependency&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;rspec&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;~&amp;gt; 3.0&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;The pipeme.gemspec file will be now like this.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# coding: utf-8&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;lib&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;expand_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;../lib&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;__FILE__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;vg&quot;&gt;$LOAD_PATH&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;unshift&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;unless&lt;/span&gt; &lt;span class=&quot;vg&quot;&gt;$LOAD_PATH&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;include?&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lib&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;pipeme/version&apos;&lt;/span&gt;
+
+&lt;span class=&quot;no&quot;&gt;Gem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Specification&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;spec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;spec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;name&lt;/span&gt;          &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;pipeme&quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;spec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;version&lt;/span&gt;       &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Pipeme&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;VERSION&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;spec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;authors&lt;/span&gt;       &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Alex Rocha&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;spec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;email&lt;/span&gt;         &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;alex.rochas@yahoo.com.br&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;spec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;summary&lt;/span&gt;       &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Add a more functional approach to your Ruby projects&quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;spec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;description&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Add pipe functionality as &apos;&amp;gt;&amp;gt;&apos; to Object class&quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;spec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;homepage&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;https://github.com/alexrochas/pipeme&quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;spec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;license&lt;/span&gt;       &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;MIT&quot;&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;spec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;files&lt;/span&gt;         &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`git ls-files -z`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x0&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;reject&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;%r{^(test|spec|features)/}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;spec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;require_paths&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;lib&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;spec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;add_development_dependency&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;bundler&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;~&amp;gt; 1.12&quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;spec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;add_development_dependency&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;rake&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;~&amp;gt; 10.0&quot;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;spec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;add_development_dependency&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;rspec&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;~&amp;gt; 3.0&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Because we are working with RSpec, create the directory where our unit tests will be.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;spec
+├─ pipeme_spec.rb
+└─ spec_pipeme.rb
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;In spec_pipeme.rb we should load all source files from “/lib” and import pipeme.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;vg&quot;&gt;$LOAD_PATH&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;unshift&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;expand_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;../../lib&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;__FILE__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;pipeme&apos;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Writing our tests, seeing that is a pretty simple gem, for now will test
+that the behavior we want is possible and if exists a file that contains
+our gem version.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;spec_helper&apos;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;describe&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Pipeme&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;it&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;has a version number&apos;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Pipeme&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;VERSION&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;not_to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;be&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;it&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;let me pipe procedures as expected&apos;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;Alex&apos;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Hello &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;equal?&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;Hello Alex!&apos;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Having tests, we could go back to pipeme.rb.
+For &lt;strong&gt;pipeme.rb&lt;/strong&gt; I delete the content and added the following behavior.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;pipeme/version&quot;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Object&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;proc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;proc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;The source code for &lt;strong&gt;pipeme&lt;/strong&gt; is simple and just one file should be enough.
+Also, is not the scope of this post explain what is happening on this code. Maybe in another post.
+Now from our root directory, we could run our tests with RSpec.&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;rspec
+
+Pipeme
+  has a version number
+  &lt;span class=&quot;nb&quot;&gt;let &lt;/span&gt;me pipe procedures as expected
+
+Finished &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;0.00155 seconds &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;files took 0.1186 seconds to load&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+2 examples, 0 failures
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Done. With passing tests we have a gem ready to be delivered.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;http://alexrocha.de/assets/media/rubygems-banner.jpg&quot; alt=&quot;cover&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;shipping-your-gem&quot;&gt;Shipping your gem&lt;/h3&gt;
+
+&lt;p&gt;Rubygems is essentially a repository for gems, like maven or npm. You should
+have a account in rubygem before been able to push your gem &lt;a href=&quot;https://rubygems.org/sign_in&quot;&gt;https://rubygems.org/sign_in&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now, having a account, is time to export our gem for the world.&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;rake release
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This way, &lt;strong&gt;pipeme&lt;/strong&gt; gem is available to be downloaded in any ruby ecosystem that use rubygems, from &lt;a href=&quot;https://rubygems.org/gems/pipeme&quot;&gt;https://rubygems.org/gems/pipeme&lt;/a&gt;
+or declaring it in your Gemfile.&lt;/p&gt;
+
+&lt;h3 id=&quot;where-to-go-from-here&quot;&gt;Where to go from here?&lt;/h3&gt;
+
+&lt;p&gt;Much more can be learned about gems. A good start may be read about other package managers as pypi, maven or npm.&lt;/p&gt;
+
+&lt;p&gt;Once you understand a little more about the process, give it a try in how to add executable scripts
+to your gem and create rich terminal applications.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://guides.rubygems.org/specification-reference/#executables&quot;&gt;http://guides.rubygems.org/specification-reference/#executables&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Study about continuous integration and how your gem can play with that.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://docs.travis-ci.com/user/languages/ruby&quot;&gt;https://docs.travis-ci.com/user/languages/ruby&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Sometimes your gem require a server to run, read about how heroku can help you that task.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://devcenter.heroku.com/articles/getting-started-with-ruby#introduction&quot;&gt;https://devcenter.heroku.com/articles/getting-started-with-ruby#introduction&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Thanks for reading!&lt;/p&gt;
+
+&lt;p&gt;Did a gem? Published on github? Tell me more in comments.&lt;/p&gt;
+</description>
+				<pubDate>Sun, 28 Aug 2016 00:00:00 +0000</pubDate>
+				<link>/development/2016/08/28/how-to-write-your-first-ruby-gem.html</link>
+				<guid isPermaLink="true">/development/2016/08/28/how-to-write-your-first-ruby-gem.html</guid>
+			</item>
+		
+			<item>
+				<title>About teaching and learning</title>
+				<description>&lt;p style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;http://alexrocha.de/assets/media/cover_banner.png&quot; alt=&quot;cover&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“The greatest enemy of knowledge is not ignorance, it is the illusion of knowledge.” 
+~ Daniel J. Boorstin&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;about-teaching-and-learning&quot;&gt;About teaching and learning.&lt;/h3&gt;
+
+&lt;p&gt;Our generation learned that is wrong to say “I don’t know” and because of that we talk about topics that we don’t have any knowledgement about.
+As a Karate teacher, in dojo (where we train) we start by presuming that the most graduate have always more knowledgement.
+The same way, in our professional career we understand that someone who has more degrees than us or is in a more superior function, will have more experience and knowledge.&lt;/p&gt;
+
+&lt;p&gt;Firstly, in Karate I’ve needed to become a black-belt to &lt;strong&gt;realize that any of us know what is really talking about and you’re virtuous when you know and
+accept this.&lt;/strong&gt;
+Didn’t need too much time until I’ve discover that this happens not only in dojo, but in life. The dojo was just some kind of instagram for people, where everybody show their best, or try at least.
+ With years as a developer, &lt;strong&gt;I’ve noticed that people with the same experience that I have, often do not have any clue about what they are talking about.&lt;/strong&gt; 
+I’ve noticed that the hardworking intern was right sometimes and the software architect was wrong.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;http://alexrocha.de/assets/media/karate_teacher_banner.jpg&quot; alt=&quot;karate teacher&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Learning something new is hard, maybe hurt sometimes. We are not used to admit to ourselves
+that “we don’t know”. &lt;strong&gt;Every time you learn something new, you learn a bit more about how you learn.&lt;/strong&gt; We read books, articles, watch videos,
+tutorials and sign to courses. 
+And with time we forgot how to do questions. We forget how is to be insecure about what we gonna learn and just stay
+in the same secure path.&lt;/p&gt;
+
+&lt;p&gt;But what if the simplest questions are essentials? 
+The intern still have this spirit, he is sometimes scared and insecure. He can show
+you how to do questions, show maybe how you did questions in the past.
+Like in dojo, &lt;strong&gt;the black belt doesn’t remember how is to be a white belt.&lt;/strong&gt; How not punch
+or kick. How is to be afraid of a fight (most times) because he feels full of himself. The truth is, while
+he maintains a “beginner’s mind” he will be able to keep learning.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“While he maintains a ‘beginner’s mind’ he will be able to keep learning.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Teaching in Benjamin Franklin words “Tell me and I forget. Teach me and I remember. Involve me and I learn”.
+&lt;strong&gt;The way we teach is crucial to keep learning.&lt;/strong&gt;
+Through teaching we start to feel insecurity again and expose ourselves from our comfort zone. 
+How to teach? In software development
+we often use concepts like “ramp up”. The junior developer has 3 months to learn and start to produce.
+Just let him work at his time and grope until he finds better paths to work.&lt;/p&gt;
+
+&lt;p&gt;Back to dojo, I let my students commit their mistakes (some of them, my past mistakes) and then something amazing happens. 
+&lt;strong&gt;My students shows me new mistakes, mistakes that I’ve never imagined and maybe some of them that I still do.&lt;/strong&gt; 
+I noticed that just repeating the same things I’ve heard from my
+teacher is not so effective that was for me.
+That amazing movement I saw in past is not to strong or fast as I remember. 
+This way I understand that is not because I’ve learn how my project works in 3 months that the new guy on project has to.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“I noticed that just repeating the same things I’ve heard from my teacher is not so effective that was for me.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The person to whom we want teach something have her 
+own way to learn. &lt;strong&gt;The way we teach must be sensible to this, we grown from that.&lt;/strong&gt;
+Out from our comfort zone, we should do that more to never stop
+learning.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“the day you stop learning is the day you stop living.”
+~ Jesse Enkamp&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+				<pubDate>Thu, 11 Aug 2016 00:00:00 +0000</pubDate>
+				<link>/general/2016/08/11/about-teaching-and-learning.html</link>
+				<guid isPermaLink="true">/general/2016/08/11/about-teaching-and-learning.html</guid>
+			</item>
+		
+	</channel>
+</rss>
