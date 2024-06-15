@@ -11,6 +11,7 @@ title: "[alex_rocha]"
 
 include:
   - _pages
+  - _posts
 
 exclude:
   - vendor/
