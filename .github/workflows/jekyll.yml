@@ -1,21 +1,37 @@
-name: Build and Deploy to GitHub Pages
+name: Jekyll site CI
+
 on:
   push:
     branches:
-      - master
+      - master  # Set this to your default branch
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-      - uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.1'
-      - run: |
-          gem install bundler
-          bundle install
-          bundle exec jekyll build
-      - uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
+    - uses: actions/checkout@v2
+
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.1'  # Specify the Ruby version you need
+
+    - name: Change permissions (if necessary)
+      run: chmod -R u+rwX,go-w $HOME/.bundle
+
+    - name: Install dependencies
+      run: |
+        gem install bundler
+        bundle config set path 'vendor/bundle'  # Use local path for gems
+        bundle install
+
+    - name: Build and test
+      run: |
+        bundle exec jekyll build
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./_site
