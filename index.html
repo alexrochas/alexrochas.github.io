@@ -6,7 +6,7 @@ pagination:
 ---
 
 {% for post in paginator.posts %}
-  {% unless post.tags contains 'til' %}
+  {% unless post.categories contains 'til' %}
     <article class="home">
 
       <span class="post-date">

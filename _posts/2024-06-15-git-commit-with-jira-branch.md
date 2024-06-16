@@ -1,114 +1,72 @@
 ---
 layout: post
-title: Jekyll and social metatags
-categories: [posts]
+title: Automate Your Git Commit Messages with JIRA Ticket Numbers
+categories: [til]
 tags: [til]
 fullview: false
 excerpt_separator: <!--more-->
 excerpt:
-   "improve your Jekyll post visibility"
+   "Adding Git Branch with JIRA Ticket to Commit Messages"
 comments: true
-image: /assets/media/social-engagement-thumb.png
-feature_img: /assets/media/social-engagement-thumb.png
 ---
 
-Recently I decided to give a push in my social engagement and personal merketing by creating more visibility to my tech blog and other fresh started project. It was a surprise for me that this whole time I was sharing posts with this look:
+### Step-by-Step Guide to Adding Git Branch with JIRA Ticket to Commit Messages
 
-![twitter-ugly-thumb](/assets/media/twitter-ugly-thumb.png){: .center}
-*besides the politeness it's not really attractive for a click*{: .quote}
+In this guide, we'll show you how to streamline your git workflow by automatically including JIRA ticket numbers in your commit messages. Follow these steps to set up a custom git alias that extracts the JIRA ticket number from your branch name and adds it to your commit messages.
 
-I discovered then the my Jekyl static blog (yes, it's important to point the whole scenario) was missing the metatags that most of social networks look for when creating a thumbnail.  Something like:
+#### Step 1: Open Your Git Configuration File
 
-><i class="far fa-file-code"></i> index.html 
+To get started, you need to open your global git configuration file. You can do this using the following command:
+
+```sh
+git config --global --edit
+```
+
+This command will open your global `.gitconfig` file in your default text editor.
+
+#### Step 2: Define the Git Alias
+
+In the opened `.gitconfig` file, add the following alias under the `[alias]` section. If the `[alias]` section doesn't exist, you can create it.
+
+><i class="far fa-file-code"></i> .gitconfig 
 {: .filename }
-```xml
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://conductofcode.io/post/social-meta-tags-with-jekyll/" />
-<meta property="og:title" content="Social meta tags with Jekyll" />
-<meta property="og:description" content="This is how I added social meta tags to this Jekyll blog to optimize sharing on Facebook, Twitter and Google+." />
-<meta property="og:image" content="http://conductofcode.io/post/social-meta-tags-with-jekyll/meta.png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:site_name" content="Conduct of Code" />
+```bash
+[alias]
+  commit-jira = "!f() { branch=$(git symbolic-ref --short HEAD); if [[ $branch =~ ([A-Z0-9]+-[0-9]+) ]]; then ticket=\"${BASH_REMATCH[1]}\"; git commit -m \"$ticket $1\"; else echo \"No JIRA ticket found in branch name.\"; fi; }; f"
 ```
 
-By seeing that the next clever step would be create a helper method on my Jekyll website and add to each one of my posts or even add to the header (some "clean code" here?). But before loose more time with that I found the right way to do it.
+#### Step 3: Save and Close the Configuration File
 
-There is a Jekyll plugin, supported by github-pages, called [jekyll-seo-tags](https://rubygems.org/gems/jekyll-seo-tag). (that is already bundled if you're using [github-pages](https://rubygems.org/gems/github-pages) gem)
+After adding the alias, save and close the `.gitconfig` file. This alias defines a custom command `commit-jira` that you can now use in your git workflow.
 
-><i class="far fa-file-code"></i> Gemfile
-{: .filename }
-```ruby
-# frozen_string_literal: true
+#### Step 4: Use the New Alias in Your Git Workflow
 
-source 'https://rubygems.org'
+To use the new alias, make sure you are on a branch that follows the JIRA ticket naming convention (e.g., `ABC-1234-feature-description`).
 
-gem 'github-pages' # jekyll-seo-tags is already bundled in this gem
-gem 'jekyll', '>= 3.6.3'
+When you want to commit changes, use the new alias like this:
 
-group :jekyll_plugins do
-  gem 'jekyll-paginate'
-  gem 'jekyll-admin'
-end
+```sh
+git commit-jira "your commit message"
 ```
 
-This plugin will add a new method that you should use in your default/template/index page, choose one that is used everywhere, to inside the head tag:
+This will automatically prepend the JIRA ticket number extracted from the branch name to your commit message.
 
-><i class="far fa-file-code"></i> default.html
-{: .filename }
-```xml
-<head>
-	<meta charset="utf-8">
-	<title>{{ page.title }}</title>
-	{% if page.description %}
-	<meta name="description" content="{{ page.description }}">
-	{% endif %}
-	<meta name="author" content="{{ site.author.name }}">
+#### Example
 
-		<!-- stuff... -->
+If your branch name is `ABC-1234-feature-description` and you run:
 
-	<link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.BASE_PATH }}/feed.xml">
-
-    {% raw %}
-        {% seo %} <!-- here is the magic trick -->
-        {% include head.html %}
-    {% endraw %}
-</head>
+```sh
+git commit-jira "fixed the navigation issue"
 ```
 
-After that, I tried to oncemore with twitter and now looks like something I may click:
+The resulting commit message will be:
 
-![simple-thumb](/assets/media/simple-thumb.png){: .center}
-
-And if you're missing a beatiful image on the thumbnail just add to your post header the image key:
-
-><i class="far fa-file-code"></i> a-post.md
-{: .filename }
 ```
----
-layout: post
-title: Event Sourcing - an evolutionary perspective
-categories: [general]
-tags: [event sourcing]
-fullview: false
-excerpt_separator: <!--more-->
-excerpt:
-    "The highs and lows of an event sourcing architecture"
-comments: true
-image: https://cdn-images-1.medium.com/max/2000/0*WdYZ4xKi-0jFdqj4.jpg
----
+ABC-1234 fixed the navigation issue
 ```
 
-The result should look something like this:
+#### Summary
 
-![full-thumb](/assets/media/full-thumb.png){: .center}
+By following these steps, you can automate the inclusion of JIRA ticket numbers in your commit messages, ensuring consistent and informative commit histories. This small improvement can significantly enhance your development workflow, making it easier to track changes related to specific JIRA tickets.
 
-Now this is something I would click!
-
-Resources:
-
-* [card validator I used to preview my cards](https://cards-dev.twitter.com/validator)
-* [github-pages supported plugins](https://pages.github.com/versions/)
-* [some insights about jekyll-seo-tag](https://conductofcode.io/post/social-meta-tags-with-jekyll/)
-* [what is twitter-cards?](https://maxchadwick.xyz/blog/twitter-cards-for-jekyll-with-jekyll-seo-tag)
-
+Happy committing!
