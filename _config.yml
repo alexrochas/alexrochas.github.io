@@ -1,7 +1,7 @@
 # visit https://github.com/mojombo/jekyll/wiki/Configuration for more settings
 
 ## paginate: 10 # pagination based on number of posts
-## paginate_path: "page:num"
+paginate_path: "page/:num"
 exclude: ["README.md"] # files to exclude
 highlighter: rouge
 markdown: kramdown
@@ -78,7 +78,7 @@ plugins:
 pagination:
   enabled: true
   per_page: 10
-  permalink: '/:num/'
+  permalink: '/page/:num/'
   trail:
     before: 2
     after: 2
