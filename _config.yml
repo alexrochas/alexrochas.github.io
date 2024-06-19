@@ -9,6 +9,10 @@ disqus: alexrochas
 google_analytics: UA-83264734-1
 title: "[alex_rocha]"
 
+collections:
+  til:
+    output: true  # Generates an HTML file for each item in the collection
+
 include:
   - _pages
   - _posts
