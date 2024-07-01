@@ -8,7 +8,7 @@ excerpt: "Learn how to define and modify factories with FactoryBot to create fle
 
 ## How to Write DRY and Maintainable Tests with FactoryBot
 
-FactoryBot is a powerful library for setting up Ruby objects as test data. It's widely used with RSpec to create maintainable and flexible test suites. This post covers how to define new factories and modify existing ones, especially those provided by third-party gems.
+FactoryBot is a powerful library for setting up Ruby objects as test data, previously known as FactoryGirl. It's widely used with RSpec to create maintainable and flexible test suites. This post covers how to define new factories and modify existing ones, especially those provided by third-party gems.
 
 ### Defining Factories with FactoryBot
 
