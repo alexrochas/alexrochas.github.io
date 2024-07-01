@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Mastering FactoryBot: Defining and Modifying Factories"
-date: 2024-06-27
+date: 2024-06-26
 categories: [RSpec, FactoryBot, Testing, Ruby]
 excerpt: "Learn how to define and modify factories with FactoryBot to create flexible and maintainable test data for your Ruby applications. This guide covers the basics and provides practical examples."
 ---
