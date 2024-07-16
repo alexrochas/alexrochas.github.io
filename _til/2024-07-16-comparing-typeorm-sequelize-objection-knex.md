@@ -37,6 +37,32 @@ TypeORM shines in maintainability, especially for TypeScript projects. Its stron
 - Steeper learning curve for beginners
 - Can be overkill for simple projects
 
+**Example:**
+
+```typescript
+import { Entity, PrimaryGeneratedColumn, Column, BaseEntity } from "typeorm";
+
+@Entity()
+export class User extends BaseEntity {
+  @PrimaryGeneratedColumn()
+  id: number;
+
+  @Column()
+  firstName: string;
+
+  @Column()
+  lastName: string;
+}
+
+// Create a new user
+const user = User.create({ firstName: 'John', lastName: 'Doe' });
+await user.save();
+
+// Retrieve users
+const users = await User.find();
+console.log(users);
+```
+
 ### Sequelize
 
 Sequelize is known for its simplicity and ease of use, which contributes to maintainability. Its promise-based API and straightforward model definitions make it easy to work with. However, its flexibility can sometimes lead to inconsistent code if not carefully managed.
@@ -50,6 +76,34 @@ Sequelize is known for its simplicity and ease of use, which contributes to main
 - Inconsistent patterns can arise
 - Weaker TypeScript support compared to TypeORM
 
+**Example:**
+
+```javascript
+const { Sequelize, DataTypes } = require('sequelize');
+const sequelize = new Sequelize('database', 'username', 'password', {
+  host: 'localhost',
+  dialect: 'mysql'
+});
+
+const User = sequelize.define('User', {
+  firstName: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  lastName: {
+    type: DataTypes.STRING
+  }
+});
+
+// Sync database and create a new user
+await sequelize.sync();
+await User.create({ firstName: 'John', lastName: 'Doe' });
+
+// Retrieve users
+const users = await User.findAll();
+console.log(users);
+```
+
 ### Objection.js with Knex.js
 
 Objection.js, combined with Knex.js, offers great maintainability for complex projects. It allows for fine-grained control over queries and relationships, making it easy to manage complex schemas. The separation of concerns between Objection.js (for ORM) and Knex.js (for query building) can lead to a cleaner and more maintainable codebase.
@@ -62,6 +116,38 @@ Objection.js, combined with Knex.js, offers great maintainability for complex pr
 **Cons:**
 - Requires familiarity with both Objection.js and Knex.js
 - More boilerplate code compared to other ORMs
+
+**Example:**
+
+```javascript
+const { Model } = require('objection');
+const Knex = require('knex');
+
+const knex = Knex({
+  client: 'mysql',
+  connection: {
+    host: '127.0.0.1',
+    user: 'your_database_user',
+    password: 'your_database_password',
+    database: 'your_database_name'
+  }
+});
+
+Model.knex(knex);
+
+class User extends Model {
+  static get tableName() {
+    return 'users';
+  }
+}
+
+// Create a new user
+const user = await User.query().insert({ firstName: 'John', lastName: 'Doe' });
+
+// Retrieve users
+const users = await User.query();
+console.log(users);
+```
 
 ## Performance
 
