@@ -1,8 +1,10 @@
 ---
+layout: post
 title: "Run RSpec Tests for Changed Files in Git"
 date: 2025-01-16
-subject: "RSpec, Git, Automation"
+categories: [RSpec, Git, Automation]
 tags: [ruby, rspec, git, testing, automation]
+excerpt: "Learn how to run RSpec tests only for files affected by recent changes in Git. This script maps modified files to their corresponding test files, ensuring that only relevant tests are run."
 ---
 
 When working with Ruby and RSpec, I wanted to streamline the process of running tests only for files affected by recent changes in Git. Here's how I achieved it by creating a script that maps modified files to their corresponding RSpec test files.
