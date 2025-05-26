@@ -2,6 +2,7 @@
 title: "TIL: One Alias to Rule All Package Managers"
 date: 2025-05-26
 excerpt: "Tired of remembering whether a project uses pnpm, yarn, or npm? Use this `pm` alias to run commands without thinking twice."
+layout: post
 tags: [til, shell, node, productivity, aliases]
 ---
 
